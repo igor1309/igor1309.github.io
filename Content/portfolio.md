@@ -15,32 +15,32 @@ I've made an app __CIFilterBrowser__ to make it easier to get into CIFilter deta
 <image src="/PortfolioImages/ciFilterBrowser/combined1_3.png" width="585" title="CIFilterBrowser main screen view options: list and grid, switched with menu">
 </p>
 <p align="center"><cite>CIFilterBrowser main screen view options: list and grid, switched with menu.</cite></p>
-
 <br>
+
 <p align="center">
 <image src="/PortfolioImages/ciFilterBrowser/combined4_6.png" width="585" title="CIFilterBrowser Search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed)">
 </p>
 <p align="center"><cite>CIFilterBrowser: search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed).</cite></p>
-
 <br>
+
 <p align="center">
 <image src="/PortfolioImages/ciFilterBrowser/combined7_9.png" width="585" title="CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters">
 </p>
 <p align="center"><cite>CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters.</cite></p>
 <br>
 
-<p><em>Coming soon to App Store.</em></p>
-
-<details>
-	<summary>Where to start</summary>
-	<p>For initial dive in into CIFilter world I highly recommend <a href="https://www.objc.io/issues/21-camera-and-photos/core-image-intro/">An Introduction to Core Image · objc.io</a> by Warren Moore and <a href="https://developer.apple.com/documentation/coreimage/processing_an_image_using_built-in_filters">Processing an Image Using Built-in Filters</a> at Apple Developer Documentation.</p>
-</details>
-</div>
+_Coming soon to App Store._
 <br>
 
-<div>
-<h2>Mobility</h2>
-<p><em>My own <b>Chart Library</b></em>, <b><em>SwiftUI</em></b>, <b><em>Combine</em></b></p>
+<div><details>
+<summary>Where to start</summary>
+<p>For initial dive in into CIFilter world I highly recommend <a href="https://www.objc.io/issues/21-camera-and-photos/core-image-intro/">An Introduction to Core Image · objc.io</a> by Warren Moore and <a href="https://developer.apple.com/documentation/coreimage/processing_an_image_using_built-in_filters">Processing an Image Using Built-in Filters</a> at Apple Developer Documentation.</p>
+</details></div>
+<br>
+
+## Mobility
+
+_My own_ ___Chart Library___, ___SwiftUI, Combine___
 
 <p>App for <a href="https://covid19.apple.com/mobility">Apple Mobility Index</a>.</p>
 <p align="center">
@@ -99,8 +99,3 @@ I've made an app __CIFilterBrowser__ to make it easier to get into CIFilter deta
 <p align="center"><cite>MAXImatica: results and history.</cite></p>
 </div>
 <br>
-
-<div>
-<h2>Contact</h2>
-<p><b><em>igor1309</em></b> (twitter or gmail)</p>
-</div>
