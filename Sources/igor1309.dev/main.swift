@@ -14,12 +14,12 @@ struct Igor1309Dev: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://your-website-url.com")!
-    var name = "Igor1309Dev"
-    var description = "A description of Igor1309Dev"
+    var url = URL(string: "https://igor1309.github.com")!
+    var name = "Igor Malyarov"
+    var description = "iOS developer"
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
 
 // This will generate your website using the built-in Foundation theme:
-try Igor1309Dev().publish(withTheme: .foundation)
+try Igor1309Dev().publish(withTheme: .igor1309)
