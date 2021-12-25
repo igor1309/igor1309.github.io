@@ -6,7 +6,9 @@ import Plot
 struct Igor1309Dev: Website {
     enum SectionID: String, WebsiteSectionID {
         // Add the sections that you want your website to contain here:
-        case posts
+        case portfolio
+        case posts = "blog"
+        case about
     }
 
     struct ItemMetadata: WebsiteItemMetadata {
@@ -21,5 +23,5 @@ struct Igor1309Dev: Website {
     var imagePath: Path? { nil }
 }
 
-// This will generate your website using the built-in Foundation theme:
+// This will generate your website using selected theme:
 try Igor1309Dev().publish(withTheme: .igor1309)
