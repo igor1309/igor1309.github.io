@@ -13,7 +13,10 @@ public extension Theme {
     static var igor1309: Self {
         Theme(
             htmlFactory: Igor1309DevHTMLFactory(),
-            resourcePaths: ["Resources/Igor1309DevTheme/styles.css"]
+            resourcePaths: [
+                "Resources/Igor1309DevTheme/styles.css",
+                "Resources/Igor1309DevTheme/colors.css"
+            ]
         )
     }
 }
@@ -43,7 +46,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
             }
         )
     }
-
+    
     func makeSectionHTML(for section: Section<Site>,
                          context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -59,7 +62,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
             }
         )
     }
-
+    
     func makeItemHTML(for item: Item<Site>,
                       context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -81,7 +84,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
             )
         )
     }
-
+    
     func makePageHTML(for page: Page,
                       context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -94,7 +97,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
             }
         )
     }
-
+    
     func makeTagListHTML(for page: TagListPage,
                          context: PublishingContext<Site>) throws -> HTML? {
         HTML(
@@ -118,7 +121,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
             }
         )
     }
-
+    
     func makeTagDetailsHTML(for page: TagDetailsPage,
                             context: PublishingContext<Site>) throws -> HTML? {
         HTML(
@@ -131,12 +134,12 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                         Text("Tagged with ")
                         Span(page.tag.string).class("tag")
                     }
-
+                    
                     Link("Browse all tags",
-                        url: context.site.tagListPath.absoluteString
+                         url: context.site.tagListPath.absoluteString
                     )
-                    .class("browse-all")
-
+                        .class("browse-all")
+                    
                     ItemList(
                         items: context.items(
                             taggedWith: page.tag,
@@ -154,7 +157,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
 
 private struct Wrapper: ComponentContainer {
     @ComponentBuilder var content: ContentProvider
-
+    
     var body: Component {
         Div(content: content).class("wrapper")
     }
@@ -163,29 +166,29 @@ private struct Wrapper: ComponentContainer {
 private struct SiteHeader<Site: Website>: Component {
     var context: PublishingContext<Site>
     var selectedSelectionID: Site.SectionID?
-
+    
     var body: Component {
         Header {
             Wrapper {
                 Link(context.site.name, url: "/")
                     .class("site-name")
-
+                
                 if Site.SectionID.allCases.count > 1 {
                     navigation
                 }
             }
         }
     }
-
+    
     private var navigation: Component {
         Navigation {
             List(Site.SectionID.allCases) { sectionID in
                 let section = context.sections[sectionID]
-
+                
                 return Link(section.title,
-                    url: section.path.absoluteString
+                            url: section.path.absoluteString
                 )
-                .class(sectionID == selectedSelectionID ? "selected" : "")
+                    .class(sectionID == selectedSelectionID ? "selected" : "")
             }
         }
     }
@@ -194,7 +197,7 @@ private struct SiteHeader<Site: Website>: Component {
 private struct ItemList<Site: Website>: Component {
     var items: [Item<Site>]
     var site: Site
-
+    
     var body: Component {
         List(items) { item in
             Article {
@@ -210,7 +213,7 @@ private struct ItemList<Site: Website>: Component {
 private struct ItemTagList<Site: Website>: Component {
     var item: Item<Site>
     var site: Site
-
+    
     var body: Component {
         List(item.tags) { tag in
             Link(tag.string, url: site.path(for: tag).absoluteString)
@@ -223,10 +226,15 @@ private struct SiteFooter: Component {
     var body: Component {
         Footer {
             Paragraph {
-                Text("Generated using ")
+                Text("Copyright © Igor Malyarov 2021")
+            }
+            Paragraph {
+                Text("Built using ")
                 Link("Publish", url: "https://github.com/johnsundell/publish")
             }
             Paragraph {
+                Link("Twitter", url: "https://twitter.com/igor1309")
+                Text(" | ")
                 Link("RSS feed", url: "/feed.rss")
             }
         }
