@@ -7,9 +7,9 @@ import SplashPublishPlugin
 struct Igor1309Dev: Website {
     enum SectionID: String, WebsiteSectionID {
         // Add the sections that you want your website to contain here:
-        case portfolio
-        case posts// = "blog"
         case about
+        case articles = "Articles"
+        case portfolio
     }
     
     struct ItemMetadata: WebsiteItemMetadata {
