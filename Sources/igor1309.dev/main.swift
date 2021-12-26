@@ -26,23 +26,6 @@ struct Igor1309Dev: Website {
 
 // This will generate your website using selected theme:
 try Igor1309Dev().publish(
-    using: [
-        .installPlugin(
-            .splash(withClassPrefix: "classPrefix")
-        ),
-        .copyResources(),
-        .addMarkdownFiles(),
-        .sortItems(in: .posts, by: \.date, order: .descending),
-        .generateHTML(withTheme: .igor1309),
-        .generateRSSFeed(including: [.posts]),
-        .generateSiteMap()
-    ]
+    withTheme: .igor1309,
+    plugins: [.splash(withClassPrefix: "classPrefix")]
 )
-
-// Publishing Igor Malyarov (6 steps)
-// [1/6] Copy 'Resources' files
-// [2/6] Add Markdown files from 'Content' folder
-// [3/6] Sort items
-// [4/6] Generate HTML
-// [5/6] Generate RSS feed
-// [6/6] Generate site map
