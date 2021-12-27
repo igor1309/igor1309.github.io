@@ -18,18 +18,21 @@ I've made an app __CIFilterBrowser__ to make it easier to get into CIFilter deta
 <br/>
 <p align="center"><cite>CIFilterBrowser main screen view options: list and grid, switched with menu.</cite></p>
 </div>
+<br/>
 
 <div align="center">
 <image src="/images/portfolio/ciFilterBrowser/combined4_6.png" width="585" title="CIFilterBrowser Search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed)">
 <br/>
 <p align="center"><cite>CIFilterBrowser: search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed).</cite></p>
 </div>
+<br/>
 
 <div align="center">
 <image src="/images/portfolio/ciFilterBrowser/combined7_9.png" width="585" title="CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters">
 <br/>
 <p align="center"><cite>CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters.</cite></p>
 </div>
+<br/>
 
 <br/>
 _Coming soon to App Store._
@@ -46,20 +49,22 @@ _Coming soon to App Store._
 _My own_ ___Chart Library___, ___SwiftUI, Combine___
 
 An app for [Apple Mobility Index](https://covid19.apple.com/mobility)
-
 <br/>
+
 <div align="center">
 <image src="/images/portfolio/mobility/combined1_3.png" width="585" title="Mobility Index Bar Chart, Country list and search">
 <br/>
 <p align="center"><cite>Mobility Index Bar Chart, Country list and search (by country, region/ sub-region or city).</cite></p>
 </div>
 <br/>
+
 <div align="center">
 <image src="/images/portfolio/mobility/combined4_6.png" width="585" title="Mobility Index Calculation Options, country selection by bar">
 <br/>
 <p align="center"><cite>Mobility Index Calculation Options, country selection by bar.</cite></p>
 </div>
-<br>
+<br/>
+
 <div align="center">
 <image src="/images/portfolio/mobility/combined7_9.png" width="585" title="Country mobility line charts: raw data and 7 days moving average">
 <br/>
@@ -67,42 +72,52 @@ An app for [Apple Mobility Index](https://covid19.apple.com/mobility)
 </div>
 <br/>
 
-<div>
-<h2>Covid-19 Observer</h2>
-<p><em>My own <b>Chart Library</b></em>, <b><em>MapKit</em></b>, <b><em>Core Data</em></b>, <b><em>UIKit</em></b>, <b><em>SwiftUI</em></b>, <b><em>Combine</em></b></p>
+## Covid-19 Observer
+
+_My own_ ___Chart Library___, ___MapKit___, ___Core Data___, ___UIKit___, ___SwiftUI___, ___Combine___.
 
 
-<p align="center">
+<div align="center">
 <image src="/images/portfolio/covid/combined1_3.png" width="585" title="Covid-19 Observer: global overview, charts with floating legend">
-</p>
+<br/>
 <p align="center"><cite>Covid-19 Observer: global overview, charts with floating legend.</cite></p>
-<br>
-<p align="center">
-<image src="/images/portfolio/covid/combined4_6.png" width="585" title="Covid-19 Observer: Map and color settings">
-</p>
-<p align="center"><cite>Covid-19 Observer: map and color settings.</cite></p>
-<br>
-<p align="center">
-<image src="/images/portfolio/covid/combined7_9.png" width="585" title="Covid-19 Observer: country data, chart with point inspector">
-</p>
-<p align="center"><cite>Covid-19 Observer: country data, chart with point inspector.</cite></p>
-
-<p><em>Data by John Hopkins University.</em></p>
-<br>
 </div>
+<br/>
 
-<div>
-<h2>MAXimatica</h2>
-<p><b><em>SwiftUI</em></b>, <b><em>Combine</em></b></p>
+<divalign="center">
+<image src="/images/portfolio/covid/combined4_6.png" width="585" title="Covid-19 Observer: Map and color settings">
+<br/>
+<p align="center"><cite>Covid-19 Observer: map and color settings.</cite></p>
+</div>
+<br/>
 
-<p>Pre-school math (Russian only).</p>
-<p align="center">
+<div align="center">
+<image src="/images/portfolio/covid/combined7_9.png" width="585" title="Covid-19 Observer: country data, chart with point inspector">
+<br/>
+<p align="center"><cite>Covid-19 Observer: country data, chart with point inspector.</cite></p>
+p>
+</div>
+<br/>
+
+_Data by John Hopkins University_.
+<br/>
+
+## MAXimatica
+
+___SwiftUI___, ___Combine___
+
+Pre-school math (Russian only).
+
+<div align="center">
 <image src="/images/portfolio/maximatica/combined1_3.png" width="585" title="MAXImatica: onboarding and mission selection">
-</p>
+<br/>
 <p align="center"><cite>MAXImatica: onboarding and mission selection.</cite></p>
-<p align="center">
+</div>
+<br/>
+
+<div align="center">
 <image src="/images/portfolio/maximatica/combined4_6.png" width="585" title="MAXImatica: results and history">
-</p>
+<br/>
 <p align="center"><cite>MAXImatica: results and history.</cite></p>
 </div>
-<br>
+<br/>
