@@ -63,8 +63,11 @@ h1 {
     font-size: 2em;
 }
 
+h1 > a {
+    text-decoration: none;
+}
+
 h2 {
-    margin: 20px 0;
 }
 
 p {
@@ -72,7 +75,8 @@ p {
 }
 
 a {
-    color: inherit;
+    /*color: inherit;*/
+    color: #eb8704;
 }
 
 .description {
@@ -100,6 +104,14 @@ a {
     margin-bottom: 0;
 }
 
+.wrapper .item-date {
+    font-size: 0.8em;
+}
+
+.item-list .item-date {
+    font-size: 0.75em;
+}
+
 .tag-list {
     margin-bottom: 15px;
 }
@@ -107,8 +119,8 @@ a {
 .tag-list li,
 .tag {
     display: inline-block;
-    background-color: #000;
-    color: #ddd;
+    background-color: #1c1c22;
+    font-size: 0.75em;
     padding: 4px 6px;
     border-radius: 5px;
     margin-right: 5px;
@@ -133,7 +145,7 @@ a {
 }
 
 .all-tags li {
-    font-size: 1.4em;
+    font-size: 0.85em;
     margin-right: 10px;
     padding: 6px 10px;
 }
@@ -144,7 +156,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #222;
+        background-color: #2a2b2f;
     }
 
     body,
@@ -157,7 +169,7 @@ footer {
     }
 
     header {
-        background-color: #000;
+        background-color: #26272b;
     }
 }
 
@@ -168,9 +180,7 @@ footer {
 }
 
 /**
- *  Example CSS file that can be used to style Splash HTML output
- *  Copyright (c) John Sundell 2018
- *  MIT license - see LICENSE.md
+ *  CSS that can be used to style Splash HTML output
  */
 
 pre {

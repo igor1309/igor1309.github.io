@@ -5,6 +5,7 @@
 //  Created by Igor Malyarov on 25.12.2021.
 //
 
+import Foundation
 import Plot
 import Publish
 
@@ -14,8 +15,7 @@ public extension Theme {
         Theme(
             htmlFactory: Igor1309DevHTMLFactory(),
             resourcePaths: [
-                "Resources/Igor1309DevTheme/styles.css",
-                "Resources/Igor1309DevTheme/colors.css"
+                "Resources/Igor1309DevTheme/styles.css"
             ]
         )
     }
@@ -63,8 +63,10 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
         )
     }
     
-    func makeItemHTML(for item: Item<Site>,
-                      context: PublishingContext<Site>) throws -> HTML {
+    func makeItemHTML(
+        for item: Item<Site>,
+        context: PublishingContext<Site>
+    ) throws -> HTML {
         HTML(
             .lang(context.site.language),
             .head(for: item, on: context.site),
@@ -75,6 +77,12 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                     Wrapper {
                         Article {
                             Div(item.content.body).class("content")
+                            
+                            Div {
+                                Span("Published on: \(item.itemDateStr)")
+                            }
+                            .class("item-date")
+                            
                             Span("Tagged with: ")
                             ItemTagList(item: item, site: context.site)
                         }
@@ -85,8 +93,10 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
         )
     }
     
-    func makePageHTML(for page: Page,
-                      context: PublishingContext<Site>) throws -> HTML {
+    func makePageHTML(
+        for page: Page,
+        context: PublishingContext<Site>
+    ) throws -> HTML {
         HTML(
             .lang(context.site.language),
             .head(for: page, on: context.site),
@@ -200,13 +210,25 @@ private struct ItemList<Site: Website>: Component {
     
     var body: Component {
         List(items) { item in
-            Article {
+            
+            return Article {
                 H1(Link(item.title, url: item.path.absoluteString))
+                Div(Text(item.itemDateStr)).class("item-date")
                 ItemTagList(item: item, site: site)
                 Paragraph(item.description)
             }
         }
         .class("item-list")
+    }
+}
+
+extension Item {
+    var itemDateStr: String {
+        if #available(macOS 12.0, *) {
+            return date.formatted(date: .abbreviated, time: .omitted)
+        } else {
+            return DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
+        }
     }
 }
 
