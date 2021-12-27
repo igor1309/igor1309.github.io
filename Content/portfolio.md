@@ -72,6 +72,7 @@ An app for [Apple Mobility Index](https://covid19.apple.com/mobility)
 </div>
 <br/>
 
+
 ## Covid-19 Observer
 
 _My own_ ___Chart Library___, ___MapKit___, ___Core Data___, ___UIKit___, ___SwiftUI___, ___Combine___.
