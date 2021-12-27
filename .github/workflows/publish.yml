@@ -37,3 +37,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: published
           publish_dir: ./Output
+        env:
+          PAGES_CNAME: igor1309.dev
