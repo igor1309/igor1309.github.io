@@ -25,7 +25,10 @@ let package = Package(
     targets: [
         .target(
             name: "igor1309.dev",
-            dependencies: ["Publish", "SplashPublishPlugin"]
+            dependencies: [
+                "Publish",
+                "SplashPublishPlugin"
+            ]
         )
     ]
 )
