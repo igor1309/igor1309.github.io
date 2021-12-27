@@ -13,54 +13,59 @@ One of the framework's pillars is __CIFilter__ image filter. There are 230 filte
 
 I've made an app __CIFilterBrowser__ to make it easier to get into CIFilter details.
 
-<p align="center">
+<div align="center">
 <image src="/images/portfolio/ciFilterBrowser/combined1_3.png" width="585" title="CIFilterBrowser main screen view options: list and grid, switched with menu">
-</p>
+<br/>
 <p align="center"><cite>CIFilterBrowser main screen view options: list and grid, switched with menu.</cite></p>
-<br>
+</div>
 
-<p align="center">
+<div align="center">
 <image src="/images/portfolio/ciFilterBrowser/combined4_6.png" width="585" title="CIFilterBrowser Search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed)">
-</p>
+<br/>
 <p align="center"><cite>CIFilterBrowser: search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed).</cite></p>
-<br>
+</div>
 
-<p align="center">
+<div align="center">
 <image src="/images/portfolio/ciFilterBrowser/combined7_9.png" width="585" title="CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters">
-</p>
+<br/>
 <p align="center"><cite>CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters.</cite></p>
-<br>
+</div>
 
+<br/>
 _Coming soon to App Store._
-<br>
+<br/>
 
 <div><details>
 <summary>Where to start</summary>
 <p>For initial dive in into CIFilter world I highly recommend <a href="https://www.objc.io/issues/21-camera-and-photos/core-image-intro/">An Introduction to Core Image · objc.io</a> by Warren Moore and <a href="https://developer.apple.com/documentation/coreimage/processing_an_image_using_built-in_filters">Processing an Image Using Built-in Filters</a> at Apple Developer Documentation.</p>
 </details></div>
-<br>
+<br/>
 
 ## Mobility
 
 _My own_ ___Chart Library___, ___SwiftUI, Combine___
 
-<p>App for <a href="https://covid19.apple.com/mobility">Apple Mobility Index</a>.</p>
-<p align="center">
+An app for [Apple Mobility Index](https://covid19.apple.com/mobility)
+
+<br/>
+<div align="center">
 <image src="/images/portfolio/mobility/combined1_3.png" width="585" title="Mobility Index Bar Chart, Country list and search">
-</p>
+<br/>
 <p align="center"><cite>Mobility Index Bar Chart, Country list and search (by country, region/ sub-region or city).</cite></p>
-<br>
-<p align="center">
+</div>
+<br/>
+<div align="center">
 <image src="/images/portfolio/mobility/combined4_6.png" width="585" title="Mobility Index Calculation Options, country selection by bar">
-</p>
+<br/>
 <p align="center"><cite>Mobility Index Calculation Options, country selection by bar.</cite></p>
-<br>
-<p align="center">
-<image src="/images/portfolio/mobility/combined7_9.png" width="585" title="Country mobility line charts: raw data and 7 days moving average">
-</p>
-<p align="center"><cite>Country mobility line charts: raw data and 7 days moving average.</cite></p>
 </div>
 <br>
+<div align="center">
+<image src="/images/portfolio/mobility/combined7_9.png" width="585" title="Country mobility line charts: raw data and 7 days moving average">
+<br/>
+<p align="center"><cite>Country mobility line charts: raw data and 7 days moving average.</cite></p>
+</div>
+<br/>
 
 <div>
 <h2>Covid-19 Observer</h2>
