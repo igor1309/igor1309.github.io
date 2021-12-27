@@ -1,3 +1,5 @@
+# Igor Malyarov. Portfolio
+
 Most of my work is covered under NDA, but there are few things I can show here
 
 __All apps__ support __Dynamic Type__ and __Dark mode__.
@@ -12,19 +14,19 @@ One of the framework's pillars is __CIFilter__ image filter. There are 230 filte
 I've made an app __CIFilterBrowser__ to make it easier to get into CIFilter details.
 
 <p align="center">
-<image src="/PortfolioImages/ciFilterBrowser/combined1_3.png" width="585" title="CIFilterBrowser main screen view options: list and grid, switched with menu">
+<image src="/images/portfolio/ciFilterBrowser/combined1_3.png" width="585" title="CIFilterBrowser main screen view options: list and grid, switched with menu">
 </p>
 <p align="center"><cite>CIFilterBrowser main screen view options: list and grid, switched with menu.</cite></p>
 <br>
 
 <p align="center">
-<image src="/PortfolioImages/ciFilterBrowser/combined4_6.png" width="585" title="CIFilterBrowser Search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed)">
+<image src="/images/portfolio/ciFilterBrowser/combined4_6.png" width="585" title="CIFilterBrowser Search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed)">
 </p>
 <p align="center"><cite>CIFilterBrowser: search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed).</cite></p>
 <br>
 
 <p align="center">
-<image src="/PortfolioImages/ciFilterBrowser/combined7_9.png" width="585" title="CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters">
+<image src="/images/portfolio/ciFilterBrowser/combined7_9.png" width="585" title="CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters">
 </p>
 <p align="center"><cite>CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters.</cite></p>
 <br>
@@ -44,17 +46,17 @@ _My own_ ___Chart Library___, ___SwiftUI, Combine___
 
 <p>App for <a href="https://covid19.apple.com/mobility">Apple Mobility Index</a>.</p>
 <p align="center">
-<image src="/PortfolioImages/mobility/combined1_3.png" width="585" title="Mobility Index Bar Chart, Country list and search">
+<image src="/images/portfolio/mobility/combined1_3.png" width="585" title="Mobility Index Bar Chart, Country list and search">
 </p>
 <p align="center"><cite>Mobility Index Bar Chart, Country list and search (by country, region/ sub-region or city).</cite></p>
 <br>
 <p align="center">
-<image src="/PortfolioImages/mobility/combined4_6.png" width="585" title="Mobility Index Calculation Options, country selection by bar">
+<image src="/images/portfolio/mobility/combined4_6.png" width="585" title="Mobility Index Calculation Options, country selection by bar">
 </p>
 <p align="center"><cite>Mobility Index Calculation Options, country selection by bar.</cite></p>
 <br>
 <p align="center">
-<image src="/PortfolioImages/mobility/combined7_9.png" width="585" title="Country mobility line charts: raw data and 7 days moving average">
+<image src="/images/portfolio/mobility/combined7_9.png" width="585" title="Country mobility line charts: raw data and 7 days moving average">
 </p>
 <p align="center"><cite>Country mobility line charts: raw data and 7 days moving average.</cite></p>
 </div>
@@ -66,17 +68,17 @@ _My own_ ___Chart Library___, ___SwiftUI, Combine___
 
 
 <p align="center">
-<image src="/PortfolioImages/covid/combined1_3.png" width="585" title="Covid-19 Observer: global overview, charts with floating legend">
+<image src="/images/portfolio/covid/combined1_3.png" width="585" title="Covid-19 Observer: global overview, charts with floating legend">
 </p>
 <p align="center"><cite>Covid-19 Observer: global overview, charts with floating legend.</cite></p>
 <br>
 <p align="center">
-<image src="/PortfolioImages/covid/combined4_6.png" width="585" title="Covid-19 Observer: Map and color settings">
+<image src="/images/portfolio/covid/combined4_6.png" width="585" title="Covid-19 Observer: Map and color settings">
 </p>
 <p align="center"><cite>Covid-19 Observer: map and color settings.</cite></p>
 <br>
 <p align="center">
-<image src="/PortfolioImages/covid/combined7_9.png" width="585" title="Covid-19 Observer: country data, chart with point inspector">
+<image src="/images/portfolio/covid/combined7_9.png" width="585" title="Covid-19 Observer: country data, chart with point inspector">
 </p>
 <p align="center"><cite>Covid-19 Observer: country data, chart with point inspector.</cite></p>
 
@@ -90,11 +92,11 @@ _My own_ ___Chart Library___, ___SwiftUI, Combine___
 
 <p>Pre-school math (Russian only).</p>
 <p align="center">
-<image src="/PortfolioImages/maximatica/combined1_3.png" width="585" title="MAXImatica: onboarding and mission selection">
+<image src="/images/portfolio/maximatica/combined1_3.png" width="585" title="MAXImatica: onboarding and mission selection">
 </p>
 <p align="center"><cite>MAXImatica: onboarding and mission selection.</cite></p>
 <p align="center">
-<image src="/PortfolioImages/maximatica/combined4_6.png" width="585" title="MAXImatica: results and history">
+<image src="/images/portfolio/maximatica/combined4_6.png" width="585" title="MAXImatica: results and history">
 </p>
 <p align="center"><cite>MAXImatica: results and history.</cite></p>
 </div>
