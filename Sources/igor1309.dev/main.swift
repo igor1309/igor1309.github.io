@@ -7,9 +7,9 @@ import SplashPublishPlugin
 struct Igor1309Dev: Website {
     enum SectionID: String, WebsiteSectionID {
         // Add the sections that you want your website to contain here:
-        case about
-        case articles = "Articles"
+        case articles
         case portfolio
+        case about
     }
     
     struct ItemMetadata: WebsiteItemMetadata {
@@ -18,10 +18,14 @@ struct Igor1309Dev: Website {
     
     // Update these properties to configure your website:
     var url = URL(string: "https://igor1309.github.com")!
-    var name = "Igor Malyarov"
+    #warning("fix website name")
+    var name = "Swift with Igor"
+    #warning("fix website description")
     var description = "iOS developer"
     var language: Language { .english }
     var imagePath: Path? { nil }
+    #warning("fix favicon location")
+    var favicon: Path? { .init("/favicon_io/") }
 }
 
 // This will generate your website using selected theme:
