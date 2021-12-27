@@ -30,10 +30,12 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
             .body {
                 SiteHeader(context: context, selectedSelectionID: nil)
                 Wrapper {
-                    H1(index.title)
-                    Paragraph(context.site.description)
-                        .class("description")
-                    H2("Latest content")
+                    
+                    // H1(index.title)
+                    // Paragraph(context.site.description)
+                    //    .class("description")
+                    
+                    H1("Latest content")
                     ItemList(
                         items: context.allItems(
                             sortedBy: \.date,
@@ -182,6 +184,9 @@ private struct SiteHeader<Site: Website>: Component {
             Wrapper {
                 Link(context.site.name, url: "/")
                     .class("site-name")
+                
+                Div(context.site.description)
+                    .class("site-description")
                 
                 if Site.SectionID.allCases.count > 1 {
                     navigation

@@ -2,7 +2,13 @@
 
 I'm Igor, iOS developer from Moscow, Russia.
 
-![image of Igor](/images/about/igor.jpeg)
+<div>
+<image src="/images/about/igor.jpeg" width="464" title="image of Igor">
+<br/>
+<br/>
+</div>
+
+  
 
 ### Contact
 
