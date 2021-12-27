@@ -46,9 +46,9 @@ _Coming soon to App Store._
 
 ## Mobility
 
-_My own_ ___Chart Library___, ___SwiftUI, Combine___
+_My own_ ___Chart Library___, ___SwiftUI, Combine___  
 
-An app for [Apple Mobility Index](https://covid19.apple.com/mobility)
+An app for [Apple Mobility Index](https://covid19.apple.com/mobility)  
 <br/>
 
 <div align="center">
@@ -84,7 +84,7 @@ _My own_ ___Chart Library___, ___MapKit___, ___Core Data___, ___UIKit___, ___Swi
 </div>
 <br/>
 
-<divalign="center">
+<div align="center">
 <image src="/images/portfolio/covid/combined4_6.png" width="585" title="Covid-19 Observer: Map and color settings">
 <br/>
 <p align="center"><cite>Covid-19 Observer: map and color settings.</cite></p>
@@ -95,18 +95,19 @@ _My own_ ___Chart Library___, ___MapKit___, ___Core Data___, ___UIKit___, ___Swi
 <image src="/images/portfolio/covid/combined7_9.png" width="585" title="Covid-19 Observer: country data, chart with point inspector">
 <br/>
 <p align="center"><cite>Covid-19 Observer: country data, chart with point inspector.</cite></p>
-p>
 </div>
 <br/>
 
+<br/>
 _Data by John Hopkins University_.
+<br/>
 <br/>
 
 ## MAXimatica
 
-___SwiftUI___, ___Combine___
+___SwiftUI___, ___Combine___  
 
-Pre-school math (Russian only).
+Pre-school math (Russian only).  
 
 <div align="center">
 <image src="/images/portfolio/maximatica/combined1_3.png" width="585" title="MAXImatica: onboarding and mission selection">
