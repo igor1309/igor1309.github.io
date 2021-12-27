@@ -1,10 +1,11 @@
-# Igor Malyarov. Portfolio
+# Portfolio
 
-Most of my work is covered under NDA, but there are few things I can show here
+_Most of my work is covered under NDA, but there are few things I can show here_.
 
-__All apps__ support __Dynamic Type__ and __Dark mode__.
+All apps support __Dynamic Type__ and __Dark mode__.
 
-## CIFilterBrowser
+## CIFilterBrowser  
+
 ___Core Image, SwiftUI, Combine___
 
 __Core Image__ is [Apple's framework](https://developer.apple.com/documentation/coreimage) for image processing and analysis. It's great and performant but not very friendly, especially for Swift programmers.
