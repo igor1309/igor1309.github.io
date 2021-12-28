@@ -31,5 +31,5 @@ struct Igor1309Dev: Website {
 // This will generate your website using selected theme:
 try Igor1309Dev().publish(
     withTheme: .igor1309,
-    plugins: [.splash(withClassPrefix: "classPrefix")]
+    plugins: [.splash(withClassPrefix: "")]
 )
