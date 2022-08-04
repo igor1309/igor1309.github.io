@@ -5,9 +5,7 @@ tags: image processing, convolution, kernel
 ---
 # Convolution & Image Kernels (Links)
 
-* [Image Kernels explained visually](https://setosa.io/ev/image-kernels/)
-
-    Amazing illustration.
+* Amazing illustration [Image Kernels explained visually](https://setosa.io/ev/image-kernels/)
 
 * [Convolutions with OpenCV and Python - PyImageSearch](https://pyimagesearch.com/2016/07/25/convolutions-with-opencv-and-python/)
 
