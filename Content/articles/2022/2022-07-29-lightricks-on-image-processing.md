@@ -1,6 +1,6 @@
 ---
 date: 2022-07-29 10:10
-description: Interecting posts on Image Processing by Lightricks
+description: Interesting posts on Image Processing by Lightricks
 tags: image processing
 ---
 # Lightricks on Image Processing
