@@ -1,6 +1,6 @@
 ---
 date: 2022-05-16 10:10
-description: Convolution & Image Kernels
+description: Useful links about convolution and image kernels
 tags: image processing, convolution, kernel
 ---
 # Convolution & Image Kernels (Links)
