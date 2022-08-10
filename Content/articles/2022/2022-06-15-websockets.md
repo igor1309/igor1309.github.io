@@ -20,7 +20,7 @@ tags: WebSockets
     Exploring [`Kraken Websockets API`](https://docs.kraken.com/websockets/) using [`websocat`](https://github.com/vi/websocat#installation) CLI
     
 
-##  WebSockets in iOS
+## WebSockets in iOS
 
 * [Real time data exchange using web sockets in iOS 13 – Donny Wals](https://www.donnywals.com/real-time-data-exchange-using-web-sockets-in-ios-13/)
  
@@ -67,7 +67,7 @@ tags: WebSockets
 
 * Unanswered [ios - URLSessionWebSocketTask.receive() doesn’t throw on cancel() - Stack Overflow](https://stackoverflow.com/questions/71344265/urlsessionwebsockettask-receive-doesnt-throw-on-cancel)
 
-* URSession.shared vs URLSession(configuration: .default) [objective c - Shared session vs. session with default configuration - Stack Overflow](https://stackoverflow.com/questions/25299166/shared-session-vs-session-with-default-configuration/25392272#25392272)
+* [URSession.shared vs URLSession(configuration: .default) - Stack Overflow](https://stackoverflow.com/questions/25299166/shared-session-vs-session-with-default-configuration/25392272#25392272)
 
 ## WebSockets APIs
 
