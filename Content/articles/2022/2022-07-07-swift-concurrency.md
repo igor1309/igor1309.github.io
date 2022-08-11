@@ -1,3 +1,8 @@
+---
+date: 2022-07-07 10:10
+description: Swift Concurrency - essential links
+tags: Swift Concurrency
+---
 # Swift Concurrency
 
 * [Getting Started with async/await in SwiftUI - SwiftUI Concurrency Essentials | Peter Friese](https://peterfriese.dev/posts/swiftui-concurrency-essentials-part1/#calling-asynchronous-code-from-swiftui-)
