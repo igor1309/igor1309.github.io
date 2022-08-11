@@ -51,6 +51,9 @@ tags: WebSockets
 * [vi/websocat: Command-line client for WebSockets, like netcat (or curl) for ws:// with advanced socat-like functions](https://github.com/vi/websocat#installation)
 
 
+* [Online WebSocket & Socket.io Tester - PieSocket Realtime](https://www.piesocket.com/websocket-tester)
+
+
 ## Gists and Libraries
 
 * [A publisher that delivers the messages from a WebSocket. · GitHub](https://gist.github.com/emorydunn/e6b5c9803e5774c26926595a63b23f37)
