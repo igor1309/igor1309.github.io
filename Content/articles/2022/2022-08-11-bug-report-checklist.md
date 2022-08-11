@@ -1,3 +1,8 @@
+---
+date: 2022-01-27 10:10
+description: Bug Report Checklist
+tags: Bug Report, Dev Processes
+---
 # Bug Report Checklist
 
 - Have you provided a full/minimal spec to reproduce the issue?
