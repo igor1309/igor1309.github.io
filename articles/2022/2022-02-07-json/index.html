@@ -74,7 +74,7 @@
 
         <span class="keyword">let</span> keyedContainer = <span class="keyword">try</span> decoder.<span class="call">container</span>(keyedBy: <span class="type">CodingKeys</span>.<span class="keyword">self</span>)
         <span class="keyword">let</span> name = <span class="keyword">try</span> keyedContainer.<span class="call">decode</span>(<span class="type">Name</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">name</span>)
-        <span class="keyword">let</span> event = <span class="keyword">try</span> keyedContainer.<span class="call">decode</span>(<span class="type">Name</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">event</span>)
+        <span class="keyword">let</span> event = <span class="keyword">try</span> keyedContainer.<span class="call">decode</span>(<span class="type">Event</span>.<span class="keyword">self</span>, forKey: .<span class="dotAccess">event</span>)
 
         <span class="keyword">self</span>.<span class="keyword">init</span>(oneOf: oneOf, name: name, event: event)
     }
