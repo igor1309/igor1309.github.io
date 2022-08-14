@@ -1,6 +1,6 @@
 ---
 date: 2022-05-16 10:10
-description: Convolution & Image Kernels
+description: Useful links about convolution and image kernels
 tags: image processing, convolution, kernel
 ---
 # Convolution & Image Kernels (Links)
@@ -25,5 +25,6 @@ tags: image processing, convolution, kernel
 
 * [95 - What is digital image filtering and image convolution? - YouTube](https://www.youtube.com/watch?v=1GUgD2SBl9A)
 
+* [Filters Kernels and Convolution in Image Processing - YouTube](https://www.youtube.com/watch?v=mbXtzv1syCc)
 
 * [ios - Vertical edge detection with convolution giving transparent image as result with Swift - Stack Overflow](https://stackoverflow.com/a/70429242/11793043)
