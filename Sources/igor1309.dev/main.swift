@@ -19,7 +19,7 @@ struct Igor1309Dev: Website {
     // Update these properties to configure your website:
     var url = URL(string: "https://igor1309.github.com")!
 #warning("fix website name")
-    var name = "Swift and iOSdev with Igor"
+    var name = "Swift and iOS dev with Igor"
 #warning("fix website description")
     var description = "The ride of the iOS developer"
     var language: Language { .english }
