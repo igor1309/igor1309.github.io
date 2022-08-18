@@ -20,7 +20,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/johnsundell/splashpublishplugin",
-            from: "0.2.0"
+            from: "0.1.0"
         )
     ],
     targets: [
