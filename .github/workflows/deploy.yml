@@ -9,4 +9,4 @@ on:
 
 jobs:
   deploy:
-    uses: .github/workflows/publish.yml
+    uses: ./.github/workflows/publish.yml
