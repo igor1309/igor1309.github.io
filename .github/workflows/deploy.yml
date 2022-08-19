@@ -1,3 +1,5 @@
+# Publish blog on push to `author` branch
+
 name: Deploy
 
 on:
