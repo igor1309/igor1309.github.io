@@ -1,6 +1,6 @@
 # Hi 👋!
 
-I'm Igor, iOS developer from Moscow, Russia.
+I'm Igor, an iOS developer from Moscow, Russia.
 
 <div>
 <image src="/images/about/igor.jpeg" width="464" title="image of Igor">
