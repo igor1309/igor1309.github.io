@@ -16,7 +16,7 @@ If we design UI components like this, we could easily test the rendering of any 
 
 With this in mind we’d create a test target `ScreenshotTests` and run test (to make screenshots) for just the views (UI components) showing exactly what we want that we’d like to add to the App Store. CHANGE WORDING
 
-State -> View -> Snapshot -> PNG-file
+State -> View -> Snapshot -> PNG-file -> fastlane
 
 Run this flow for every device size and every language we need.
 
