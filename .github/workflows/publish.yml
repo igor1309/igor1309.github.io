@@ -1,33 +1,33 @@
-name: Deploy
+# This is a reusable workflow that publishes the blog
+
+name: Publish
 
 on:
-  push:
-    branches:
-      - author
-
+  workflow_call:
+  
 jobs:
-  deploy:
+  publish:
     runs-on: macos-latest
     
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/cache@v2
-        with:
-          path: |
-            ~/Publish_build
-            .build
-          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-spm-
+ #     - uses: actions/cache@v3.0.7
+ #       with:
+ #         path: |
+ #           ~/Publish_build
+ #           .build
+ #         key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+ #         restore-keys: |
+ #           ${{ runner.os }}-spm-
             
       - name: Setup JohnSundell/Publish
         run: |
           cd ${HOME}
-          export PUBLISH_VERSION="0.7.0"
+          export PUBLISH_VERSION="0.9.0"
           git clone https://github.com/JohnSundell/Publish.git
           cd ./Publish && git checkout ${PUBLISH_VERSION}
           mv ~/Publish_build .build || true
@@ -38,7 +38,7 @@ jobs:
       - run: publish-cli generate
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: published

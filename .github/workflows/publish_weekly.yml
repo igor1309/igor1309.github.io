@@ -1,0 +1,20 @@
+# This workflow would run blog publisher every Sunday
+
+on:
+  schedule:
+    # run on Sundays at 8:15
+    #
+    # Crontab entry is a text file consisting of lines of six fields each.
+    # The fields shall be separated by <blank> characters.
+    # The first five fields shall be integer patterns that specify the following:
+    #   1. Minute when the process will be started [0-60]
+    #   2. Hour when the process will be started [0-23]
+    #   3. Day of the month when the process will be started [1-28/29/30/31]
+    #   4. Month of the year when the process will be started [1-12]
+    #   5. Weekday when the process will be started [0-6] [0 is Sunday]
+    # https://crontab.guru/#15_8_*_*_0
+    - cron: '15 8 * * 0'
+
+jobs:
+  publish:
+    uses: ./.github/workflows/publish.yml

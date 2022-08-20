@@ -1,0 +1,12 @@
+# Publish blog on push to `author` branch
+
+name: Deploy
+
+on:
+  push:
+    branches:
+      - author
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/publish.yml

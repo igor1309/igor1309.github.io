@@ -2,7 +2,33 @@
 
 _Most of my work is covered under NDA, but there are few things I can show here_.
 
-All apps support __Dynamic Type__ and __Dark mode__.
+All iOS apps support __Dynamic Type__ and __Dark mode__.
+
+## Hole Fill
+
+`Hole Fill` was a take home assignment, that I used to present __ultra-modular design of decoupled composable components__. Its [public repo](https://github.com/igor1309/fill-hole-public) is on the Github.
+
+<div align="center">
+<image src="/images/portfolio/fill-hole/terminal.png" width="585" title="`fill-hole` terminal command showing help in case of incorrect input.">
+<br/>
+<p align="center"><cite>`fill-hole` terminal command showing help in case of incorrect input.</cite></p>
+</div>
+<br/>
+
+<div align="center">
+<image src="/images/portfolio/fill-hole/modules.png" width="585" title="Top-level view of modules and dependencies">
+<br/>
+<p align="center"><cite>Top-level view of modules and dependencies.</cite></p>
+</div>
+<br/>
+
+<div align="center">
+<image src="/images/portfolio/fill-hole/components.png" width="585" title="Detailed view with components">
+<br/>
+<p align="center"><cite>Detailed view with components.</cite></p>
+</div>
+<br/>
+
 
 ## CIFilterBrowser  
 
