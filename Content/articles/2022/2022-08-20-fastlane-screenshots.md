@@ -1,6 +1,6 @@
 # CHECK GRAMMARLY
 
-Manually managing _screenshots_ and _app previews_ for your app is quite a pain. You have to provide at least one screenshot for every device size and app previews are optional.
+Manually managing _screenshots_ and _[app previews](https://developer.apple.com/app-store/app-previews/)_ for your app is quite a pain. You have to provide at least one screenshot for every device size and app previews are optional. (App Radar has a [nice summary](https://appradar.com/blog/ios-app-screenshot-sizes-and-guidelines-for-the-apple-app-store) of guidelines and requirements.)
 
 The good thing is that the number of device sizes is smaller than the number of all iPhones and iPads (plus Watches, plus Apple TVs) - take a look at [Screenshot specifications](https://help.apple.com/app-store-connect/#/devd274dd925) and [App preview specifications](https://help.apple.com/app-store-connect/#/dev4e413fcb8), but still it’s 🤯 for manual work.
 
