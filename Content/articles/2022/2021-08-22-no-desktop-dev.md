@@ -87,7 +87,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v3
     
-    # Change script file permissions. Need to run just once 
+    # Change script file permissions
     - name: Make executeable
       run: chmod +x ./.github/scripts/clean_build_test.sh
     
