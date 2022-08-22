@@ -57,7 +57,7 @@ jobs:
 
 Manually run `Swift Package Init` workflow from the `Actions` tab.
     
-After workflow is successfully done you’ll have a swift package initialized in the repo root directory. If workflow fails look into workflow execution details for debugging.
+After workflow is successfully done you’ll have a swift package initialized in the repo root directory. If workflow fails, look into workflow execution details for debugging.
 
 ## Testing
 
