@@ -3,19 +3,18 @@
 description: Swift development without desktop
 tags: Swift Package, CLI, GitHub, Working Copy
 ---
-# ADD TO EACH STEP WHERE IS MAKES SENSE: CHECKING OUT TO THE NEW BRACH AT THE BEGGING AND MERGING IN THE END
-
-# Desktop-less Dev
+# Desktop-less Development
 
 ## New Repo
 
 Create new GitHub repo using GitHub website (mobile version works ok).
     
 Enable “create `.gitignore`” option by selecting `Swift`.
-    
+
+
 ## New Workflow
 
-Add new workflow (suggested name is `swift-package-init.yml`) with the following content:
+Add new workflow via GitHub.com: in the repo Actions tab select `Skip this and set up a workflow yourself ->` (suggested name is `swift-package-init.yml`) with the following content:
 
 ```yml
 # This is a simple workflow to initialize swift package and commit it to the new branch
@@ -50,14 +49,19 @@ jobs:
           # If this input is set, the action will push the commit to a new branch with this name.
           # Default: ‘’
           new_branch: swift-package-init
-
 ```
+
+Commit directly to the `main` branch.
+
 
 ## Initialize Swift Package
 
-Manually run `Swift Package Init` workflow from the `Actions` tab.
+Manually run `Swift Package Init` workflow from the `Actions` tab (select workflow and run).
     
-After workflow is successfully done you’ll have a swift package initialized in the repo root directory. If workflow fails, look into workflow execution details for debugging.
+After the workflow is successfully done you’ll have a swift package initialized in the repo root directory and committed to the `swift-package-init` branch. If the workflow fails, look into the workflow execution details for debugging.
+
+Checkout `swift-package-init` branch. If everything looks good, merge to `main` and delete `swift-package-init` branch.
+
 
 ## Testing
 
@@ -97,11 +101,13 @@ jobs:
 
 That’s right, it’s referencing `clean_build_test.sh` script that we will create on the next step.
 
+Commit to `main` and move to the next step.
+
 ### Add Script
 
-Create sub-directory `scripts` in the `.gitgub` directory (I find it’s convenient to separate workflows and scrips).
+Using `Working Copy` app create sub-directory `scripts` in the `.gitgub` directory (I find it’s convenient to separate workflows and scrips).
 
-Add new file `clean_build_test.sh` with the following contents:
+Add new file `clean_build_test.sh` to `scripts` with the following contents:
 
 ```bash
 #!/bin/bash
@@ -125,31 +131,38 @@ swift build
 swift test
 ```
 
+Commit to `main`.
+
 ### Run Tests
 
-Select `Run Clean Build Test Script` workflow on `Actions` tab and run it.
+On `Actions` tab select `Run Clean Build Test Script` workflow tab and run it.
+
+Inspect logs if the workflow failed.
+
 
 ### Test Failing Test
-# CHECK OUT 
 
-Change the content of the boilerplate function `testExample()` in the test target on your Swift Package to
+Add new test function `testFailing()` to the `XCTestCase` subclass in swift test file in the Swift Package test target:
 
 ```swift
-XCTFail(“Testing failing test”)
+func testFailing() {
+    XCTFail(“Testing failing test”)
+}
 ```
 
-Commit and run `Run Clean Build Test Script` workflow. You’ll see it failing. Inspecting workflow run log will show you that failing test is the reason for workflow failure.
+Commit to `main` and run `Run Clean Build Test Script` workflow to see it failing. Inspecting workflow run log will show you that failing test is the reason for workflow failure.
 
-# DELETE BRANCH
+Remove `testFailing` function. Commit and run workflow again to see passing tests.
+
 
 ## CI
 
-We’ll add a check that would be triggered automatically every time a pull request into `main` branch is opened (it highly advised to protect your significant branch(es) by enabling at least “Require a pull request before merging” flag in repo Settings/Branches/Branch protection rules).
+We’ll add a check that would be triggered automatically every time a pull request into the `main` branch is opened (it highly advised to protect your significant branch(es) by enabling at least “Require a pull request before merging” flag in repo Settings/Branches/Branch protection rules).
 
 First, add new `ci.yml` file to `.github/workflows`:
 
 ```yml
-# This workflow runs on pull request opening for main branch
+# This workflow runs when a pull request into the `main` branch is created
 
 name: CI
 
@@ -180,10 +193,46 @@ on:
   
   # Allows to reuse this workflow (call from workflows)
   workflow_call:     # 2
-  
 
 ```
 
 This would make `Run Clean Build Test Script` workflow reusable, i.e., callable from another workflow, as we do in `CI` (`ci.yml`).
 
 
+Commit both changes to `main`.
+
+Checkout new branch `feature`, add empty new file to `Sources` folder , commit to `feature` branch, make pull request into `main`.
+
+In the `Pull requests` tab (github.com) you’ll see check(s) running for the new open pull request, at least your `CI` with clean build and test.
+Merge pull request, remove `feature` branch. Remove local branch(es) other than main in `Working Copy`.
+
+
+## Features and Fixes
+
+Edit `ci.yml` - add the following after `branches: main`:
+
+```yml
+on:
+  # Run this workflow if pull request into branch `main` is created
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+ 
+  # Triggers the workflow on push events but only for the `feature` or `fix` branches
+  push:
+    branches: 
+      - ‘feature/**’
+      - ‘fix/**’
+```
+
+
+Now you’re good to go with development without desktop 😎.
+
+Just follow:
+
+- checkout `feature/featureX` or `fix/fixX` branch,
+- use __TDD__ to write tests and production code,
+- push to remote
+- create pull requests into `main` if workflows run green.
