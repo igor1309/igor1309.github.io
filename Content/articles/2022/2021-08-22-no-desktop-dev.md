@@ -142,3 +142,48 @@ Commit and run `Run Clean Build Test Script` workflow. You’ll see it failing. 
 
 # DELETE BRANCH
 
+## CI
+
+We’ll add a check that would be triggered automatically every time a pull request into `main` branch is opened (it highly advised to protect your significant branch(es) by enabling at least “Require a pull request before merging” flag in repo Settings/Branches/Branch protection rules).
+
+First, add new `ci.yml` file to `.github/workflows`:
+
+```yml
+# This workflow runs on pull request opening for main branch
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Run this workflow if pull request into branch `main` is created
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job
+  ci:
+    # Calls reusable workflow Run Clean Build Test
+      uses: ./.github/workflows/run_clean_build_test_script.yml
+```
+
+Second, add `workflow_call` (# 2) after `workflow_dispatch` (# 1) in `run_clean_build_test_script.yml`:
+
+```yml
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch: # 1
+  
+  # Allows to reuse this workflow (call from workflows)
+  workflow_call:     # 2
+  
+
+```
+
+This would make `Run Clean Build Test Script` workflow reusable, i.e., callable from another workflow, as we do in `CI` (`ci.yml`).
+
+
