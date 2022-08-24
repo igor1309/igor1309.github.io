@@ -3,6 +3,8 @@
 description: Swift development without desktop
 tags: Swift Package, CLI, GitHub, Working Copy
 ---
+# NEED TO CHECK WITH LATEST CODE SAMPLES AND FILE NAMES IN NoDesktop repo
+
 # Desktop-less Development
 
 ## New Repo
@@ -51,7 +53,7 @@ jobs:
           new_branch: swift-package-init
 ```
 
-Commit directly to the `main` branch.
+Commit directly into the `main` branch.
 
 
 ## Initialize Swift Package
@@ -66,6 +68,8 @@ Checkout `swift-package-init` branch. If everything looks good, merge to `main` 
 ## Testing
 
 ### Another Workflow
+
+# ADD WORKFLOW WITHOUT SCRIPT AS WELL
 
 Add another workflow (suggested name is `run_clean_build_test_script.yml`) with the following content:
 
@@ -182,6 +186,15 @@ jobs:
     # Calls reusable workflow Run Clean Build Test
       uses: ./.github/workflows/run_clean_build_test_script.yml
 ```
+
+Note that this workflow would run when pull request is created. In order to auto run it when more commits are added or other pull request events, remove _type: - open_:
+
+```yml
+pull_request:
+    types:     # remove this line
+      - opened # remove this line
+```
+
 
 Second, add `workflow_call` (# 2) after `workflow_dispatch` (# 1) in `run_clean_build_test_script.yml`:
 
