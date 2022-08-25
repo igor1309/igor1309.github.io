@@ -5,7 +5,7 @@ tags: Point-Free, Protocol Witness
 ---
 # Protocol Witnesses
 
-[Episode #33: Protocol Witnesses: Part 1](https://www.pointfree.co/episodes/ep33-protocol-witnesses-part-1)
+## [Episode #33: Protocol Witnesses: Part 1](https://www.pointfree.co/episodes/ep33-protocol-witnesses-part-1)
 
 Episode #33 • Oct 15, 2018 • Subscriber-Only
 
@@ -14,7 +14,7 @@ Protocols are a great tool for abstraction, but aren’t the only one. This week
 > ... protocols are quite rigid in that a type can conform to a given protocol in only one single way. Sometimes it’s completely valid and even technically correct to allow a type to conform to a protocol in multiple ways.
 
 
-[Episode #34: Protocol Witnesses: Part 2](https://www.pointfree.co/episodes/ep34-protocol-witnesses-part-2)
+## [Episode #34: Protocol Witnesses: Part 2](https://www.pointfree.co/episodes/ep34-protocol-witnesses-part-2)
 
 Episode #34 • Oct 22, 2018 • Subscriber-Only
 
@@ -29,7 +29,7 @@ Last time we covered some basics with protocols, and demonstrated one of their b
 Using `contramap`.
 
 
-[Episode #35: Advanced Protocol Witnesses: Part 1](https://www.pointfree.co/episodes/ep35-advanced-protocol-witnesses-part-1)
+## [Episode #35: Advanced Protocol Witnesses: Part 1](https://www.pointfree.co/episodes/ep35-advanced-protocol-witnesses-part-1)
 
 Episode #35 • Oct 29, 2018 • Subscriber-Only
 
@@ -38,7 +38,7 @@ Now that we know it’s possible to replace protocols with concrete datatypes, a
 Rename `contramap` to `pullback`.
 
 
-[Episode #36: Advanced Protocol Witnesses: Part 2](https://www.pointfree.co/episodes/ep36-advanced-protocol-witnesses-part-2)
+## [Episode #36: Advanced Protocol Witnesses: Part 2](https://www.pointfree.co/episodes/ep36-advanced-protocol-witnesses-part-2)
 
 Episode #36 • Nov 5, 2018 • Subscriber-Only
 
@@ -47,97 +47,7 @@ We complete our dictionary for translating Swift protocol concepts into concrete
 > translating protocols to concrete datatypes has revealed just how simple some of these seemingly complex features are. We could clear away the fog and see that a protocol feature is really just functions and composition and generics in disguise! Even the dreaded “Self or associated type” error becomes much less dreadful when you realize that it’s just a couple hidden generics.
 
 
-## Exercise: Decorator pattern with Protocol Witness
-
-```swift
-/// [Episode #34: Protocol Witnesses: Part 2](https://www.pointfree.co/episodes/ep34-protocol-witnesses-part-2)
-/// [Episode #35: Advanced Protocol Witnesses: Part 1](https://www.pointfree.co/episodes/ep35-advanced-protocol-witnesses-part-1)
-/// [Episode #36: Advanced Protocol Witnesses: Part 2](https://www.pointfree.co/episodes/ep36-advanced-protocol-witnesses-part-2)
-
-protocol Logger {
-    func log(_ message: String)
-}
-
-final class PrintLogger: Logger {
-    func log(_ message: String) {
-        print(message)
-    }
-}
-
-/// Corresponds to protocol `Logger`
-struct Logging {
-    let log: (String) -> Void
-}
-
-extension Logging {
-    static let printLogging: Self = .init { print($0) }
-}
-
-protocol SendMessageInput {
-    associatedtype MessageDetails
-    associatedtype ChannelID
-    
-    func send(_ messageDetails: MessageDetails, to channelID: ChannelID) throws
-}
-
-final class DummySendMessageInput: SendMessageInput {
-    typealias MessageDetails = String
-    typealias ChannelID = Int
-    
-    func send(_ messageDetails: MessageDetails, to channelID: ChannelID) throws {
-        // do nothing
-    }
-}
-
-/// To create `decorator` with protocols we need a new class, conforming to `SendMessageInput`, and initialized with `logger` and `decoratee`
-final class DecoratedDummySendMessageInput: SendMessageInput {
-    private let logger: Logger
-    private let decoratee: DummySendMessageInput
-    
-    init(logger: Logger, decoratee: DummySendMessageInput) {
-        self.logger = logger
-        self.decoratee = decoratee
-    }
-    
-    func send(_ messageDetails: String, to channelID: String) throws {
-        logger.log(“Started sending message.”)
-        try self.send(messageDetails, to: channelID)
-        logger.log(“Started sending message.”)
-    }
-}
-
-/// Corresponds to protocol `SendMessageInput`
-struct SendingMessageInput<MessageDetails, ChannelID> {
-    let send: (MessageDetails, ChannelID) throws -> Void
-}
-
-extension SendingMessageInput {
-    static var dummy: Self { .init { _, _ in } }
-}
-
-/// Protocol witness, corresponds to `DummySendMessageInput`
-extension SendingMessageInput
-where MessageDetails == String,
-      ChannelID == String {
-    static let stringDummy: Self = .dummy
-}
-
-/// To create `decorator` with protocol witnesses we do not need a new type, just a function that extends existing type with injected instance of `Logging`
-extension SendingMessageInput {
-    func decorated(with logger: Logging) -> Self {
-        .init { messageDetails, channelID in
-            logger.log(“Started sending message.”)
-            try send(messageDetails, channelID)
-            logger.log(“Started sending message.”)
-        }
-    }
-}
-
-let decoratedStringDummy: SendingMessageInput = .stringDummy.decorated(with: .printLogging)
-```
-
-
-[Episode #37: Protocol-Oriented Library Design: Part 1](https://www.pointfree.co/episodes/ep37-protocol-oriented-library-design-part-1)
+## [Episode #37: Protocol-Oriented Library Design: Part 1](https://www.pointfree.co/episodes/ep37-protocol-oriented-library-design-part-1)
 
 Episode #37 • Nov 12, 2018 • Subscriber-Only
 
