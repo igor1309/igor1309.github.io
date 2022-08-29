@@ -15,14 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
- #     - uses: actions/cache@v3.0.7
- #       with:
- #         path: |
- #           ~/Publish_build
- #           .build
- #         key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
- #         restore-keys: |
- #           ${{ runner.os }}-spm-
+      - uses: actions/cache@v3.0.7
+        with:
+          path: |
+            ~/Publish_build
+            .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
             
       - name: Setup JohnSundell/Publish
         run: |
