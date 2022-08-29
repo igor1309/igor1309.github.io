@@ -60,7 +60,6 @@ Episode #38 • Nov 19, 2018 • Subscriber-Only
 
 With our library fully generalized using protocols, we show off the flexibility of our abstraction by adding new conformances and functionality. In fleshing out our library we find out why protocols may not be the right tool for the job.
 
-
 Snapshotting views as strings.
 
 
@@ -105,12 +104,3 @@ Snapshotting alerts (UIWindow, hosting application @11:44)
 Turning animation off and on. Not working for alerts.
 
 ...play a simple user script by sending actions to the store and then take screenshots of what the application looks like at each step of the way
-
-
-
-
-
-
-
-
-
