@@ -3,6 +3,7 @@ date: 2022-08-24 10:10
 description: Re-watch and recap of Point-Free series on Protocol Witnesses
 tags: Point-Free, Protocol Witness
 ---
+
 # Protocol Witnesses
 
 ## [Episode #33: Protocol Witnesses: Part 1](https://www.pointfree.co/episodes/ep33-protocol-witnesses-part-1)
@@ -52,6 +53,61 @@ We complete our dictionary for translating Swift protocol concepts into concrete
 Episode #37 • Nov 12, 2018 • Subscriber-Only
 
 Perhaps the most popular approach to code reuse and extensibility in Swift is to liberally adopt protocol-oriented programming, and many Swift libraries are designed with protocol-heavy APIs. In today’s episode we refactor a sample library to use protocols and examine the pros and cons of this approach.
+
+
+## [Episode #38: Protocol-Oriented Library Design: Part 2](https://www.pointfree.co/episodes/ep38-protocol-oriented-library-design-part-2)
+
+Episode #38 • Nov 19, 2018 • Subscriber-Only
+
+With our library fully generalized using protocols, we show off the flexibility of our abstraction by adding new conformances and functionality. In fleshing out our library we find out why protocols may not be the right tool for the job.
+
+
+Snapshotting views as strings.
+
+
+## [Episode #39: Witness-Oriented Library Design](https://www.pointfree.co/episodes/ep39-witness-oriented-library-design)
+
+Episode #39 • Nov 26, 2018 • Subscriber-Only
+
+We previously refactored a library using protocols to make it more flexible and extensible but found that it wasn’t quite as flexible or extensible as we wanted it to be. This week we re-refactor our protocols away to concrete datatypes using our learnings from earlier in the series.
+
+## [Episode #40: Async Functional Refactoring](https://www.pointfree.co/episodes/ep40-async-functional-refactoring)
+
+Episode #40 • Dec 17, 2018 • Subscriber-Only
+
+The snapshot testing library we have been designing over the past few weeks has a serious problem: it can’t snapshot asynchronous values, like web views and anything that uses delegates or callbacks. Today we embark on a no-regret refactor to fix this problem with the help of a well-studied and well-understood functional type that we have discussed numerous times before.
+
+Sync snapshotting web views fails, need async.
+
+Async snapshotting. `Parallel` type.
+
+Async pullback.
+
+
+## [Episode #41: A Tour of Snapshot Testing](https://www.pointfree.co/episodes/ep41-a-tour-of-snapshot-testing)
+
+Episode #41 • Dec 18, 2018 • Free Episode
+
+Our snapshot testing library is now officially open source! In order to show just how easy it is to integrate the library into any existing code base, we add some snapshot tests to a popular open source library for attributed strings. This gives us the chance to see how easy it is to write all new, domain-specific snapshot strategies from scratch.
+
+
+## [Episode #86: SwiftUI Snapshot Testing](https://www.pointfree.co/episodes/ep86-swiftui-snapshot-testing)
+
+Episode #86 • Dec 23, 2019 • Free Episode
+
+In this week’s free holiday episode we show what it looks like to snapshot test a SwiftUI application in our architecture and compare this style of integration testing against XCTest’s UI testing tools.
+
+
+Snapshotting alerts (UIWindow, hosting application @11:44)
+
+
+`windowedImage` snapshotting strategy
+
+Turning animation off and on. Not working for alerts.
+
+...play a simple user script by sending actions to the store and then take screenshots of what the application looks like at each step of the way
+
+
 
 
 
