@@ -3,7 +3,6 @@ date: 2022-08-24 10:10
 description: Re-watch and recap of Point-Free series on Protocol Witnesses
 tags: Point-Free, Protocol Witness
 ---
-
 # Protocol Witnesses
 
 ## [Episode #33: Protocol Witnesses: Part 1](https://www.pointfree.co/episodes/ep33-protocol-witnesses-part-1)
