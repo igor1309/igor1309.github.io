@@ -10,7 +10,7 @@ _Gang of Four Design Patterns_:
 > Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
 
 
-[Essential Developer: Design Patterns in iOS/Swift: Standing on the shoulder of giants | iOS Lead Essentials Podcast #014](https://www.essentialdeveloper.com/articles/design-patterns-in-ios-swift-standing-on-the-shoulder-of-giants-ios-lead-essentials-podcast-014?rq=Decorator):
+_[Essential Developer: Design Patterns in iOS/Swift: Standing on the shoulder of giants | iOS Lead Essentials Podcast #014](https://www.essentialdeveloper.com/articles/design-patterns-in-ios-swift-standing-on-the-shoulder-of-giants-ios-lead-essentials-podcast-014?rq=Decorator)_:
 
 > The Decorator pattern offers a way of adding behavior to an individual object and extending its functionality without subclassing or changing the object’s class.
 
