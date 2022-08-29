@@ -1,12 +1,13 @@
-# CHECK GRAMMARLY
-
-# THERE IS A START IN SWIFT PLAYGROUNDS @ iPad called Screenshottable
 ---
 date: 2022-08-20 10:10
 description: Automating app screenshots and previews for the App Store with Snapshotting and fastlane
 tags: App Store, fastlane, screenshots
 ---
+[//]: # CHECK GRAMMARLY
+
 # Automating app screenshots and previews for the App Store with Snapshotting and fastlane
+
+[//]: # THERE IS A START IN SWIFT PLAYGROUNDS @ iPad called Screenshottable
 
 Table of contents
 
@@ -76,7 +77,3 @@ extension XCTestCase {
     } 
 }
 ```
-
-
-
-
