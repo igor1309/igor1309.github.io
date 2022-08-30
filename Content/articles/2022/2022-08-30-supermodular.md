@@ -98,6 +98,7 @@ let package = Package(
 ENDOFFILE
 </span>
 </details><div>
+<br/><br/>
 
 ```sh
 $ cat > App/Package.swift << ENDOFFILE
