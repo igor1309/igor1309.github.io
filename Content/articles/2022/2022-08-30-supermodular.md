@@ -25,7 +25,7 @@ Open Xcode, create new `iOS` project `QuoteWatcher` (do not not use Core Data, d
 
 <br/>
 <div align="center">
-<img src="../../../images/supermodular/create.png" width="585" title="Create">
+<img src="../../../images/supermodular/create.png" width="800" title="Create">
 </div>
 <br/>
 
@@ -33,7 +33,7 @@ Save to `QuoteWatcher` folder (do not add to any project or workspace)
 
 <br/>
 <div align="center">
-<img src="../../../images/supermodular/save.png" width="585" title="Create">
+<img src="../../../images/supermodular/save.png" width="800" title="Create">
 <br/>
 </div>
 <br/>
@@ -56,7 +56,7 @@ Open the project in the Xcode. Drag the folder `QuoteWatcher` into the project
 
 <br/>
 <div align="center">
-<img src="../../../images/supermodular/drag.png" width="585" title="Create">
+<img src="../../../images/supermodular/drag.png" width="800" title="Create">
 <br/>
 </div>
 <br/>
@@ -65,7 +65,7 @@ Local Swift Package would be added to Xcode project.
 
 <br/>
 <div align="center">
-<img src="../../../images/supermodular/app.png" width="585" title="Create">
+<img src="../../../images/supermodular/app.png" width="800" title="Create">
 <br/>
 </div>
 <br/>
@@ -76,7 +76,7 @@ We'll handle `App` folder in a moment, but first let's commit changes to the `Ap
 $ git commit -am 'Add Swift Package to Xcode project'
 ```
 
-Add empty Swift Package to hide `App` folder from Xcode
+Add empty Swift Package to hide `App` folder from the Xcode
 
 ```sh
 $ cat > App/Package.swift << ENDOFFILE
