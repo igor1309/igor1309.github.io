@@ -1,43 +1,163 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Swift and iOS dev with Igor</title><description>The ride of the iOS developer</description><link>https://igor1309.github.com</link><language>en</language><lastBuildDate>Tue, 30 Aug 2022 14:34:43 +0000</lastBuildDate><pubDate>Tue, 30 Aug 2022 14:34:43 +0000</pubDate><ttl>250</ttl><atom:link href="https://igor1309.github.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-30-supermodular</guid><title>Supermodular App Scaffolding</title><description>How to create a basic scaffolding for a super modularized app</description><link>https://igor1309.github.com/articles/2022/2022-08-30-supermodular</link><pubDate>Tue, 30 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>Supermodular App Scaffolding</h1><p>Create new Swift Package in terminal</p><pre><code>$ mkdir <span class="type">QuoteWatcher</span>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Swift and iOS dev with Igor</title><description>The ride of the iOS developer</description><link>https://igor1309.github.com</link><language>en</language><lastBuildDate>Tue, 30 Aug 2022 21:55:53 +0000</lastBuildDate><pubDate>Tue, 30 Aug 2022 21:55:53 +0000</pubDate><ttl>250</ttl><atom:link href="https://igor1309.github.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-30-supermodular</guid><title>Supermodular App Scaffolding</title><description>How to create a basic scaffolding for a super modularized app</description><link>https://igor1309.github.com/articles/2022/2022-08-30-supermodular</link><pubDate>Tue, 30 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>Supermodular App Scaffolding</h1><p>Create a new Swift Package in the terminal</p><pre><code>$ mkdir <span class="type">QuoteWatcher</span>
 $ cd <span class="type">QuoteWatcher</span>
 $ swift package <span class="keyword">init</span>
 </code></pre><p>Initiate Git and commit</p><pre><code>$ git <span class="keyword">init</span>
 $ git add .
 $ git commit -am '<span class="type">Add</span> basic scaffolding <span class="keyword">for</span> `<span class="type">QuoteWatcher</span>` <span class="type">Swift Package</span>'
-</code></pre><p>Open Xcode, create new <code>iOS</code> project <code>QuoteWatcher</code> (do not not use Core Data, do not include tests)</p><br/><div align="center">
-<img src="../../../images/supermodular/create.png" width="800" title="Create">
-</div><br/><p>Save to <code>QuoteWatcher</code> folder (do not add to any project or workspace)</p><br/><div align="center">
-<img src="../../../images/supermodular/save.png" width="800" title="Create">
+</code></pre><p>Open Xcode, create a new <code>iOS</code> project <code>QuoteWatcher</code> (do not use Core Data, do not include tests)</p><br/><div align="center">
+<img src="../../../images/supermodular/create.png" width="100%" title="Create">
+</div><br/><p>Save to the <code>QuoteWatcher</code> folder (do not add to any project or workspace)</p><br/><div align="center">
+<img src="../../../images/supermodular/save.png" width="100%" title="Create">
 <br/>
-</div><br/><p>Close the project. Back in terminal rename <code>QuoteWatcher</code> to <code>App</code></p><pre><code>$ mv <span class="type">QuoteWatcher App</span>
+</div><br/><p>Close the project. Back in the terminal rename <code>QuoteWatcher</code> to <code>App</code></p><pre><code>$ mv <span class="type">QuoteWatcher App</span>
 </code></pre><p>Commit</p><pre><code>$ git add .
 $ git commit -m '<span class="type">Create</span> `<span class="type">QuoteWatcher</span>` project'
 </code></pre><p>Open the project in the Xcode. Drag the folder <code>QuoteWatcher</code> into the project</p><br/><div align="center">
-<img src="../../../images/supermodular/drag.png" width="800" title="Create">
+<img src="../../../images/supermodular/drag.png" width="100%" title="Create">
 <br/>
-</div><br/><p>Local Swift Package would be added to Xcode project.</p><br/><div align="center">
-<img src="../../../images/supermodular/app.png" width="800" title="Create">
+</div><br/><p>Local Swift Package would be added to the Xcode project.</p><br/><div align="center">
+<img src="../../../images/supermodular/app.png" width="100%" title="Create">
 <br/>
-</div><br/><p>We'll handle <code>App</code> folder in a moment, but first let's commit changes to the <code>App/QuoteWatcher.xcodeproj/project.pbxproj</code> file</p><pre><code>$ git commit -am '<span class="type">Add Swift Package</span> to <span class="type">Xcode</span> project'
-</code></pre><p>Add empty Swift Package to hide <code>App</code> folder from the Xcode</p><pre><code>$ cat &gt; <span class="type">App</span>/<span class="type">Package</span>.<span class="property">swift</span> &lt;&lt; <span class="type">ENDOFFILE</span>
-<span class="comment">// swift-tools-version:5.6
+</div><br/><p>We'll handle the <code>App</code> folder in a moment, but first, let's commit changes to the <code>App/QuoteWatcher.xcodeproj/project.pbxproj</code> file</p><pre><code>$ git commit -am '<span class="type">Add Swift Package</span> to <span class="type">Xcode</span> project'
+</code></pre><p>Add an empty Swift Package to hide the <code>App</code> folder from the Xcode</p><p><strong>Until syntax lighlighting issue with comments is resolved, use:</strong></p><div>
+cat > App/Package.swift << ENDOFFILE
 
-// Leave blank. This is only here so that Xcode doesn't display it.</span>
+// swift-tools-version:5.6
 
-<span class="keyword">import</span> PackageDescription
+// Leave blank. This is only here so that Xcode doesn't display it.
 
-<span class="keyword">let</span> package = <span class="type">Package</span>(
-    name: <span class="string">"client"</span>,
+import PackageDescription
+
+let package = Package(
+    name: "client",
     products: [],
     targets: []
 )
-<span class="type">ENDOFFILE</span>
-</code></pre><p>Reopen the project in the Xcode. Now the <code>App</code> folder is hidden.</p><br/><div align="center">
-<img src="../../../images/supermodular/no-app.png" width="585" title="Create">
+ENDOFFILE
+</div>
+
+```sh
+$ cat > App/Package.swift << ENDOFFILE
+// swift-tools-version:5.6
+
+// Leave blank. This is only here so that Xcode doesn't display it.
+
+import PackageDescription
+
+let package = Package(
+    name: "client",
+    products: [],
+    targets: []
+)
+ENDOFFILE
+```
+
+Reopen the project in the Xcode. Now the `App` folder is hidden.
+
 <br/>
-</div><br/><p>Commit</p><pre><code>$ git add .
-$ git commit -m '<span class="type">Add</span> empty <span class="type">Swift Package</span> to hide `<span class="type">App</span>` folder from <span class="type">Xcode</span>'
-</code></pre>]]></content:encoded></item><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-25-decorator-protocol-witness</guid><title>The Decorator Pattern with Protocol and Protocol Witnesses</title><description>Exploring the way of the Decorator Pattern implementation with Protocol and Protocol Witnesses</description><link>https://igor1309.github.com/articles/2022/2022-08-25-decorator-protocol-witness</link><pubDate>Thu, 25 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>The Decorator Pattern with Protocol and Protocol Witnesses</h1><p><em>Gang of Four Design Patterns</em>:</p><blockquote><p>Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.</p></blockquote><p><em><a href="https://www.essentialdeveloper.com/articles/design-patterns-in-ios-swift-standing-on-the-shoulder-of-giants-ios-lead-essentials-podcast-014?rq=Decorator">Essential Developer: Design Patterns in iOS/Swift: Standing on the shoulder of giants | iOS Lead Essentials Podcast #014</a></em>:</p><blockquote><p>The Decorator pattern offers a way of adding behavior to an individual object and extending its functionality without subclassing or changing the object’s class.</p></blockquote><blockquote><p>Decorators are useful when you want to add or alter the behavior of individual objects instead of an entire class of objects.</p></blockquote><blockquote><p>To implement the Decorator pattern, you create a new object (decorator) that encloses and conforms to the interface of the component (decoratee) it decorates. The decorator class will contain the extended behavior and forward messages to the decoratee.</p></blockquote><blockquote><p>By doing so, the decorator can be used by the clients of the interface, extending the behavior of the system without needing to alter any existing components.</p></blockquote><blockquote><p>The Decorator pattern is supported by the SOLID principles, especially the Single Responsibility, Liskov Substitution, and Open/Closed Principles.</p></blockquote><blockquote><p>You can use Decorators to add Cross-Cutting concerns such as Logging, Analytics, Threading, Security, etc. into your modules in a clean way while maintaining low coupling in your applications.</p></blockquote><h2>Decorator with protocol</h2><pre><code><span class="keyword">protocol</span> Logger {
+<div align="center">
+<img src="../../../images/supermodular/no-app.png" width="40%" title="Create">
+<br/>
+</div>
+<br/>
+
+
+Commit
+
+```sh
+$ git add .
+$ git commit -m 'Add empty Swift Package to hide `App` folder from Xcode'
+```
+
+```sh
+#!/bin/bash
+
+# Do not forget to make this file executable with `chmod +x the_file_name`
+
+###########################################################################
+#
+#   Use this script to create super-modular app
+#   for details https://igor1309.dev/articles/2022/2022-08-30-supermodular/
+#   to run: $ bash supermodular-i.sh
+#
+###########################################################################
+
+# `set -o pipefail`┬ácauses a pipeline (for example,
+# `curl -s https://sipb.mit.edu/ | grep foo`) to produce
+# a failure return code if any command errors.
+# Normally, pipelines only return a failure if the last command errors.
+# In combination with `set -e`, this will make your script exit
+# if any command in a pipeline errors.
+set -eo pipefail
+
+if [ $# -eq 0 ]; then
+    echo "Exiting: ❌ no app name provided"
+    echo
+    exit
+fi
+
+size=${#1}
+
+if [ "$size" -lt "5" ]; then
+    echo "Exiting: ❌ app name is too short ($size)"
+    echo
+    exit
+fi
+
+echo
+read -r -p "❓ Your app name would be: '$1' - Are you sure? [y/N] " response
+
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+    echo "Ok, will be creating the app named \`$1\`"
+    echo
+
+    mkdir $1
+    cd $1
+    swift package init
+
+    git init
+    git add .
+    git commit -am "Add basic scaffolding for \`$1\` Swift Package" --quiet
+    git log --oneline
+
+    echo
+    echo "🛠"
+    echo "Now create project in Xcode."
+    read -p "Close Xcode and press [Enter] when done"
+
+    # rename folder to `App`
+    mv $1 App
+
+    git add .
+    git commit -m "Create \`$1\` project" --quiet --quiet
+    git log --oneline
+
+    # preserve indentation to have `Package.swift` nicely formatted
+package="// swift-tools-version:5.6
+
+// Leave blank. This is only here so that Xcode doesn\'t display it.
+
+import PackageDescription
+
+let package = Package(
+    name: "client",
+    products: [],
+    targets: []
+)"
+
+    echo "$package" > App/Package.swift
+
+    git add .
+    git commit -m "Add empty Swift Package to hide \`App\` folder from Xcode" --quiet
+
+    echo "✅ done"
+else
+    echo "App name was not confirmed ❌"
+    echo
+fi
+```
+]]></content:encoded></item><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-25-decorator-protocol-witness</guid><title>The Decorator Pattern with Protocol and Protocol Witnesses</title><description>Exploring the way of the Decorator Pattern implementation with Protocol and Protocol Witnesses</description><link>https://igor1309.github.com/articles/2022/2022-08-25-decorator-protocol-witness</link><pubDate>Thu, 25 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>The Decorator Pattern with Protocol and Protocol Witnesses</h1><p><em>Gang of Four Design Patterns</em>:</p><blockquote><p>Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.</p></blockquote><p><em><a href="https://www.essentialdeveloper.com/articles/design-patterns-in-ios-swift-standing-on-the-shoulder-of-giants-ios-lead-essentials-podcast-014?rq=Decorator">Essential Developer: Design Patterns in iOS/Swift: Standing on the shoulder of giants | iOS Lead Essentials Podcast #014</a></em>:</p><blockquote><p>The Decorator pattern offers a way of adding behavior to an individual object and extending its functionality without subclassing or changing the object’s class.</p></blockquote><blockquote><p>Decorators are useful when you want to add or alter the behavior of individual objects instead of an entire class of objects.</p></blockquote><blockquote><p>To implement the Decorator pattern, you create a new object (decorator) that encloses and conforms to the interface of the component (decoratee) it decorates. The decorator class will contain the extended behavior and forward messages to the decoratee.</p></blockquote><blockquote><p>By doing so, the decorator can be used by the clients of the interface, extending the behavior of the system without needing to alter any existing components.</p></blockquote><blockquote><p>The Decorator pattern is supported by the SOLID principles, especially the Single Responsibility, Liskov Substitution, and Open/Closed Principles.</p></blockquote><blockquote><p>You can use Decorators to add Cross-Cutting concerns such as Logging, Analytics, Threading, Security, etc. into your modules in a clean way while maintaining low coupling in your applications.</p></blockquote><h2>Decorator with protocol</h2><pre><code><span class="keyword">protocol</span> Logger {
     <span class="keyword">func</span> log(<span class="keyword">_</span> message: <span class="type">String</span>)
 }
 
@@ -259,7 +379,7 @@ on:
     } 
 }
 </code></pre>]]></content:encoded></item><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-16-ci-cd</guid><title>CI/CD</title><description>Continuous Integration/Continuous Deployment</description><link>https://igor1309.github.com/articles/2022/2022-08-16-ci-cd</link><pubDate>Tue, 16 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>CI/CD</h1><h1>CI</h1><ul><li><a href="https://www.raywenderlich.com/books/ios-app-distribution-best-practices/v1.0/chapters/14-continuous-integration">iOS App Distribution &amp; Best Practices, Chapter 14: Continuous Integration | raywenderlich.com</a></li></ul><h2>App Store Connect</h2><ul><li><a href="https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api">Creating API Keys for App Store Connect API | Apple Developer Documentation</a></li></ul><p>Create API keys you use to sign JWTs and authorize API requests.</p><h2>GitHub</h2><ul><li><a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets">Encrypted secrets - GitHub Docs</a></li></ul><ul><li><a href="https://www.cobeisfresh.com/blog/how-to-implement-a-ci-cd-workflow-for-ios-using-github-actions">How to Implement a CI/CD Workflow for iOS Using GitHub Actions</a></li></ul><ul><li><a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">Events that trigger workflows - GitHub Docs</a></li></ul><ul><li><a href="https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#using-filters-to-target-specific-branches-or-tags-for-push-events">Using filters to target specific branches or tags for push events</a></li></ul><ul><li><a href="https://docs.github.com/en/actions/using-workflows/about-workflows#creating-dependent-jobs">Creating dependent jobs</a></li></ul><ul><li><a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows">Reusing workflows - GitHub Docs</a><ul></ul></li></ul><p>Learn how to avoid duplication when creating a workflow by reusing existing workflows.<br> <a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows#limitations">Limitations</a><br> <a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows#using-inputs-and-secrets-in-a-reusable-workflow">Using inputs and secrets in a reusable workflow</a><br><br> Unlike when you are using actions within a workflow, you call reusable workflows directly within a job, and not from within job steps.</p><ul><li><a href="https://docs.github.com/en/actions/hosting-your-own-runners">Hosting your own runners - GitHub Docs</a></li></ul><h2>Secrets</h2><ul><li><a href="https://www.raywenderlich.com/books/ios-app-distribution-best-practices/v1.0/chapters/11-managing-secrets">iOS App Distribution &amp; Best Practices, Chapter 11: Managing Secrets | raywenderlich.com</a></li></ul><h2>Code Signing &amp; Provisioning</h2><ul><li><a href="https://www.raywenderlich.com/books/ios-app-distribution-best-practices/v1.0/chapters/4-code-signing-provisioning">iOS App Distribution &amp; Best Practices, Chapter 4: Code Signing &amp; Provisioning | raywenderlich.com</a></li></ul><h2>fastlane</h2><ul><li><a href="https://www.raywenderlich.com/books/ios-app-distribution-best-practices/v1.0/chapters/13-introduction-to-fastlane">iOS App Distribution &amp; Best Practices, Chapter 13: Introduction to Fastlane | raywenderlich.com</a></li></ul><ul><li><a href="https://www.raywenderlich.com/11744293-fastlane-tutorial-actions-and-plugins">fastlane Tutorial: Actions and Plugins | raywenderlich.com</a></li></ul><h2>Tutorials</h2><ul><li><a href="https://engineering.talkdesk.com/test-and-deploy-an-ios-app-with-github-actions-44de9a7dcef6">Test and deploy an iOS App with GitHub Actions | by Tiago Santo | Talkdesk Engineering</a></li></ul><ul><li><a href="https://www.runway.team/blog/how-to-set-up-a-ci-cd-pipeline-for-your-ios-app-fastlane-github-actions">How to set up a CI/CD pipeline for your iOS app using fastlane and GitHub Actions | Runway</a></li></ul><ul><li><a href="https://www.runway.team/blog/how-to-build-the-perfect-fastlane-pipeline-for-ios">How to build the perfect fastlane pipeline for iOS | Runway</a></li></ul><h2>More</h2><ul><li><a href="https://www.raywenderlich.com/books/ios-app-distribution-best-practices/v1.0/chapters/12-build-automation">iOS App Distribution &amp; Best Practices, Chapter 12: Build Automation | raywenderlich.com</a></li></ul><h2>Issues &amp; Solutions</h2><ul><li>Unauthorized Access (using 2FA)</li></ul><p>delete the <code>~/.fastlane/spaceship/{email}/cookie</code></p><p>remove the credentials by <code></code>`bash fastlane fastlane-credentials remove --username YOUR_APPLEID <code></code>`<br> <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">fastlane/credentials_manager at master · fastlane/fastlane</a></p>]]></content:encoded></item><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-03-unit-test-tips</guid><title>Unit Tests (tips)</title><description>Short tips on unit tests</description><link>https://igor1309.github.com/articles/2022/2022-08-03-unit-test-tips</link><pubDate>Wed, 3 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>Unit Tests (tips)</h1><ol><li>Test the behavior, not the implementation.</li></ol><ol start="2"><li>Use DSL helpers to simplify tests and decouple them from the implementation.</li></ol>]]></content:encoded></item><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-01-fill-hole</guid><title>Hole Filling</title><description>Take home Fill Hole assignment.</description><link>https://igor1309.github.com/articles/2022/2022-08-01-fill-hole</link><pubDate>Mon, 1 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>Hole Filling</h1><p>This was a take home test.</p><blockquote><p>The goal of this task is to build a small image processing library that fills holes in images, along with a small command line utility that uses that library, and answer a few questions.</p></blockquote><p>See detailed assignment in <a href="../../../images/fill-hole/Hole%20Filling%203%20-%20Interview%20Exercise.pdf">Hole Filling 3 - Interview Exercise.pdf</a>.</p><h2>Goals</h2><ol><li>Solve the assignment.</li><li>Demonstrate the ultra-modular design of decoupled composable components.</li></ol><br/><div align="center">
-<img src="../../../images/fill-hole/Lenna.png" width="585" title="Lenna">
+<img src="../../../images/fill-hole/Lenna.png" width="60%" title="Lenna">
 <br/>
 <p align="center"><cite>Lenna.png</cite></p>
 </div><br/><h2>CLI</h2><p>To see in action change your current console directory to <code>fill-hole</code> Swift Package folder and run the following command</p><pre><code>$ swift run fill-hole -h
@@ -291,15 +411,15 @@ image file name.
 <span class="type">Package</span>.<span class="property">resolved</span>	<span class="type">README</span>.<span class="property">md</span>		<span class="type">Tests</span>			output.<span class="property">png</span>
 <span class="type">Package</span>.<span class="property">swift</span>		<span class="type">Sources</span>			docs
 </code></pre><p>Run <code>open output.png</code> to open it.</p><h2>Package Structure</h2><p>The solution is implemented using <em>Swift Package</em>.</p><p>To simplify reasoning, have clear responsibilities, and construct decoupled components, we divided the codebase into the following targets inside one Swift Package:</p><ul><li><code>fill-hole</code> (executable target)</li><li><code>FillHoleCommand</code></li><li><code>FillHoleLib</code></li><li><code>GrayscaleIOLib</code></li></ul><br/><div align="center">
-<image src="../../../images/fill-hole/package.png" width="800" title="Swift Package">
+<image src="../../../images/fill-hole/package.png" width="100%" title="Swift Package">
 <br/>
 <p align="center"><cite>Swift Package</cite></p>
 </div><br/><p><code>FillHoleCommand</code>, <code>FillHoleLib</code>, and <code>GrayscaleIOLib</code> are accompanied by tests in their respective test targets.</p><h2>Modules</h2><p>Here is the top-level view of modules and dependencies:</p><br/><div align="center">
-<image src="../../../images/fill-hole/modules.png" width="800" title="Modules">
+<image src="../../../images/fill-hole/modules.png" width="100%" title="Modules">
 <br/>
 <p align="center"><cite>Modules</cite></p>
 </div><br/><p>Here is more detailed view with components:</p><br/><div align="center">
-<image src="../../../images/fill-hole/components.png" width="800" title="Components">
+<image src="../../../images/fill-hole/components.png" width="100%" title="Components">
 <br/>
 <p align="center"><cite>Components</cite></p>
 </div><br/><ul><li>Command line utility <code>fill-hole</code> is a simple thin executable wrapper for the <code>FillHoleCommand</code>.</li></ul><ul><li><code>FillHoleCommand</code></li></ul><p><code>FillHoleCommand</code> accepts an <code>input image</code> file, <code>hole</code> (mask) file, weight function parameters <code>𝑧</code> and <code>ε</code>, and <code>connectivity</code> type, fills the hole and writes the result to an output image file.</p><p>It's implemented using <a href="https://github.com/apple/swift-argument-parser">Swift Argument Parser</a> by Apple.</p><p><code>FillHoleCommand</code> as a <code>ParsableCommand</code> uses its default implementation of the static func <code>main()</code>. To preserve the functionality and compatibility, there is no way of using constructor injection with <code>FillHoleCommand</code>. As a compromise, we use implicit dependencies (<code>Valuator</code> and <code>Runner</code>) considering <code>FillHoleCommand</code> a <strong>composition layer</strong>, that wraps <code>Valuator</code> and <code>Runner</code> logic.</p><p><code>Valuator</code> and <code>Runner</code> use constructor injection with polymorphic interfaces, so we can easily swap their dependencies.</p><p>The <code>FillHoleCommand</code> doesn’t support an arbitrary weight function, only the default one with configurable 𝑧 and ε.</p><ul><li><code>FillHoleLib</code></li></ul><p><code>FillHoleLib</code> is a module with algorithm for hole filling. Its two main components are <code>HoleFiller</code> and <code>Balance</code>.</p><p><code>HoleFiller</code> is initialized with <code>PixelConnectivity</code> and <code>Balance</code> and has a function to <code>fill</code> the hole in the image.</p><p><code>Balance</code> holds <code>WeightFunc</code>, either arbitrary or <code>default</code> weighting function<br> <code></code>` 1 / (||u - v||^z + ε), <code></code>` where <code>ε (epsilon)</code> is a small float value used to avoid division by zero, and <code>||u - v||</code> denotes the euclidean distance between <code>u</code> and <code>v</code>.</p><ul><li><code>GrayscaleIOLib</code></li></ul><p>This is not a generic file IO operations suite, but a very concrete case of loading grayscale images from files and saving such images using <code>ImageIO</code>, the performant API from Apple (<a href="https://developer.apple.com/documentation/imageio/cgimagesource"><code>CGImageSource</code></a>, <a href="https://developer.apple.com/documentation/imageio/cgimagedestination/"><code>CGImageDestination</code></a>).</p><h2>Questions</h2><blockquote><p>1. If there are 𝑚 boundary pixels and 𝑛 pixels inside the hole, what’s the complexity of the algorithm that fills the hole, assuming that the hole and boundary were already found? Try to also express the complexity only in terms of 𝑛.</p></blockquote><ul><li><code>O(n * m)</code></li><li><code>O(n * √n)</code> - idea: <code>n</code> is like the area of the hole, and <code>m</code> is the perimeter, so O(m) ≃ O(√n).</li></ul><blockquote><p>(a) Could you imagine the case where it would be <code>O(n * n)</code>?</p></blockquote><ul><li>Yes, consider long thin rectangle - its perimeter would be <code>~O(n)</code> and overall complexity would be <code>O(n²)</code>.</li></ul><blockquote><p>2. Describe an algorithm that approximates the result in 𝑂(𝑛) to a high degree of accuracy. Bonus: implement the suggested algorithm in your library in addition to the algorithm described above.</p></blockquote><p>We could change each hole pixel color to the average color of the boundary. In this case, the complexity would be <code>O(n + m)</code>, where <code>m &lt; n</code>, which is equivalent to <code>O(n)</code>.</p><p>A more granular approach would be the following: divide the boundary into k sets of pixels, calculate average color and "average" coordinates for each set thus creating a set of pixels <code>newBoundary</code>, and run the basic algorithm against the original hole and newBoundary.<br>Complexity:<br>- Creating newBoundary of <code>k</code> pixels from the original boundary of <code>m</code> pixels: <code>m</code> - Filling the hole: <code>k * n</code> - Total <code>O(m) + O(k * n) ≲ O(n)</code></p><blockquote><p>3. Bonus (hard!): Describe and implement an algorithm that finds the exact solution in 𝑂(𝑛𝑙𝑜𝑔𝑛). In this section, feel free to use any algorithmic functionality provided by external libraries as needed.</p></blockquote><p>In this case I would think about gradually shrinking boundary and hole:</p><pre><code><span class="comment">// pixelConnectivity: PixelConnectivity is given</span>
