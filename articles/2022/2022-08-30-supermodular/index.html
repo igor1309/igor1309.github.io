@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="og:site_name" content="Swift and iOS dev with Igor"/><link rel="canonical" href="https://igor1309.github.com/articles/2022/2022-08-30-supermodular"/><meta name="twitter:url" content="https://igor1309.github.com/articles/2022/2022-08-30-supermodular"/><meta name="og:url" content="https://igor1309.github.com/articles/2022/2022-08-30-supermodular"/><title>Supermodular App Scaffolding | Swift and iOS dev with Igor</title><meta name="twitter:title" content="Supermodular App Scaffolding | Swift and iOS dev with Igor"/><meta name="og:title" content="Supermodular App Scaffolding | Swift and iOS dev with Igor"/><meta name="description" content="How to create a basic scaffolding for a super modularized app"/><meta name="twitter:description" content="How to create a basic scaffolding for a super modularized app"/><meta name="og:description" content="How to create a basic scaffolding for a super modularized app"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon_io/favicon.ico" type="image/x-icon"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Swift and iOS dev with Igor"/></head><body class="item-page"><header><div class="wrapper"><a href="/" class="site-name">Swift and iOS dev with Igor</a><div class="site-description">The ride of the iOS developer</div><nav><ul><li><a href="/articles" class="selected">Articles</a></li><li><a href="/portfolio">Portfolio</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper"><article><div class="content"><h1>Supermodular App Scaffolding</h1><p>Create new Swift Package in terminal</p><pre><code>$ mkdir <span class="type">QuoteWatcher</span>
+$ cd <span class="type">QuoteWatcher</span>
+$ swift package <span class="keyword">init</span>
+</code></pre><p>Initiate Git and commit</p><pre><code>$ git <span class="keyword">init</span>
+$ git add .
+$ git commit -am '<span class="type">Add</span> basic scaffolding <span class="keyword">for</span> `<span class="type">QuoteWatcher</span>` <span class="type">Swift Package</span>'
+</code></pre><p>Open Xcode, create new <code>iOS</code> project <code>QuoteWatcher</code> (do not not use Core Data, do not include tests)</p><br/><div align="center">
+<img src="../../../images/supermodular/create.png" width="800" title="Create">
+</div><br/><p>Save to <code>QuoteWatcher</code> folder (do not add to any project or workspace)</p><br/><div align="center">
+<img src="../../../images/supermodular/save.png" width="800" title="Create">
+<br/>
+</div><br/><p>Close the project. Back in terminal rename <code>QuoteWatcher</code> to <code>App</code></p><pre><code>$ mv <span class="type">QuoteWatcher App</span>
+</code></pre><p>Commit</p><pre><code>$ git add .
+$ git commit -m '<span class="type">Create</span> `<span class="type">QuoteWatcher</span>` project'
+</code></pre><p>Open the project in the Xcode. Drag the folder <code>QuoteWatcher</code> into the project</p><br/><div align="center">
+<img src="../../../images/supermodular/drag.png" width="800" title="Create">
+<br/>
+</div><br/><p>Local Swift Package would be added to Xcode project.</p><br/><div align="center">
+<img src="../../../images/supermodular/app.png" width="800" title="Create">
+<br/>
+</div><br/><p>We'll handle <code>App</code> folder in a moment, but first let's commit changes to the <code>App/QuoteWatcher.xcodeproj/project.pbxproj</code> file</p><pre><code>$ git commit -am '<span class="type">Add Swift Package</span> to <span class="type">Xcode</span> project'
+</code></pre><p>Add empty Swift Package to hide <code>App</code> folder from the Xcode</p><pre><code>$ cat &gt; <span class="type">App</span>/<span class="type">Package</span>.<span class="property">swift</span> &lt;&lt; <span class="type">ENDOFFILE</span>
+<span class="comment">// swift-tools-version:5.6
+
+// Leave blank. This is only here so that Xcode doesn't display it.</span>
+
+<span class="keyword">import</span> PackageDescription
+
+<span class="keyword">let</span> package = <span class="type">Package</span>(
+    name: <span class="string">"client"</span>,
+    products: [],
+    targets: []
+)
+<span class="type">ENDOFFILE</span>
+</code></pre><p>Reopen the project in the Xcode. Now the <code>App</code> folder is hidden.</p><br/><div align="center">
+<img src="../../../images/supermodular/no-app.png" width="585" title="Create">
+<br/>
+</div><br/><p>Commit</p><pre><code>$ git add .
+$ git commit -m '<span class="type">Add</span> empty <span class="type">Swift Package</span> to hide `<span class="type">App</span>` folder from <span class="type">Xcode</span>'
+</code></pre></div><div class="item-date"><span>Published on: Aug 30, 2022</span></div><span>Tagged with: </span><ul class="tag-list"><li><a href="/tags/supermodular">Supermodular</a></li></ul></article></div><footer><p>Copyright © Igor Malyarov 2021</p><p>Built using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="https://twitter.com/igor1309">Twitter</a> | <a href="/feed.rss">RSS feed</a></p></footer></body></html>
