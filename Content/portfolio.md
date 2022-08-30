@@ -9,6 +9,8 @@ All iOS apps support __Dynamic Type__ and __Dark mode__.
 `Hole Fill` was a take home assignment that I've used to present __ultra-modular design of decoupled composable components__.
 Its public repo is [on the Github](https://github.com/igor1309/fill-hole-public).
 
+> The goal of this task is to build a small image processing library that fills holes in images, along with a small command line utility that uses that library, and answer a few questions.
+
 <div align="center">
 <image src="/images/portfolio/fill-hole/terminal.png" width="585" title="fill-hole terminal command showing help in case of incorrect input.">
 <br/>
@@ -126,7 +128,7 @@ An app for the [Apple Mobility Index](https://covid19.apple.com/mobility)
 
 <br/>
 
-Data by John Hopkins University.
+*Data by John Hopkins University*.
 
 <br/>
 <br/>
