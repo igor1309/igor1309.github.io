@@ -80,6 +80,7 @@ Add an empty Swift Package to hide the `App` folder from the Xcode
 
 <div><details>
 <summary>Until syntax lighlighting issue with comments is resolved, use:</summary>
+<span>
 cat > App/Package.swift << ENDOFFILE
 
 // swift-tools-version:5.6
@@ -95,6 +96,7 @@ let package = Package(
 )
 
 ENDOFFILE
+</span>
 </details><div>
 
 ```sh
