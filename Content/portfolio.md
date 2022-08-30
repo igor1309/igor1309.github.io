@@ -6,12 +6,13 @@ All iOS apps support __Dynamic Type__ and __Dark mode__.
 
 ## Hole Fill
 
-`Hole Fill` was a take home assignment, that I used to present __ultra-modular design of decoupled composable components__. Its [public repo](https://github.com/igor1309/fill-hole-public) is on the Github.
+`Hole Fill` was a take home assignment that I've used to present __ultra-modular design of decoupled composable components__.
+Its public repo is [on the Github](https://github.com/igor1309/fill-hole-public).
 
 <div align="center">
-<image src="/images/portfolio/fill-hole/terminal.png" width="585" title="`fill-hole` terminal command showing help in case of incorrect input.">
+<image src="/images/portfolio/fill-hole/terminal.png" width="585" title="fill-hole terminal command showing help in case of incorrect input.">
 <br/>
-<p align="center"><cite>`fill-hole` terminal command showing help in case of incorrect input.</cite></p>
+<p align="center"><cite>fill-hole terminal command showing help in case of incorrect input.</cite></p>
 </div>
 <br/>
 
@@ -29,10 +30,9 @@ All iOS apps support __Dynamic Type__ and __Dark mode__.
 </div>
 <br/>
 
+## CIFilterBrowser
 
-## CIFilterBrowser  
-
-___Core Image, SwiftUI, Combine___
+***Core Image***, ***SwiftUI***, ***Combine***
 
 __Core Image__ is [Apple's framework](https://developer.apple.com/documentation/coreimage) for image processing and analysis. It's great and performant but not very friendly, especially for Swift programmers.
 
@@ -67,15 +67,15 @@ _Coming soon to App Store._
 
 <div><details>
 <summary>Where to start</summary>
-<p>For initial dive in into CIFilter world I highly recommend <a href="https://www.objc.io/issues/21-camera-and-photos/core-image-intro/">An Introduction to Core Image · objc.io</a> by Warren Moore and <a href="https://developer.apple.com/documentation/coreimage/processing_an_image_using_built-in_filters">Processing an Image Using Built-in Filters</a> at Apple Developer Documentation.</p>
+<p>For initial dive in into the CIFilter world I highly recommend <a href="https://www.objc.io/issues/21-camera-and-photos/core-image-intro/">An Introduction to Core Image · objc.io</a> by Warren Moore and <a href="https://developer.apple.com/documentation/coreimage/processing_an_image_using_built-in_filters">Processing an Image Using Built-in Filters</a> in Apple Developer Documentation.</p>
 </details></div>
 <br/>
 
 ## Mobility
 
-_My own_ ___Chart Library___, ___SwiftUI, Combine___  
+*My own* ***Chart Library***, ***SwiftUI***, ***Combine***
 
-An app for [Apple Mobility Index](https://covid19.apple.com/mobility)  
+An app for the [Apple Mobility Index](https://covid19.apple.com/mobility)
 <br/>
 
 <div align="center">
@@ -99,11 +99,9 @@ An app for [Apple Mobility Index](https://covid19.apple.com/mobility)
 </div>
 <br/>
 
-
 ## Covid-19 Observer
 
-_My own_ ___Chart Library___, ___MapKit___, ___Core Data___, ___UIKit___, ___SwiftUI___, ___Combine___.
-
+*My own* ***Chart Library***, ***MapKit***, ***Core Data***, ***UIKit***, ***SwiftUI***, ***Combine***.
 
 <div align="center">
 <image src="/images/portfolio/covid/combined1_3.png" width="585" title="Covid-19 Observer: global overview, charts with floating legend">
@@ -127,15 +125,17 @@ _My own_ ___Chart Library___, ___MapKit___, ___Core Data___, ___UIKit___, ___Swi
 <br/>
 
 <br/>
-_Data by John Hopkins University_.
+
+Data by John Hopkins University.
+
 <br/>
 <br/>
 
 ## MAXimatica
 
-___SwiftUI___, ___Combine___  
+***SwiftUI***, ***Combine***
 
-Pre-school math (Russian only).  
+Pre-school math (Russian only).
 
 <div align="center">
 <image src="/images/portfolio/maximatica/combined1_3.png" width="585" title="MAXImatica: onboarding and mission selection">
