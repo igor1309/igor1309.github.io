@@ -170,7 +170,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #2c2c2e;
+        background-color: #242529;
     }
 
     body {
@@ -249,6 +249,11 @@ pre code .string {
 
 pre code .comment {
     color: #6b8a94;
+}
+
+pre code .comment, .comment:not(.token):not(code) {
+    display: block !important;
+    visibility: visible;
 }
 
 pre code .dotAccess {
