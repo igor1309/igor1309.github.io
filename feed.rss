@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Swift and iOS dev with Igor</title><description>The ride of the iOS developer</description><link>https://igor1309.github.com</link><language>en</language><lastBuildDate>Tue, 30 Aug 2022 21:55:53 +0000</lastBuildDate><pubDate>Tue, 30 Aug 2022 21:55:53 +0000</pubDate><ttl>250</ttl><atom:link href="https://igor1309.github.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-30-supermodular</guid><title>Supermodular App Scaffolding</title><description>How to create a basic scaffolding for a super modularized app</description><link>https://igor1309.github.com/articles/2022/2022-08-30-supermodular</link><pubDate>Tue, 30 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>Supermodular App Scaffolding</h1><p>Create a new Swift Package in the terminal</p><pre><code>$ mkdir <span class="type">QuoteWatcher</span>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Swift and iOS dev with Igor</title><description>The ride of the iOS developer</description><link>https://igor1309.github.com</link><language>en</language><lastBuildDate>Tue, 30 Aug 2022 22:07:28 +0000</lastBuildDate><pubDate>Tue, 30 Aug 2022 22:07:28 +0000</pubDate><ttl>250</ttl><atom:link href="https://igor1309.github.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-30-supermodular</guid><title>Supermodular App Scaffolding</title><description>How to create a basic scaffolding for a super modularized app</description><link>https://igor1309.github.com/articles/2022/2022-08-30-supermodular</link><pubDate>Tue, 30 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>Supermodular App Scaffolding</h1><p>Create a new Swift Package in the terminal</p><pre><code>$ mkdir <span class="type">QuoteWatcher</span>
 $ cd <span class="type">QuoteWatcher</span>
 $ swift package <span class="keyword">init</span>
 </code></pre><p>Initiate Git and commit</p><pre><code>$ git <span class="keyword">init</span>
@@ -19,7 +19,8 @@ $ git commit -m '<span class="type">Create</span> `<span class="type">QuoteWatch
 <img src="../../../images/supermodular/app.png" width="100%" title="Create">
 <br/>
 </div><br/><p>We'll handle the <code>App</code> folder in a moment, but first, let's commit changes to the <code>App/QuoteWatcher.xcodeproj/project.pbxproj</code> file</p><pre><code>$ git commit -am '<span class="type">Add Swift Package</span> to <span class="type">Xcode</span> project'
-</code></pre><p>Add an empty Swift Package to hide the <code>App</code> folder from the Xcode</p><p><strong>Until syntax lighlighting issue with comments is resolved, use:</strong></p><div>
+</code></pre><p>Add an empty Swift Package to hide the <code>App</code> folder from the Xcode</p><div><details>
+<summary>Until syntax lighlighting issue with comments is resolved, use:</summary>
 cat > App/Package.swift << ENDOFFILE
 
 // swift-tools-version:5.6
@@ -33,8 +34,9 @@ let package = Package(
     products: [],
     targets: []
 )
+
 ENDOFFILE
-</div>
+</details><div>
 
 ```sh
 $ cat > App/Package.swift << ENDOFFILE
@@ -61,101 +63,11 @@ Reopen the project in the Xcode. Now the `App` folder is hidden.
 </div>
 <br/>
 
-
 Commit
 
 ```sh
 $ git add .
 $ git commit -m 'Add empty Swift Package to hide `App` folder from Xcode'
-```
-
-```sh
-#!/bin/bash
-
-# Do not forget to make this file executable with `chmod +x the_file_name`
-
-###########################################################################
-#
-#   Use this script to create super-modular app
-#   for details https://igor1309.dev/articles/2022/2022-08-30-supermodular/
-#   to run: $ bash supermodular-i.sh
-#
-###########################################################################
-
-# `set -o pipefail`┬ácauses a pipeline (for example,
-# `curl -s https://sipb.mit.edu/ | grep foo`) to produce
-# a failure return code if any command errors.
-# Normally, pipelines only return a failure if the last command errors.
-# In combination with `set -e`, this will make your script exit
-# if any command in a pipeline errors.
-set -eo pipefail
-
-if [ $# -eq 0 ]; then
-    echo "Exiting: ❌ no app name provided"
-    echo
-    exit
-fi
-
-size=${#1}
-
-if [ "$size" -lt "5" ]; then
-    echo "Exiting: ❌ app name is too short ($size)"
-    echo
-    exit
-fi
-
-echo
-read -r -p "❓ Your app name would be: '$1' - Are you sure? [y/N] " response
-
-if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
-then
-    echo "Ok, will be creating the app named \`$1\`"
-    echo
-
-    mkdir $1
-    cd $1
-    swift package init
-
-    git init
-    git add .
-    git commit -am "Add basic scaffolding for \`$1\` Swift Package" --quiet
-    git log --oneline
-
-    echo
-    echo "🛠"
-    echo "Now create project in Xcode."
-    read -p "Close Xcode and press [Enter] when done"
-
-    # rename folder to `App`
-    mv $1 App
-
-    git add .
-    git commit -m "Create \`$1\` project" --quiet --quiet
-    git log --oneline
-
-    # preserve indentation to have `Package.swift` nicely formatted
-package="// swift-tools-version:5.6
-
-// Leave blank. This is only here so that Xcode doesn\'t display it.
-
-import PackageDescription
-
-let package = Package(
-    name: "client",
-    products: [],
-    targets: []
-)"
-
-    echo "$package" > App/Package.swift
-
-    git add .
-    git commit -m "Add empty Swift Package to hide \`App\` folder from Xcode" --quiet
-
-    echo "✅ done"
-else
-    echo "App name was not confirmed ❌"
-    echo
-fi
 ```
 ]]></content:encoded></item><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-25-decorator-protocol-witness</guid><title>The Decorator Pattern with Protocol and Protocol Witnesses</title><description>Exploring the way of the Decorator Pattern implementation with Protocol and Protocol Witnesses</description><link>https://igor1309.github.com/articles/2022/2022-08-25-decorator-protocol-witness</link><pubDate>Thu, 25 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>The Decorator Pattern with Protocol and Protocol Witnesses</h1><p><em>Gang of Four Design Patterns</em>:</p><blockquote><p>Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.</p></blockquote><p><em><a href="https://www.essentialdeveloper.com/articles/design-patterns-in-ios-swift-standing-on-the-shoulder-of-giants-ios-lead-essentials-podcast-014?rq=Decorator">Essential Developer: Design Patterns in iOS/Swift: Standing on the shoulder of giants | iOS Lead Essentials Podcast #014</a></em>:</p><blockquote><p>The Decorator pattern offers a way of adding behavior to an individual object and extending its functionality without subclassing or changing the object’s class.</p></blockquote><blockquote><p>Decorators are useful when you want to add or alter the behavior of individual objects instead of an entire class of objects.</p></blockquote><blockquote><p>To implement the Decorator pattern, you create a new object (decorator) that encloses and conforms to the interface of the component (decoratee) it decorates. The decorator class will contain the extended behavior and forward messages to the decoratee.</p></blockquote><blockquote><p>By doing so, the decorator can be used by the clients of the interface, extending the behavior of the system without needing to alter any existing components.</p></blockquote><blockquote><p>The Decorator pattern is supported by the SOLID principles, especially the Single Responsibility, Liskov Substitution, and Open/Closed Principles.</p></blockquote><blockquote><p>You can use Decorators to add Cross-Cutting concerns such as Logging, Analytics, Threading, Security, etc. into your modules in a clean way while maintaining low coupling in your applications.</p></blockquote><h2>Decorator with protocol</h2><pre><code><span class="keyword">protocol</span> Logger {
     <span class="keyword">func</span> log(<span class="keyword">_</span> message: <span class="type">String</span>)
