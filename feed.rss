@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Swift and iOS dev with Igor</title><description>The ride of the iOS developer</description><link>https://igor1309.github.com</link><language>en</language><lastBuildDate>Tue, 30 Aug 2022 22:07:28 +0000</lastBuildDate><pubDate>Tue, 30 Aug 2022 22:07:28 +0000</pubDate><ttl>250</ttl><atom:link href="https://igor1309.github.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-30-supermodular</guid><title>Supermodular App Scaffolding</title><description>How to create a basic scaffolding for a super modularized app</description><link>https://igor1309.github.com/articles/2022/2022-08-30-supermodular</link><pubDate>Tue, 30 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>Supermodular App Scaffolding</h1><p>Create a new Swift Package in the terminal</p><pre><code>$ mkdir <span class="type">QuoteWatcher</span>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Swift and iOS dev with Igor</title><description>The ride of the iOS developer</description><link>https://igor1309.github.com</link><language>en</language><lastBuildDate>Tue, 30 Aug 2022 22:10:41 +0000</lastBuildDate><pubDate>Tue, 30 Aug 2022 22:10:41 +0000</pubDate><ttl>250</ttl><atom:link href="https://igor1309.github.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-30-supermodular</guid><title>Supermodular App Scaffolding</title><description>How to create a basic scaffolding for a super modularized app</description><link>https://igor1309.github.com/articles/2022/2022-08-30-supermodular</link><pubDate>Tue, 30 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>Supermodular App Scaffolding</h1><p>Create a new Swift Package in the terminal</p><pre><code>$ mkdir <span class="type">QuoteWatcher</span>
 $ cd <span class="type">QuoteWatcher</span>
 $ swift package <span class="keyword">init</span>
 </code></pre><p>Initiate Git and commit</p><pre><code>$ git <span class="keyword">init</span>
@@ -21,6 +21,7 @@ $ git commit -m '<span class="type">Create</span> `<span class="type">QuoteWatch
 </div><br/><p>We'll handle the <code>App</code> folder in a moment, but first, let's commit changes to the <code>App/QuoteWatcher.xcodeproj/project.pbxproj</code> file</p><pre><code>$ git commit -am '<span class="type">Add Swift Package</span> to <span class="type">Xcode</span> project'
 </code></pre><p>Add an empty Swift Package to hide the <code>App</code> folder from the Xcode</p><div><details>
 <summary>Until syntax lighlighting issue with comments is resolved, use:</summary>
+<span>
 cat > App/Package.swift << ENDOFFILE
 
 // swift-tools-version:5.6
@@ -36,6 +37,7 @@ let package = Package(
 )
 
 ENDOFFILE
+</span>
 </details><div>
 
 ```sh
