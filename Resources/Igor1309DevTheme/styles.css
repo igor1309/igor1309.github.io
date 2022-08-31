@@ -173,9 +173,8 @@ a {
 }
 
 .all-tags li {
-    font-size: 0.85em;
-    margin-right: 0.625em;
-    padding: 0.375em 0.625em;
+    margin: 0 0.625em 0.5em 0;
+    padding: 0.31255em 0.5em;
 }
 
 footer {
