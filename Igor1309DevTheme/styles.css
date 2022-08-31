@@ -71,6 +71,10 @@ nav li a.selected {
     text-decoration: underline;
 }
 
+.wrapper h1 {
+    color: #eb8e15;
+}
+
 h1 {
     margin-bottom: 1.25em;
     font-size: 2em;
@@ -169,9 +173,8 @@ a {
 }
 
 .all-tags li {
-    font-size: 0.85em;
-    margin-right: 0.625em;
-    padding: 0.375em 0.625em;
+    margin: 0 0.625em 0.5em 0;
+    padding: 0.31255em 0.5em;
 }
 
 footer {
@@ -221,6 +224,15 @@ blockquote p {
     border-top-right-radius: 0.4375em;
     border-bottom-right-radius: 0.4375em;
     border-left: 0.05em solid #eb8e15;
+}
+
+p code,
+li code {
+    background-color: #1a1a1a;
+    border-radius: 0.3em;
+    padding: 0.1em 0.2em;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 /**
