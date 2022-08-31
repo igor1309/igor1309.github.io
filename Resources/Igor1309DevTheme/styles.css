@@ -213,6 +213,16 @@ footer {
     }
 }
 
+blockquote p {
+    position: relative;
+    color: #c7c7c7;
+    /* background-color: #efefef; */
+    padding: 0.625em 0.625em 0.625em 0.9375em;
+    border-top-right-radius: 0.4375em;
+    border-bottom-right-radius: 0.4375em;
+    border-left: 0.05em solid #eb8e15;
+}
+
 /**
  *  CSS that can be used to style Splash HTML output
  */
