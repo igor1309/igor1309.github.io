@@ -253,7 +253,7 @@ private struct SiteFooter: Component {
     var body: Component {
         Footer {
             Paragraph {
-                Text("Copyright © Igor Malyarov 2021")
+                Text("Copyright © Igor Malyarov 2022")
             }
             Paragraph {
                 Text("Built using ")
