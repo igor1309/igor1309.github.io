@@ -19,57 +19,42 @@ $ git commit -m '<span class="type">Create</span> `<span class="type">QuoteWatch
 <img src="../../../images/supermodular/app.png" width="100%" title="Create">
 <br/>
 </div><br/><p>We'll handle the <code>App</code> folder in a moment, but first, let's commit changes to the <code>App/QuoteWatcher.xcodeproj/project.pbxproj</code> file</p><pre><code>$ git commit -am '<span class="type">Add Swift Package</span> to <span class="type">Xcode</span> project'
-</code></pre><p>Add an empty Swift Package to hide the <code>App</code> folder from the Xcode</p><div><details>
+</code></pre><p>Add an empty Swift Package to hide the <code>App</code> folder from the Xcode</p><br/><details>
 <summary>Until syntax lighlighting issue with comments is resolved, use:</summary>
-<span>
-cat > App/Package.swift << ENDOFFILE
-
-// swift-tools-version:5.6
-
-// Leave blank. This is only here so that Xcode doesn't display it.
-
-import PackageDescription
-
-let package = Package(
-    name: "client",
-    products: [],
-    targets: []
-)
-
-ENDOFFILE
-</span>
-</details><div>
-<br/><br/>
-
-```sh
-$ cat > App/Package.swift << ENDOFFILE
-// swift-tools-version:5.6
-
-// Leave blank. This is only here so that Xcode doesn't display it.
-
-import PackageDescription
-
-let package = Package(
-    name: "client",
-    products: [],
-    targets: []
-)
-ENDOFFILE
-```
-
-Reopen the project in the Xcode. Now the `App` folder is hidden.
-
+<div>
 <br/>
-<div align="center">
+<p>cat > App/Package.swift << ENDOFFILE</p>
+
+<p>// swift-tools-version:5.6</p>
+
+<p>// Leave blank. This is only here so that Xcode doesn't display it.</p>
+
+<p>import PackageDescription</p>
+
+<p>let package = Package(</p>
+<p>&emsp;name: "client",</p>
+<p>&emsp;products: [],</p>
+<p>&emsp;targets: []</p>
+<p>)</p>
+
+<p>ENDOFFILE</p>
+<div>
+</details><br/><br/><pre><code>$ cat &gt; <span class="type">App</span>/<span class="type">Package</span>.<span class="property">swift</span> &lt;&lt; <span class="type">ENDOFFILE</span>
+<span class="comment">// swift-tools-version:5.6
+
+// Leave blank. This is only here so that Xcode doesn't display it.</span>
+
+<span class="keyword">import</span> PackageDescription
+
+<span class="keyword">let</span> package = <span class="type">Package</span>(
+    name: <span class="string">"client"</span>,
+    products: [],
+    targets: []
+)
+<span class="type">ENDOFFILE</span>
+</code></pre><p>Reopen the project in the Xcode. Now the <code>App</code> folder is hidden.</p><br/><div align="center">
 <img src="../../../images/supermodular/no-app.png" width="40%" title="Create">
 <br/>
-</div>
-<br/>
-
-Commit
-
-```sh
-$ git add .
-$ git commit -m 'Add empty Swift Package to hide `App` folder from Xcode'
-```
-</div><div class="item-date"><span>Published on: Aug 30, 2022</span></div><span>Tagged with: </span><ul class="tag-list"><li><a href="/tags/supermodular">Supermodular</a></li></ul></article></div><footer><p>Copyright © Igor Malyarov 2021</p><p>Built using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="https://twitter.com/igor1309">Twitter</a> | <a href="/feed.rss">RSS feed</a></p></footer></body></html>
+</div><br/><p>Commit</p><pre><code>$ git add .
+$ git commit -m '<span class="type">Add</span> empty <span class="type">Swift Package</span> to hide `<span class="type">App</span>` folder from <span class="type">Xcode</span>'
+</code></pre></div><div class="item-date"><span>Published on: Aug 30, 2022</span></div><span>Tagged with: </span><ul class="tag-list"><li><a href="/tags/supermodular">Supermodular</a></li></ul></article></div><footer><p>Copyright © Igor Malyarov 2021</p><p>Built using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="https://twitter.com/igor1309">Twitter</a> | <a href="/feed.rss">RSS feed</a></p></footer></body></html>
