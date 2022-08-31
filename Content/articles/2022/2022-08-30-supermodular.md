@@ -122,7 +122,7 @@ Reopen the project in the Xcode. Now the `App` folder is hidden.
 
 <br/>
 <div align="center">
-<img src="../../../images/supermodular/no-app.png" width="40%" title="Create">
+<img src="../../../images/supermodular/no-app.png" max-width="40%" title="Create">
 <br/>
 </div>
 <br/>
