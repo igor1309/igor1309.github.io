@@ -78,26 +78,28 @@ $ git commit -am 'Add Swift Package to Xcode project'
 
 Add an empty Swift Package to hide the `App` folder from the Xcode
 
-<div><details>
+<br/>
+<details>
 <summary>Until syntax lighlighting issue with comments is resolved, use:</summary>
-<span>
-cat > App/Package.swift << ENDOFFILE
+<div>
+<br/>
+<p>cat > App/Package.swift << ENDOFFILE</p>
 
-// swift-tools-version:5.6
+<p>// swift-tools-version:5.6</p>
 
-// Leave blank. This is only here so that Xcode doesn't display it.
+<p>// Leave blank. This is only here so that Xcode doesn't display it.</p>
 
-import PackageDescription
+<p>import PackageDescription</p>
 
-let package = Package(
-    name: "client",
-    products: [],
-    targets: []
-)
+<p>let package = Package(</p>
+<p>&emsp;name: "client",</p>
+<p>&emsp;products: [],</p>
+<p>&emsp;targets: []</p>
+<p>)</p>
 
-ENDOFFILE
-</span>
-</details><div>
+<p>ENDOFFILE</p>
+<div>
+</details>
 <br/><br/>
 
 ```sh
