@@ -71,6 +71,10 @@ nav li a.selected {
     text-decoration: underline;
 }
 
+.wrapper h1 {
+    color: #eb8e15;
+}
+
 h1 {
     margin-bottom: 1.25em;
     font-size: 2em;
