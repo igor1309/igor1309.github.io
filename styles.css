@@ -80,11 +80,16 @@ h1 > a {
     text-decoration: none;
 }
 
-h2 {
+h2,
+h3 {
+    margin-top: 1em;
 }
 
-p {
-    margin-bottom: 10px;
+h2,
+h3,
+p,
+.content li {
+     margin-bottom: 0.6em;
 }
 
 a {
@@ -119,6 +124,7 @@ a {
 
 .wrapper .item-date {
     font-size: 0.8em;
+    color: gray;
 }
 
 .item-list .item-date {
@@ -126,14 +132,19 @@ a {
 }
 
 .tag-list {
-    margin-bottom: 15px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.tag-list,
+.tag {
+    font-size: 0.9em;
 }
 
 .tag-list li,
 .tag {
     display: inline-block;
     background-color: #202124;
-    font-size: 0.75em;
     padding: 4px 6px;
     border-radius: 5px;
     margin-right: 5px;
@@ -188,7 +199,7 @@ footer {
     }
 
     .item-list > li {
-        background-color: #373739;
+        background-color: #202124;
     }
 
     header {
