@@ -13,15 +13,15 @@ _Gang of Four Design Patterns_:
 _[Essential Developer: Design Patterns in iOS/Swift: Standing on the shoulder of giants | iOS Lead Essentials Podcast #014](https://www.essentialdeveloper.com/articles/design-patterns-in-ios-swift-standing-on-the-shoulder-of-giants-ios-lead-essentials-podcast-014?rq=Decorator)_:
 
 > The Decorator pattern offers a way of adding behavior to an individual object and extending its functionality without subclassing or changing the object’s class.
-
+><br/><br/>
 > Decorators are useful when you want to add or alter the behavior of individual objects instead of an entire class of objects.
-
+><br/><br/>
 > To implement the Decorator pattern, you create a new object (decorator) that encloses and conforms to the interface of the component (decoratee) it decorates. The decorator class will contain the extended behavior and forward messages to the decoratee.
-
+><br/><br/>
 > By doing so, the decorator can be used by the clients of the interface, extending the behavior of the system without needing to alter any existing components.
-
+><br/><br/>
 > The Decorator pattern is supported by the SOLID principles, especially the Single Responsibility, Liskov Substitution, and Open/Closed Principles.
-
+><br/><br/>
 > You can use Decorators to add Cross-Cutting concerns such as Logging, Analytics, Threading, Security, etc. into your modules in a clean way while maintaining low coupling in your applications.
 
 
