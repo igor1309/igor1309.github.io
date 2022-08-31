@@ -223,6 +223,15 @@ blockquote p {
     border-left: 0.05em solid #eb8e15;
 }
 
+p code,
+li code {
+    background-color: #1a1a1a;
+    border-radius: 0.3em;
+    padding: 0.1em 0.2em;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
 /**
  *  CSS that can be used to style Splash HTML output
  */
