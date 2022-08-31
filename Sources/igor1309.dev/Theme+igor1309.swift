@@ -85,7 +85,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                             }
                             .class("item-date")
                             
-                            Span("Tagged with: ")
+                            Span("Tagged with: ").class("tag-list")
                             ItemTagList(item: item, site: context.site)
                         }
                     }
