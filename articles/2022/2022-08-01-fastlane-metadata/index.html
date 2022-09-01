@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="og:site_name" content="Swift and iOS dev with Igor"/><link rel="canonical" href="https://igor1309.github.com/articles/2022/2022-08-01-fastlane-metadata"/><meta name="twitter:url" content="https://igor1309.github.com/articles/2022/2022-08-01-fastlane-metadata"/><meta name="og:url" content="https://igor1309.github.com/articles/2022/2022-08-01-fastlane-metadata"/><title>fastlane: Metadata | Swift and iOS dev with Igor</title><meta name="twitter:title" content="fastlane: Metadata | Swift and iOS dev with Igor"/><meta name="og:title" content="fastlane: Metadata | Swift and iOS dev with Igor"/><meta name="description" content="Check your app metadata against App Store review rules with fastlane"/><meta name="twitter:description" content="Check your app metadata against App Store review rules with fastlane"/><meta name="og:description" content="Check your app metadata against App Store review rules with fastlane"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon_io/favicon.ico" type="image/x-icon"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Swift and iOS dev with Igor"/></head><body class="item-page"><header><div class="wrapper"><a href="/" class="site-name">Swift and iOS dev with Igor</a><div class="site-description">The ride of the iOS developer</div><nav><ul><li><a href="/articles" class="selected">Articles</a></li><li><a href="/portfolio">Portfolio</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper"><article><div class="content"><h1>fastlane: Metadata</h1><p>Apple can reject an app for metadata issues like mentioning other platforms, bad-mouthing Apple, and others. Use <code>fastlane</code>'s <code>precheck</code> to examine your app for App Store review rules compliance.</p><pre><code>$ bundle exec fastlane precheck
+</code></pre><p><code>precheck</code> is an alias for the <code>check_app_store_metadata</code>.</p><p>Use <code>Precheckfile</code> to store your precheck defaults, run <code>fastlane precheck init</code> to create one. Set the desired level for the check: <code>skip</code>, <code>warn</code>, or <code>error</code>:</p><pre><code># skip checking this metadata
+<span class="call">negative_apple_sentiment</span>(level: :skip)
+
+# trigger a warning
+<span class="call">curse_words</span>(level: :warn)
+
+# show error and stop after precheck
+<span class="call">unreachable_urls</span>(level: :error)
+
+# check <span class="keyword">for</span> words
+<span class="call">custom_text</span>(
+    data: [<span class="string">"chrome"</span>, <span class="string">"webos"</span>],
+    level: :warn
+)
+</code></pre><p>By default all levels are set to <code>:error</code>, so you need to list only those keys that you want to skip or warn.</p><p>At the time of writing, <em>"precheck cannot check In-app purchases with the App Store Connect API Key (yet)"</em>, but the default is <code>true</code>, so it makes sense to change it to <code>false</code>.</p><p><strong>Important</strong>: <code>precheck</code> does not check <code>Appfile</code> for App Store credentials and app identifiers, so you'd need to add them into <code>Precheckfile</code>:</p><pre><code>app_identifier <span class="type">APP_IDENTIFIER</span>
+username <span class="type">USERNAME</span>
+team_name <span class="type">TEAM_NAME</span>
+team_id <span class="type">TEAM_ID</span>
+</code></pre><p>Use in <code>Fastfile</code>:</p><pre><code># run precheck alone
+lane :check_metadata <span class="keyword">do</span>
+    precheck
+end
+</code></pre><p><code>precheck</code> is also integrated with <a href="https://docs.fastlane.tools/actions/deliver/"><code>deliver</code></a>:</p><pre><code># <span class="type">Fastfile</span>
+
+lane :production <span class="keyword">do</span>
+    # ...
+
+    # by <span class="keyword">default</span> deliver will call precheck and warn you of any problems
+    # <span class="keyword">if</span> you want precheck to halt submitting to app review, you can pass
+    # precheck_default_rule_level: :error
+    <span class="call">deliver</span>(precheck_default_rule_level: :error)
+
+    # ...
+end
+</code></pre><p>For the full list of the keys to check and more see <a href="https://docs.fastlane.tools/actions/precheck/">precheck - fastlane docs</a>.</p></div><div class="item-date"><span>Published on: Sep 1, 2022</span></div><span class="tag-list">Tagged with: </span><ul class="tag-list"><li><a href="/tags/app-store">App Store</a></li><li><a href="/tags/fastlane">fastlane</a></li></ul></article></div><footer><p>Copyright © Igor Malyarov 2022</p><p>Built using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="https://twitter.com/igor1309">Twitter</a> | <a href="/feed.rss">RSS feed</a></p></footer></body></html>

@@ -75,6 +75,11 @@ nav li a.selected {
     color: #eb8e15;
 }
 
+.wrapper p,
+.wrapper li {
+    line-height: 1.3em;
+}
+
 h1 {
     margin-bottom: 1.25em;
     font-size: 2em;

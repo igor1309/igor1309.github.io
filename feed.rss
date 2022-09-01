@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Swift and iOS dev with Igor</title><description>The ride of the iOS developer</description><link>https://igor1309.github.com</link><language>en</language><lastBuildDate>Wed, 31 Aug 2022 20:56:12 +0000</lastBuildDate><pubDate>Wed, 31 Aug 2022 20:56:12 +0000</pubDate><ttl>250</ttl><atom:link href="https://igor1309.github.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-30-supermodular</guid><title>Supermodular App Scaffolding</title><description>How to create a basic scaffolding for a super modularized app</description><link>https://igor1309.github.com/articles/2022/2022-08-30-supermodular</link><pubDate>Tue, 30 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>Supermodular App Scaffolding</h1><p>Create a new Swift Package in the terminal</p><pre><code>$ mkdir <span class="type">QuoteWatcher</span>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Swift and iOS dev with Igor</title><description>The ride of the iOS developer</description><link>https://igor1309.github.com</link><language>en</language><lastBuildDate>Thu, 1 Sep 2022 11:18:40 +0000</lastBuildDate><pubDate>Thu, 1 Sep 2022 11:18:40 +0000</pubDate><ttl>250</ttl><atom:link href="https://igor1309.github.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-01-fastlane-metadata</guid><title>fastlane: Metadata</title><description>Check your app metadata against App Store review rules with fastlane</description><link>https://igor1309.github.com/articles/2022/2022-08-01-fastlane-metadata</link><pubDate>Thu, 1 Sep 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>fastlane: Metadata</h1><p>Apple can reject an app for metadata issues like mentioning other platforms, bad-mouthing Apple, and others. Use <code>fastlane</code>'s <code>precheck</code> to examine your app for App Store review rules compliance.</p><pre><code>$ bundle exec fastlane precheck
+</code></pre><p><code>precheck</code> is an alias for the <code>check_app_store_metadata</code>.</p><p>Use <code>Precheckfile</code> to store your precheck defaults, run <code>fastlane precheck init</code> to create one. Set the desired level for the check: <code>skip</code>, <code>warn</code>, or <code>error</code>:</p><pre><code># skip checking this metadata
+<span class="call">negative_apple_sentiment</span>(level: :skip)
+
+# trigger a warning
+<span class="call">curse_words</span>(level: :warn)
+
+# show error and stop after precheck
+<span class="call">unreachable_urls</span>(level: :error)
+
+# check <span class="keyword">for</span> words
+<span class="call">custom_text</span>(
+    data: [<span class="string">"chrome"</span>, <span class="string">"webos"</span>],
+    level: :warn
+)
+</code></pre><p>By default all levels are set to <code>:error</code>, so you need to list only those keys that you want to skip or warn.</p><p>At the time of writing, <em>"precheck cannot check In-app purchases with the App Store Connect API Key (yet)"</em>, but the default is <code>true</code>, so it makes sense to change it to <code>false</code>.</p><p><strong>Important</strong>: <code>precheck</code> does not check <code>Appfile</code> for App Store credentials and app identifiers, so you'd need to add them into <code>Precheckfile</code>:</p><pre><code>app_identifier <span class="type">APP_IDENTIFIER</span>
+username <span class="type">USERNAME</span>
+team_name <span class="type">TEAM_NAME</span>
+team_id <span class="type">TEAM_ID</span>
+</code></pre><p>Use in <code>Fastfile</code>:</p><pre><code># run precheck alone
+lane :check_metadata <span class="keyword">do</span>
+    precheck
+end
+</code></pre><p><code>precheck</code> is also integrated with <a href="https://docs.fastlane.tools/actions/deliver/"><code>deliver</code></a>:</p><pre><code># <span class="type">Fastfile</span>
+
+lane :production <span class="keyword">do</span>
+    # ...
+
+    # by <span class="keyword">default</span> deliver will call precheck and warn you of any problems
+    # <span class="keyword">if</span> you want precheck to halt submitting to app review, you can pass
+    # precheck_default_rule_level: :error
+    <span class="call">deliver</span>(precheck_default_rule_level: :error)
+
+    # ...
+end
+</code></pre><p>For the full list of the keys to check and more see <a href="https://docs.fastlane.tools/actions/precheck/">precheck - fastlane docs</a>.</p>]]></content:encoded></item><item><guid isPermaLink="true">https://igor1309.github.com/articles/2022/2022-08-30-supermodular</guid><title>Supermodular App Scaffolding</title><description>How to create a basic scaffolding for a super modularized app</description><link>https://igor1309.github.com/articles/2022/2022-08-30-supermodular</link><pubDate>Tue, 30 Aug 2022 10:10:00 +0000</pubDate><content:encoded><![CDATA[<h1>Supermodular App Scaffolding</h1><p>Create a new Swift Package in the terminal</p><pre><code>$ mkdir <span class="type">QuoteWatcher</span>
 $ cd <span class="type">QuoteWatcher</span>
 $ swift package <span class="keyword">init</span>
 </code></pre><p>Initiate Git and commit</p><pre><code>$ git <span class="keyword">init</span>
