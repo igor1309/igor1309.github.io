@@ -7,6 +7,7 @@
 
 @testable import igor1309dev
 import SnapshotTesting
+import WebKit
 import XCTest
 
 final class igor1309devTests: XCTestCase {
@@ -47,5 +48,18 @@ final class igor1309devTests: XCTestCase {
         assertSnapshots(matching: pageHTMLs, as: [.dump])
         // assertSnapshots(matching: pageHTMLs, as: [.image])
         // assertSnapshots(matching: pageHTMLs, as: [.html])
+    }
+    
+    func test_PagesHtml() throws {
+        let website = try Igor1309Dev().publish(
+            withTheme: .igor1309,
+            plugins: [.splash(withClassPrefix: "")]
+        )
+
+        let pageHTML = website.pages.map(\.value.content.body.html)[0]
+        let webView = WKWebView(frame: .init(x: 0, y: 0, width: 1100, height: 2000))
+        webView.loadHTMLString(pageHTML, baseURL: nil)
+        
+        assertSnapshot(matching: webView, as: .wait(for: 1, on: .image))
     }
 }
