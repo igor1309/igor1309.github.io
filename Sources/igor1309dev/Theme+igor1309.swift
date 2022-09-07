@@ -85,7 +85,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                             }
                             .class("item-date")
                             
-                            Span("Tagged with: ")
+                            Span("Tagged with: ").class("tag-list")
                             ItemTagList(item: item, site: context.site)
                         }
                     }
@@ -253,7 +253,7 @@ private struct SiteFooter: Component {
     var body: Component {
         Footer {
             Paragraph {
-                Text("Copyright © Igor Malyarov 2021")
+                Text("Copyright © Igor Malyarov 2022")
             }
             Paragraph {
                 Text("Built using ")

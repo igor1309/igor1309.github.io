@@ -20,7 +20,7 @@ body {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    padding: 40px;
+    padding: 2.5em;
     text-align: left;
 }
 
@@ -29,8 +29,8 @@ header {
 }
 
 header .wrapper {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 1.875em;
+    padding-bottom: 1.875em;
     text-align: center;
 }
 
@@ -46,7 +46,7 @@ header .site-name {
 }
 
 header .site-description {
-    margin: 12px 0;
+    margin: 0.75em 0;
     color: #c7c7c7;
     /*
     font-size: 2.5em;
@@ -55,22 +55,33 @@ header .site-description {
 }
 
 nav {
-    margin-top: 20px;
+    margin-top: 1.25em;
     font-family: -apple-system;
 }
 
 nav li {
     display: inline-block;
-    margin: 0 7px;
+    margin: 0 0.4375em;
     line-height: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: .14em;
 }
 
 nav li a.selected {
     text-decoration: underline;
 }
 
+.wrapper h1 {
+    color: #eb8e15;
+}
+
+.wrapper p,
+.wrapper li {
+    line-height: 1.3em;
+}
+
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
     font-size: 2em;
 }
 
@@ -78,11 +89,16 @@ h1 > a {
     text-decoration: none;
 }
 
-h2 {
+h2,
+h3 {
+    margin-top: 1em;
 }
 
-p {
-    margin-bottom: 10px;
+h2,
+h3,
+p,
+.content li {
+     margin-bottom: 0.6em;
 }
 
 a {
@@ -91,15 +107,15 @@ a {
 }
 
 .description {
-    margin-bottom: 40px;
+    margin-bottom: 2.5em;
 }
 
 .item-list > li {
     display: block;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 1.25em;
+    border-radius: 1.25em;
     background-color: #eee;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
 }
 
 .item-list > li:last-child {
@@ -107,7 +123,7 @@ a {
 }
 
 .item-list h1 {
-    margin-bottom: 15px;
+    margin-bottom: 1em;
     font-size: 1.3em;
 }
 
@@ -117,6 +133,7 @@ a {
 
 .wrapper .item-date {
     font-size: 0.8em;
+    color: gray;
 }
 
 .item-list .item-date {
@@ -124,17 +141,22 @@ a {
 }
 
 .tag-list {
-    margin-bottom: 15px;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+.tag-list,
+.tag {
+    font-size: 0.9em;
 }
 
 .tag-list li,
 .tag {
     display: inline-block;
     background-color: #202124;
-    font-size: 0.75em;
-    padding: 4px 6px;
-    border-radius: 5px;
-    margin-right: 5px;
+    padding: 0.25em 0.375em;
+    border-radius: 0.3125em;
+    margin-right: 0.3125em;
 }
 
 .tag-list a,
@@ -147,18 +169,17 @@ a {
 }
 
 .content {
-    margin-bottom: 40px;
+    margin-bottom: 2.5em;
 }
 
 .browse-all {
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 1.875em;
 }
 
 .all-tags li {
-    font-size: 0.85em;
-    margin-right: 10px;
-    padding: 6px 10px;
+    margin: 0 0.625em 0.5em 0;
+    padding: 0.31255em 0.5em;
 }
 
 footer {
@@ -170,7 +191,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #2c2c2e;
+        background-color: #242529;
     }
 
     body {
@@ -186,7 +207,7 @@ footer {
     }
 
     .item-list > li {
-        background-color: #373739;
+        background-color: #202124;
     }
 
     header {
@@ -196,8 +217,27 @@ footer {
 
 @media(max-width: 600px) {
     .wrapper {
-        padding: 40px 20px;
+        padding: 2.5em 1.25em;
     }
+}
+
+blockquote p {
+    position: relative;
+    color: #c7c7c7;
+    /* background-color: #efefef; */
+    padding: 0.625em 0.625em 0.625em 0.9375em;
+    border-top-right-radius: 0.4375em;
+    border-bottom-right-radius: 0.4375em;
+    border-left: 0.05em solid #eb8e15;
+}
+
+p code,
+li code {
+    background-color: #1a1a1a;
+    border-radius: 0.3em;
+    padding: 0.1em 0.2em;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 /**
@@ -207,14 +247,14 @@ footer {
 pre {
     margin-bottom: 1.5em;
     background-color: #1a1a1a;
-    padding: 16px 0;
-    border-radius: 16px;
+    padding: 1em 0;
+    border-radius: 1em;
 }
 
 pre code {
     font-family: monospace;
     display: block;
-    padding: 0 20px;
+    padding: 0 1.25em;
     color: #a9bcbc;
     line-height: 1.4em;
     font-size: 0.95em;
@@ -249,6 +289,12 @@ pre code .string {
 
 pre code .comment {
     color: #6b8a94;
+}
+
+pre .comment,
+pre .comment:not(.token):not(code) {
+    display: block !important;
+    /* visibility: visible; */
 }
 
 pre code .dotAccess {

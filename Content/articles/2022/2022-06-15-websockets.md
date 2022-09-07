@@ -10,7 +10,7 @@ tags: WebSockets
 * [WebSocket - Wikipedia](https://en.wikipedia.org/wiki/WebSocket)
 
 * [RFC 6455 - The WebSocket Protocol](https://datatracker.ietf.org/doc/html/rfc6455)
- 
+
 * [The WebSocket API (WebSockets) - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 
 * [WebSocket - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
@@ -18,12 +18,11 @@ tags: WebSockets
 * [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro | AsyncAPI Initiative for event-driven APIs](https://www.asyncapi.com/blog/websocket-part1)
 
     Exploring [`Kraken Websockets API`](https://docs.kraken.com/websockets/) using [`websocat`](https://github.com/vi/websocat#installation) CLI
-    
 
 ## WebSockets in iOS
 
 * [Real time data exchange using web sockets in iOS 13 – Donny Wals](https://www.donnywals.com/real-time-data-exchange-using-web-sockets-in-ios-13/)
- 
+
 * [An Introduction to WebSockets | raywenderlich.com](https://www.raywenderlich.com/13209594-an-introduction-to-websockets) by [Jari Koopman](https://www.raywenderlich.com/u/mrlotu): Learn about WebSockets using Swift and Vapor by building a question and answer client and server app (subscription only).
 
 * A good summary [Websockets in iOS 13 using Swift and Xcode 11 | Kristaps Grinbergs](https://kristaps.me/blog/websockets-ios-13-swift/)

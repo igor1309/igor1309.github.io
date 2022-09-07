@@ -4,3 +4,7 @@
 /.swiftpm
 /*.xcodeproj
 .publish
+Output
+Content/articles/*.html
+Content\\portfolio.html
+Content\\about.html

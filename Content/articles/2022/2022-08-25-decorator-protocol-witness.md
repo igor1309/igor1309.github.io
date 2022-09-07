@@ -2,7 +2,7 @@
 date: 2022-08-25 10:10
 description: Exploring the way of the Decorator Pattern implementation with Protocol and Protocol Witnesses
 tags: Decorator Pattern, Protocol Witness
-—--
+---
 # The Decorator Pattern with Protocol and Protocol Witnesses
 
 _Gang of Four Design Patterns_:
@@ -13,15 +13,15 @@ _Gang of Four Design Patterns_:
 _[Essential Developer: Design Patterns in iOS/Swift: Standing on the shoulder of giants | iOS Lead Essentials Podcast #014](https://www.essentialdeveloper.com/articles/design-patterns-in-ios-swift-standing-on-the-shoulder-of-giants-ios-lead-essentials-podcast-014?rq=Decorator)_:
 
 > The Decorator pattern offers a way of adding behavior to an individual object and extending its functionality without subclassing or changing the object’s class.
-
+><br/><br/>
 > Decorators are useful when you want to add or alter the behavior of individual objects instead of an entire class of objects.
-
+><br/><br/>
 > To implement the Decorator pattern, you create a new object (decorator) that encloses and conforms to the interface of the component (decoratee) it decorates. The decorator class will contain the extended behavior and forward messages to the decoratee.
-
+><br/><br/>
 > By doing so, the decorator can be used by the clients of the interface, extending the behavior of the system without needing to alter any existing components.
-
+><br/><br/>
 > The Decorator pattern is supported by the SOLID principles, especially the Single Responsibility, Liskov Substitution, and Open/Closed Principles.
-
+><br/><br/>
 > You can use Decorators to add Cross-Cutting concerns such as Logging, Analytics, Threading, Security, etc. into your modules in a clean way while maintaining low coupling in your applications.
 
 
@@ -42,14 +42,14 @@ final class PrintLogger: Logger {
 protocol SendMessageInput {
     associatedtype MessageDetails
     associatedtype ChannelID
-    
+
     func send(_ messageDetails: MessageDetails, to channelID: ChannelID) throws
 }
 
 final class DummySendMessageInput: SendMessageInput {
     typealias MessageDetails = String
     typealias ChannelID = Int
-    
+
     func send(_ messageDetails: MessageDetails, to channelID: ChannelID) throws {
         // do nothing
     }
@@ -57,23 +57,26 @@ final class DummySendMessageInput: SendMessageInput {
 ```
 
 ### Decorator
- 
+
 Let’s extend the functionally of the `DummySendMessageInput` class by logging:
 
+To create `decorator` with protocols we need a new class, conforming to `SendMessageInput`, and initialized with `logger` and `decoratee`
+
 ```swift
-/// To create `decorator` with protocols we need a new class,
-/// conforming to `SendMessageInput`, and initialized
-/// with `logger` and `decoratee`
 final class DecoratedDummySendMessageInput: SendMessageInput {
     private let logger: Logger
     private let decoratee: DummySendMessageInput
-    
+
     init(logger: Logger, decoratee: DummySendMessageInput) {
         self.logger = logger
         self.decoratee = decoratee
     }
-    
-    /// extended functionality
+}
+```
+
+Extended functionality
+
+```swift
     func send(_ messageDetails: String, to channelID: String) throws {
         logger.log(“Started sending message.”)
         try self.send(messageDetails, to: channelID)
@@ -84,23 +87,32 @@ final class DecoratedDummySendMessageInput: SendMessageInput {
 
 ## Decorator with Protocol Witness
 
+Corresponds to protocol `Logger`
+
 ```swift
-/// Corresponds to protocol `Logger`
 struct Logging {
     let log: (String) -> Void
 }
+```
 
-/// Protocol witness
+Protocol witness
+
+```swift
 extension Logging {
     static let printLogging: Self = .init { print($0) }
 }
+```
 
-/// Corresponds to protocol `SendMessageInput`
+Corresponds to protocol `SendMessageInput`
+
+```swift
 struct SendingMessageInput<MessageDetails, ChannelID> {
     let send: (MessageDetails, ChannelID) throws -> Void
 }
+```
 
-/// Protocol witness, corresponds to `DummySendMessageInput`
+Protocol witness, corresponds to `DummySendMessageInput`
+```swift
 extension SendingMessageInput
 where MessageDetails == String,
       ChannelID == String {
@@ -110,10 +122,9 @@ where MessageDetails == String,
 
 ### Decorator
 
+To create `decorator` with protocol witnesses we do not need a new type, just a function that extends existing type with injected instance of `Logging`
+
 ```swift
-/// To create `decorator` with protocol witnesses we do not need
-/// a new type, just a function that extends existing type
-/// with injected instance of `Logging`
 extension SendingMessageInput {
     func decorated(with logger: Logging) -> Self {
         .init { messageDetails, channelID in
@@ -131,7 +142,7 @@ let decoratedStringDummy: SendingMessageInput = .stringDummy.decorated(with: .pr
 
 * [Design Patterns in iOS/Swift: Standing on the shoulder of giants | iOS Lead Essentials Podcast #014 - Essential Developer](https://www.essentialdeveloper.com/articles/design-patterns-in-ios-swift-standing-on-the-shoulder-of-giants-ios-lead-essentials-podcast-014?rq=Decorator)
 
-* [Testing code that uses DispatchQueue.main.async | iOS Lead Essentials Community Q&A — Essential Developer](https://www.essentialdeveloper.com/articles/testing-code-that-uses-dispatchqueue-main-async-ios-lead-essentials-community-qa?rq=Decorator) 
+* [Testing code that uses DispatchQueue.main.async | iOS Lead Essentials Community Q&A — Essential Developer](https://www.essentialdeveloper.com/articles/testing-code-that-uses-dispatchqueue-main-async-ios-lead-essentials-community-qa?rq=Decorator)
 
 * __Gang of Four (GoF) Design Patterns__: [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.goodreads.com/book/show/85009.Design_Patterns) by Erich Gamma,  Ralph Johnson,  John Vlissides, Richard Helm
 

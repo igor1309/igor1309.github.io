@@ -1,9 +1,9 @@
 ---
-2022-08-22 10:10
+date: 2022-08-22 10:10
 description: Swift development without desktop
 tags: Swift Package, CLI, GitHub, Working Copy
 ---
-# NEED TO CHECK WITH LATEST CODE SAMPLES AND FILE NAMES IN NoDesktop repo
+[//]: # NEED TO CHECK WITH LATEST CODE SAMPLES AND FILE NAMES IN NoDesktop repo
 
 # Desktop-less Development
 

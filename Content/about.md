@@ -3,12 +3,12 @@
 I'm Igor, an iOS developer from Moscow, Russia.
 
 <div>
-<image src="/images/about/igor.jpeg" width="464" title="image of Igor">
+<image src="/images/about/igor.jpeg" width="50%" title="image of Igor">
 <br/>
 <br/>
 </div>
 
-  
+
 
 ### Contact
 

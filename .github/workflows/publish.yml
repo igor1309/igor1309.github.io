@@ -7,7 +7,7 @@ on:
   
 jobs:
   publish:
-    runs-on: macos-latest
+    runs-on: macos-12
     
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -15,14 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
- #     - uses: actions/cache@v3.0.7
- #       with:
- #         path: |
- #           ~/Publish_build
- #           .build
- #         key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
- #         restore-keys: |
- #           ${{ runner.os }}-spm-
+      - uses: actions/cache@v3.0.7
+        with:
+          path: |
+            ~/Publish_build
+            .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
             
       - name: Setup JohnSundell/Publish
         run: |
@@ -35,7 +35,8 @@ jobs:
           cp -r .build ~/Publish_build || true
           echo "${HOME}/Publish/.build/release" >> ${GITHUB_PATH}
           
-      - run: publish-cli generate
+      - name: Generate Site 
+        run: publish-cli generate
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.7.3
