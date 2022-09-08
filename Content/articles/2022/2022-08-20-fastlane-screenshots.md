@@ -15,12 +15,12 @@ Table of contents
 - Solution: Automation
     - Prepare screenshots
         - SwiftUI views for app previews or screenshots
-            - 
+            -
     - Make screenshots
         - Device sizes
         - Languages
         - Git LFS for images
- 
+
     - Publish to App Store with fastlane
 
 Manually managing _screenshots_ and _[app previews](https://developer.apple.com/app-store/app-previews/)_ for your app is quite a pain. You have to provide at least one screenshot for every device size and app previews are optional. (App Radar has a [nice summary](https://appradar.com/blog/ios-app-screenshot-sizes-and-guidelines-for-the-apple-app-store) of guidelines and requirements.)
@@ -49,11 +49,11 @@ struct DeviceConfig {
         case landscape
         case portrait
     }
-    
-    // ... 
+
+    // ...
 
     static let iPhone13Pro: Self = .iPhone13Pro(.portrait)
-    
+
     static func iPhone13Pro(_ orientation: Orientation) {
         // ...
     }
@@ -68,12 +68,16 @@ extension XCTestCase {
         _ view: any View,
         config: DeviceConfig,
         locale: Locale,
-        colorScheme: ColorScheme 
+        colorScheme: ColorScheme
     ) {
         let view = view
             .environment(\.locale, locale)
             .preferredColorScheme(colorScheme)
         // ...
-    } 
+    }
 }
 ```
+
+## References
+
+- [Testing and Declarative UI's - Nataliya Patsovska](https://www.youtube.com/watch?v=tk0HzScvW2M)
