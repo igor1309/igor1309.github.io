@@ -7,18 +7,19 @@ tags: App Store, fastlane, snapshot, screenshots
 
 1. Create dedicated UI Test Target and Scheme (enable `Run` option for the Test Target) for snapshots.
 
-1. Run
+2. Run
+
 ```sh
 $ bundle exec fastlane snapshot init
 ```
 
-1. Add `SnapshotHelper.swift` to Test Target.
+3. Add `SnapshotHelper.swift` to Test Target.
 
-1. Add UI tests for snapshots.
+4. Add UI tests for snapshots.
 
-1. Edit `Snapfile` - select devices and languages.
+5. Edit `Snapfile` - select devices and languages.
 
-1. Run
+6. Run
 ```sh
 $ bundle exec fastlane snapshot
 ```
