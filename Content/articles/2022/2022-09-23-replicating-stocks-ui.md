@@ -1,9 +1,9 @@
 ---
 date: 2022-09-23 10:10
-description: Replicating search UI of the Stocks app with SwiftUI searchable API
+description: Replicating Search UI of the Stocks app with SwiftUI `searchable` API
 tags: SwiftUI, searchable
 ---
-# Replicating search UI of the Stocks app
+# Replicating Search UI of the Stocks app
 
 This use case is inspired by Apple‘s Stocks app. There is a local watchlist, which is empty initially, and the user can add assets to this watchlist by searching for the asset, search is performed by typing in the search field. API returns some search results that can be added to the watchlist by tapping on the plus button. If the asset is already in the watchlist, there would be a checkmark instead of a plus button, the checkmark is actually a button, and if the user taps on this button, then this asset would be removed from the watchlist.
 
