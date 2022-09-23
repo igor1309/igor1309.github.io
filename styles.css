@@ -75,6 +75,10 @@ nav li a.selected {
     color: #eb8e15;
 }
 
+.wrapper h1 {
+    line-height: 1.7em;
+}
+
 .wrapper p,
 .wrapper li {
     line-height: 1.3em;
@@ -143,6 +147,7 @@ a {
 .tag-list {
     margin-top: 0.75em;
     margin-bottom: 0.75em;
+    margin-right: 0.75em;
 }
 
 .tag-list,
