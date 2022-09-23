@@ -7,16 +7,16 @@ $ git commit -am '<span class="type">Add</span> basic scaffolding <span class="k
 </code></pre><p>Open Xcode, create a new <code>iOS</code> project <code>QuoteWatcher</code> (do not use Core Data, do not include tests)</p><br/><div align="center">
 <img src="../../../images/supermodular/create.png" width="100%" title="Create">
 </div><br/><p>Save to the <code>QuoteWatcher</code> folder (do not add to any project or workspace)</p><br/><div align="center">
-<img src="../../../images/supermodular/save.png" width="100%" title="Create">
+<img src="../../../images/supermodular/save.png" width="100%" title="Save">
 <br/>
 </div><br/><p>Close the project. Back in the terminal rename <code>QuoteWatcher</code> to <code>App</code></p><pre><code>$ mv <span class="type">QuoteWatcher App</span>
 </code></pre><p>Commit</p><pre><code>$ git add .
 $ git commit -m '<span class="type">Create</span> `<span class="type">QuoteWatcher</span>` project'
 </code></pre><p>Open the project in the Xcode. Drag the folder <code>QuoteWatcher</code> into the project</p><br/><div align="center">
-<img src="../../../images/supermodular/drag.png" width="100%" title="Create">
+<img src="../../../images/supermodular/drag.png" width="100%" title="Drag">
 <br/>
 </div><br/><p>Local Swift Package would be added to the Xcode project.</p><br/><div align="center">
-<img src="../../../images/supermodular/app.png" width="100%" title="Create">
+<img src="../../../images/supermodular/app.png" width="100%" title="App">
 <br/>
 </div><br/><p>We'll handle the <code>App</code> folder in a moment, but first, let's commit changes to the <code>App/QuoteWatcher.xcodeproj/project.pbxproj</code> file</p><pre><code>$ git commit -am '<span class="type">Add Swift Package</span> to <span class="type">Xcode</span> project'
 </code></pre><p>Add an empty Swift Package to hide the <code>App</code> folder from the Xcode</p><br/><details>
@@ -53,7 +53,7 @@ $ git commit -m '<span class="type">Create</span> `<span class="type">QuoteWatch
 )
 <span class="type">ENDOFFILE</span>
 </code></pre><p>Reopen the project in the Xcode. Now the <code>App</code> folder is hidden.</p><br/><div align="center">
-<img src="../../../images/supermodular/no-app.png" width="67.625%" title="Create">
+<img src="../../../images/supermodular/no-app.png" width="67.625%" title="No app">
 <br/>
 </div><br/><p>Commit</p><pre><code>$ git add .
 $ git commit -m '<span class="type">Add</span> empty <span class="type">Swift Package</span> to hide `<span class="type">App</span>` folder from <span class="type">Xcode</span>'
