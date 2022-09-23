@@ -19,13 +19,24 @@ Search suggestions are active if the watchlist is empty.
 
 The use of tokens is not utilized, the possible idea could be to use tokens as a way to broaden or narrow the search - another dimension in addition to Scope.
 
-![Demo video](../../../images/searchable/searchable_demo.mp4)
+<br/>
+<div align="center">
+<video id="Demo video" width="100%" controls>
+        <source src = "../../../images/searchable/searchable_demo.mp4" type = "video/mp4">
+    </video><br/>
+</div>
+<br/>
 
 To see tokens use case switch to the branch `tokens`.
 
 ## Structure
 
-![Folder structure](../../../images/searchable/folder_structure.png)
+<br/>
+<div align="center">
+<img src="../../../images/searchable/folder_structure.png" width="100%" title="Folder structure">
+<br/>
+</div>
+<br/>
 
 ## References
 

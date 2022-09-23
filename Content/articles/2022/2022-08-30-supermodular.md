@@ -33,7 +33,7 @@ Save to the `QuoteWatcher` folder (do not add to any project or workspace)
 
 <br/>
 <div align="center">
-<img src="../../../images/supermodular/save.png" width="100%" title="Create">
+<img src="../../../images/supermodular/save.png" width="100%" title="Save">
 <br/>
 </div>
 <br/>
@@ -56,7 +56,7 @@ Open the project in the Xcode. Drag the folder `QuoteWatcher` into the project
 
 <br/>
 <div align="center">
-<img src="../../../images/supermodular/drag.png" width="100%" title="Create">
+<img src="../../../images/supermodular/drag.png" width="100%" title="Drag">
 <br/>
 </div>
 <br/>
@@ -65,7 +65,7 @@ Local Swift Package would be added to the Xcode project.
 
 <br/>
 <div align="center">
-<img src="../../../images/supermodular/app.png" width="100%" title="Create">
+<img src="../../../images/supermodular/app.png" width="100%" title="App">
 <br/>
 </div>
 <br/>
@@ -122,7 +122,7 @@ Reopen the project in the Xcode. Now the `App` folder is hidden.
 
 <br/>
 <div align="center">
-<img src="../../../images/supermodular/no-app.png" width="67.625%" title="Create">
+<img src="../../../images/supermodular/no-app.png" width="67.625%" title="No app">
 <br/>
 </div>
 <br/>
