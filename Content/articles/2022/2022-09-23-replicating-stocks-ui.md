@@ -33,7 +33,7 @@ To see tokens use case switch to the branch `tokens`.
 
 <br/>
 <div align="center">
-<img src="../../../images/searchable/folder_structure.png" width="100%" title="Folder structure">
+<img src="../../../images/searchable/folder_structure.png" max-width="100%" title="Folder structure">
 <br/>
 </div>
 <br/>
