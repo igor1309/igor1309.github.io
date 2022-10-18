@@ -22,4 +22,8 @@ I can’t recommend this course enough as a great source of knowledge, ideas, an
 
 Thank you, Caio, Mike, [Bogdan](https://www.linkedin.com/in/bpoplauschi/), [Raphael Silva](https://www.linkedin.com/in/raphsilva/), [Marko Engelman](https://www.linkedin.com/in/marko-engelman/), Danil Lahtin, and all instructors and students of the Academy!
 
-![Certificate](images/about/certificate-of-completion-for-ios-lead-essentials.png)
+<br/>
+<div align="center">
+<img src="../../../images/about/certificate-of-completion-for-ios-lead-essentials.png" width="100%" title="Certificate of completion for iOS Lead Essentials programs at the Essential Developer Academy">
+</div>
+<br/>
