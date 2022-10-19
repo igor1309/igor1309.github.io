@@ -3,7 +3,7 @@ date: 2022-10-18 13:13
 description: iOS Lead Essentials Certification (Essential Developer)
 tags:
 ---
-# Essential Blue Belt
+# Essential Blue Belt 🔵
 
 I’m super excited and proud to share that I’ve completed the [iOS Lead Essentials](https://iosacademy.essentialdeveloper.com/p/ios-lead-essentials/) program at the [Essential Developer](http://essentialdeveloper.com/) 🎉
 
@@ -24,6 +24,6 @@ Thank you, Caio, Mike, [Bogdan](https://www.linkedin.com/in/bpoplauschi/), [Raph
 
 <br/>
 <div align="center">
-<img src="../../../images/about/certificate-of-completion-for-ios-lead-essentials.png" width="100%" title="Certificate of completion for iOS Lead Essentials programs at the Essential Developer Academy">
+<img src="../../../images/about/certificate-of-completion-for-ios-lead-essentials.png" width="100%" title="Certificate of completion for iOS Lead Essentials program at the Essential Developer Academy">
 </div>
 <br/>
