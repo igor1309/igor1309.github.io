@@ -3,7 +3,7 @@ date: 2023-01-07 23:33
 description:
 tags: Best Practices
 ---
-# The Tablets
+# The Tablets (aka Best Intentions)
 
 ## Bug fixes
 
