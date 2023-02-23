@@ -17,15 +17,17 @@ Notes:
 
 2. Xcode Find Navigator: Replace > Regular Expression > `(if|guard)(\s+)([\w|\.]+) == false` with `$1$2!$3`
 
-3. Check expressions with long comple time using swift-flags: Build Settings ➔ Swift Compiler - Custom Flags ➔ Other Swift Flags:
+3. Check expressions with long comple time using swift-flags: Build Settings ➔ Swift Compiler - Custom Flags ➔ Other Swift Flags: 
+
 ```
 -Xfrontend -warn-long-function-bodies=<limit>
 -Xfrontend -warn-long-expression-type-checking=<limit>
 ```
+
 Start with `limit` of 500 or 1000 milliseconds and move down to 100.
 
 ## References:
 
 - [Swift equality operator takes long time to type check - Using Swift - Swift Forums](https://forums.swift.org/t/swift-equality-operator-takes-long-time-to-type-check/41226/9)
 
-- [Build performance analysis for speeding up Xcode builds - SwiftLee](https://www.avanderlee.com/optimization/analysing-build-performance-xcode/)
+- [Build performance analysis for speeding up Xcode builds - SwiftLee](https://www.avanderlee.com/optimization/analysing-build-performance-xcode/) 
