@@ -4,6 +4,6 @@ description:
 tags: Hardware, Farm, Testing, Links
 ---
 
-# Колхоз в Яндексе | Yandex hardware farm for testing
+# Колхоз в Яндексе | Yandex Hardware Farm for Testing
 
 [Колхоз. Большая история фермы устройств Яндекса / Хабр](https://habr.com/ru/companies/yandex/articles/686324/)
