@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Swift and iOS dev with Igor</title><description>The ride of the iOS developer</description><link>https://igor1309.github.com</link><language>en</language><lastBuildDate>Sat, 18 May 2024 09:42:54 +0000</lastBuildDate><pubDate>Sat, 18 May 2024 09:42:54 +0000</pubDate><ttl>250</ttl><atom:link href="https://igor1309.github.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://igor1309.github.com/articles/2024/2024-05-18-decorators-balancing-weak-and-strong-references</guid><title>Enhancing Swift with Decorators: Balancing Weak and Strong References</title><description></description><link>https://igor1309.github.com/articles/2024/2024-05-18-decorators-balancing-weak-and-strong-references</link><pubDate>Sat, 18 May 2024 12:35:00 +0000</pubDate><content:encoded><![CDATA[<h1>Enhancing Swift with Decorators: Balancing Weak and Strong References</h1><p>Decorators are a powerful design pattern used to add behavior to functions or objects without modifying their structure. They are particularly useful in event-driven systems where side effects and additional processing steps are common. In this blog post, I'll walk you through an advanced technique for implementing decorators in Swift, focusing on managing weak and strong references to avoid retain cycles and ensure reliable execution.</p><h2>The Challenge of Retain Cycles</h2><p>In Swift, retain cycles are a common issue when using closures that capture <code>self</code>. If not handled correctly, these cycles can lead to memory leaks, as the objects involved in the cycle are never released. To address this, we often use weak references. However, there are cases where a strong reference is necessary to ensure that certain actions complete even if the original object is deallocated.</p><h2>Introducing the HandleEffectDecorator</h2><p>Let's consider a scenario where we have an event-driven system that processes effects and dispatches events. We want to add additional behavior before and after the main effect processing. We'll use a decorator to achieve this, and our decorator will need both weak and strong reference handling.</p><p>Here's a simplified version of our <code>HandleEffectDecorator</code> class:</p><pre><code><span class="keyword">final class</span> HandleEffectDecorator&lt;Event, Effect&gt; {
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Swift and iOS dev with Igor</title><description>The ride of the iOS developer</description><link>https://igor1309.github.com</link><language>en</language><lastBuildDate>Sat, 18 May 2024 09:58:53 +0000</lastBuildDate><pubDate>Sat, 18 May 2024 09:58:53 +0000</pubDate><ttl>250</ttl><atom:link href="https://igor1309.github.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://igor1309.github.com/articles/2024/2024-05-18-decorators-balancing-weak-and-strong-references</guid><title>Enhancing Swift with Decorators: Balancing Weak and Strong References</title><description>This blog post explores how to implement a `HandleEffectDecorator` in Swift, demonstrating techniques for using weak and strong references to manage side effects in an event-driven system while avoiding retain cycles and ensuring reliable execution.</description><link>https://igor1309.github.com/articles/2024/2024-05-18-decorators-balancing-weak-and-strong-references</link><pubDate>Sat, 18 May 2024 12:35:00 +0000</pubDate><content:encoded><![CDATA[<h1>Enhancing Swift with Decorators: Balancing Weak and Strong References</h1><p>Decorators are a powerful design pattern used to add behavior to functions or objects without modifying their structure. They are particularly useful in event-driven systems where side effects and additional processing steps are common. In this blog post, I'll walk you through an advanced technique for implementing decorators in Swift, focusing on managing weak and strong references to avoid retain cycles and ensure reliable execution.</p><h2>The Challenge of Retain Cycles</h2><p>In Swift, retain cycles are a common issue when using closures that capture <code>self</code>. If not handled correctly, these cycles can lead to memory leaks, as the objects involved in the cycle are never released. To address this, we often use weak references. However, there are cases where a strong reference is necessary to ensure that certain actions complete even if the original object is deallocated.</p><h2>Introducing the HandleEffectDecorator</h2><p>Let's consider a scenario where we have an event-driven system that processes effects and dispatches events. We want to add additional behavior before and after the main effect processing. We'll use a decorator to achieve this, and our decorator will need both weak and strong reference handling.</p><p>Here's a simplified version of our <code>HandleEffectDecorator</code> class:</p><pre><code><span class="keyword">final class</span> HandleEffectDecorator&lt;Event, Effect&gt; {
     
     <span class="keyword">private let</span> decoratee: <span class="type">Decoratee</span>
     <span class="keyword">private let</span> decoration: <span class="type">Decoration</span>
@@ -11,7 +11,8 @@
     <span class="keyword">func</span> handleEffect(<span class="keyword">_</span> effect: <span class="type">Effect</span>, <span class="keyword">_</span> dispatch: <span class="keyword">@escaping</span> <span class="type">Dispatch</span>) {
     	
         <span class="call">decoratee</span>(effect) { [<span class="keyword">weak self</span>] event <span class="keyword">in
-            guard let self</span> = <span class="keyword">self else</span> { <span class="keyword">return</span> }
+        
+            guard let self else</span> { <span class="keyword">return</span> }
             
             <span class="keyword">self</span>.<span class="property">decoration</span>.<span class="call">onEffectStart</span>()
             <span class="call">dispatch</span>(event)
@@ -22,6 +23,7 @@
     <span class="keyword">func</span> callAsFunction(<span class="keyword">_</span> effect: <span class="type">Effect</span>, <span class="keyword">_</span> dispatch: <span class="keyword">@escaping</span> <span class="type">Dispatch</span>) {
     	
         <span class="call">handleEffect</span>(effect) { [<span class="keyword">self</span>] event <span class="keyword">in</span>
+        
             <span class="call">dispatch</span>(event)
             <span class="keyword">_</span> = <span class="keyword">self</span>
         }
@@ -31,6 +33,7 @@
 <span class="keyword">extension</span> <span class="type">HandleEffectDecorator</span> {
 
     <span class="keyword">struct</span> Decoration {
+    	
         <span class="keyword">let</span> onEffectStart: () -&gt; <span class="type">Void</span>
         <span class="keyword">let</span> onEffectFinish: () -&gt; <span class="type">Void</span>
     }
@@ -39,9 +42,10 @@
     <span class="keyword">typealias</span> Dispatch = (<span class="type">Event</span>) -&gt; <span class="type">Void</span>
 }
 </code></pre><p>You can find the full implementation in the <a href="https://github.com/igor1309/swift-imrx/blob/main/Sources/IMTools/Decorators/HandleEffectDecorator.swift">HandleEffectDecorator.swift</a> file on GitHub.</p><h2>Understanding the Decorator</h2><p>Our <code>HandleEffectDecorator</code> class has two primary methods for handling effects: <code>handleEffect</code> and <code>callAsFunction</code>.</p><ol><li><strong><code>handleEffect</code>: Using Weak References</strong></li></ol><pre><code>     <span class="keyword">func</span> handleEffect(<span class="keyword">_</span> effect: <span class="type">Effect</span>, <span class="keyword">_</span> dispatch: <span class="keyword">@escaping</span> <span class="type">Dispatch</span>) {
+    	
         <span class="call">decoratee</span>(effect) { [<span class="keyword">weak self</span>] event <span class="keyword">in
         
-            guard let self</span> = <span class="keyword">self else</span> { <span class="keyword">return</span> }
+            guard let self else</span> { <span class="keyword">return</span> }
             
             <span class="keyword">self</span>.<span class="property">decoration</span>.<span class="call">onEffectStart</span>()
             <span class="call">dispatch</span>(event)
@@ -58,6 +62,7 @@
     <span class="keyword">func</span> callAsFunction(<span class="keyword">_</span> effect: <span class="type">Effect</span>, <span class="keyword">_</span> dispatch: <span class="keyword">@escaping</span> <span class="type">Dispatch</span>) {
     	
         <span class="call">handleEffect</span>(effect) { [<span class="keyword">self</span>] event <span class="keyword">in</span>
+        
             <span class="call">dispatch</span>(event)
             <span class="keyword">_</span> = <span class="keyword">self</span>
         }
