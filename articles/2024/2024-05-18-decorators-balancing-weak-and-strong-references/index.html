@@ -41,94 +41,61 @@
     <span class="keyword">typealias</span> Decoratee = (<span class="type">Effect</span>, <span class="keyword">@escaping</span> <span class="type">Dispatch</span>) -&gt; <span class="type">Void</span>
     <span class="keyword">typealias</span> Dispatch = (<span class="type">Event</span>) -&gt; <span class="type">Void</span>
 }
-</code></pre><p>You can find the full implementation in the <a href="https://github.com/igor1309/swift-imrx/blob/main/Sources/IMTools/Decorators/HandleEffectDecorator.swift">HandleEffectDecorator.swift</a> file on GitHub.</p><h2>Understanding the Decorator</h2><p>Our <code>HandleEffectDecorator</code> class has two primary methods for handling effects: <code>handleEffect</code> and <code>callAsFunction</code>.</p><ol><li><strong><code>handleEffect</code>: Using Weak References</strong></li></ol><pre><code>     <span class="keyword">func</span> handleEffect(<span class="keyword">_</span> effect: <span class="type">Effect</span>, <span class="keyword">_</span> dispatch: <span class="keyword">@escaping</span> <span class="type">Dispatch</span>) {
-    	
-        <span class="call">decoratee</span>(effect) { [<span class="keyword">weak self</span>] event <span class="keyword">in
+</code></pre><p>You can find the full implementation in the <a href="https://github.com/igor1309/swift-imrx/blob/main/Sources/IMTools/Decorators/HandleEffectDecorator.swift">HandleEffectDecorator.swift</a> file on GitHub.</p><h2>Understanding the Decorator</h2><p>Our <code>HandleEffectDecorator</code> class has two primary methods for handling effects: <code>handleEffect</code> and <code>callAsFunction</code>.</p><ol><li><strong><code>handleEffect</code>: Using Weak References</strong></li></ol><pre><code><span class="keyword">func</span> handleEffect(<span class="keyword">_</span> effect: <span class="type">Effect</span>, <span class="keyword">_</span> dispatch: <span class="keyword">@escaping</span> <span class="type">Dispatch</span>) {
+	
+    <span class="call">decoratee</span>(effect) { [<span class="keyword">weak self</span>] event <span class="keyword">in
+    
+        guard let self else</span> { <span class="keyword">return</span> }
         
-            guard let self else</span> { <span class="keyword">return</span> }
-            
-            <span class="keyword">self</span>.<span class="property">decoration</span>.<span class="call">onEffectStart</span>()
-            <span class="call">dispatch</span>(event)
-            <span class="keyword">self</span>.<span class="property">decoration</span>.<span class="call">onEffectFinish</span>()
-        }
+        <span class="keyword">self</span>.<span class="property">decoration</span>.<span class="call">onEffectStart</span>()
+        <span class="call">dispatch</span>(event)
+        <span class="keyword">self</span>.<span class="property">decoration</span>.<span class="call">onEffectFinish</span>()
     }
-    ```
-
-    <span class="type">The</span> `handleEffect` method uses a <span class="keyword">weak</span> reference to `self` to avoid retain cycles. <span class="type">This</span> <span class="keyword">is</span> crucial when the effect handling might create circular references, as it ensures that the decorator instance can be deallocated when no longer needed. <span class="type">If</span> `self` is deallocated before the decorated function completes, the completion handler simply doesn't execute, preventing any potential memory leaks.
-
-<span class="number">2</span>. **`callAsFunction`: <span class="type">Using Strong References</span>**
-
-    ```swift
-    <span class="keyword">func</span> callAsFunction(<span class="keyword">_</span> effect: <span class="type">Effect</span>, <span class="keyword">_</span> dispatch: <span class="keyword">@escaping</span> <span class="type">Dispatch</span>) {
-    	
-        <span class="call">handleEffect</span>(effect) { [<span class="keyword">self</span>] event <span class="keyword">in</span>
-        
-            <span class="call">dispatch</span>(event)
-            <span class="keyword">_</span> = <span class="keyword">self</span>
-        }
+}
+</code></pre><p>The <code>handleEffect</code> method uses a weak reference to <code>self</code> to avoid retain cycles. This is crucial when the effect handling might create circular references, as it ensures that the decorator instance can be deallocated when no longer needed. If <code>self</code> is deallocated before the decorated function completes, the completion handler simply doesn't execute, preventing any potential memory leaks.</p><ol start="2"><li><strong><code>callAsFunction</code>: Using Strong References</strong></li></ol><pre><code><span class="keyword">func</span> callAsFunction(<span class="keyword">_</span> effect: <span class="type">Effect</span>, <span class="keyword">_</span> dispatch: <span class="keyword">@escaping</span> <span class="type">Dispatch</span>) {
+	
+    <span class="call">handleEffect</span>(effect) { [<span class="keyword">self</span>] event <span class="keyword">in</span>
+    
+        <span class="call">dispatch</span>(event)
+        <span class="keyword">_</span> = <span class="keyword">self</span>
     }
-    ```
+}
+</code></pre><p>The <code>callAsFunction</code> method provides an alternative that uses a strong reference to <code>self</code>. By capturing <code>self</code> strongly within the closure, we ensure that the decorator instance remains alive until the decorated function completes. This guarantees that all necessary actions, such as dispatching the event and finishing the decoration, are performed reliably.</p><h2>When to Use Each Method</h2><ul><li><strong><code>handleEffect</code> (Weak Reference)</strong>: Use this method when you want to avoid retain cycles and can tolerate the possibility that the decorated function may not complete if the decorator instance is deallocated early. This is suitable for scenarios where the effect processing is optional or non-critical.</li></ul><ul><li><strong><code>callAsFunction</code> (Strong Reference)</strong>: Use this method when it is crucial that the decorated function completes, regardless of the lifecycle of the decorator instance. This ensures that all side effects and dispatch actions are carried out fully.</li></ul><h2>Practical Example</h2><p>Let's put this into context with a practical example. Imagine we have an effect that triggers a network request and dispatches an event based on the response. We want to log the start and end of the effect processing.</p><pre><code><span class="keyword">struct</span> NetworkEffect: <span class="type">Equatable</span> {
 
-    <span class="type">The</span> `callAsFunction` method provides an alternative that uses a strong reference to `self`. <span class="type">By</span> capturing `self` strongly within the closure, we ensure that the decorator instance remains alive until the decorated function completes. <span class="type">This</span> guarantees that all necessary actions, such <span class="keyword">as</span> dispatching the event and finishing the decoration, are performed reliably.
-
-## <span class="type">When</span> to <span class="type">Use Each Method</span>
-
-- **`handleEffect` (<span class="type">Weak Reference</span>)**: <span class="type">Use</span> this method when you want to avoid retain cycles and can tolerate the possibility that the decorated function may not complete <span class="keyword">if</span> the decorator instance <span class="keyword">is</span> deallocated early. <span class="type">This</span> <span class="keyword">is</span> suitable <span class="keyword">for</span> scenarios <span class="keyword">where</span> the effect processing <span class="keyword">is</span> optional or non-critical.
-
-- **`callAsFunction` (<span class="type">Strong Reference</span>)**: <span class="type">Use</span> this method when it <span class="keyword">is</span> crucial that the decorated function completes, regardless of the lifecycle of the decorator instance. <span class="type">This</span> ensures that all side effects and dispatch actions are carried out fully.
-
-## <span class="type">Practical Example
-
-Let</span>'s put this into context with a practical example. <span class="type">Imagine</span> we have an effect that triggers a network request and dispatches an event based on the response. <span class="type">We</span> want to log the start and end of the effect processing.
-
-</code></pre><p>swift struct NetworkEffect: Equatable {</p><p>let request: URLRequest }</p><p>struct NetworkEvent: Equatable {</p><p>let response: URLResponse }</p><p>let logDecoration = HandleEffectDecorator<NetworkEvent, NetworkEffect>.Decoration(
-    onEffectStart: { print("Effect started") },
-    onEffectFinish: { print("Effect finished") }
-)
-
-let networkEffectHandler: (NetworkEffect, @escaping (NetworkEvent) -> Void) -> Void = { effect, dispatch in
-
-    // Simulate network request
-    let response = URLResponse() // Simplified for example purposes
-    dispatch(NetworkEvent(response: response))
+    <span class="keyword">let</span> request: <span class="type">URLRequest</span>
 }
 
-let decorator = HandleEffectDecorator<NetworkEvent, NetworkEffect>(
+<span class="keyword">struct</span> NetworkEvent: <span class="type">Equatable</span> {
+
+    <span class="keyword">let</span> response: <span class="type">URLResponse</span>
+}
+
+<span class="keyword">let</span> logDecoration = <span class="type">HandleEffectDecorator</span>&lt;<span class="type">NetworkEvent</span>, <span class="type">NetworkEffect</span>&gt;.<span class="type">Decoration</span>(
+    onEffectStart: { <span class="call">print</span>(<span class="string">"Effect started"</span>) },
+    onEffectFinish: { <span class="call">print</span>(<span class="string">"Effect finished"</span>) }
+)
+
+<span class="keyword">let</span> networkEffectHandler: (<span class="type">NetworkEffect</span>, <span class="keyword">@escaping</span> (<span class="type">NetworkEvent</span>) -&gt; <span class="type">Void</span>) -&gt; <span class="type">Void</span> = { effect, dispatch <span class="keyword">in</span>
+
+    <span class="comment">// Simulate network request</span>
+    <span class="keyword">let</span> response = <span class="type">URLResponse</span>() <span class="comment">// Simplified for example purposes</span>
+    <span class="call">dispatch</span>(<span class="type">NetworkEvent</span>(response: response))
+}
+
+<span class="keyword">let</span> decorator = <span class="type">HandleEffectDecorator</span>&lt;<span class="type">NetworkEvent</span>, <span class="type">NetworkEffect</span>&gt;(
     decoratee: networkEffectHandler,
     decoration: logDecoration
 )
 
-// Using handleEffect with weak reference
-decorator.handleEffect(NetworkEffect(request: URLRequest(url: URL(string: "https://example.com")!))) { event in
+<span class="comment">// Using handleEffect with weak reference</span>
+decorator.<span class="call">handleEffect</span>(<span class="type">NetworkEffect</span>(request: <span class="type">URLRequest</span>(url: <span class="type">URL</span>(string: <span class="string">"https://example.com"</span>)!))) { event <span class="keyword">in</span>
 
-    print("Event received: \(event.response)")
+    <span class="call">print</span>(<span class="string">"Event received:</span> \(event.<span class="property">response</span>)<span class="string">"</span>)
 }
 
-// Using callAsFunction with strong reference
-decorator(NetworkEffect(request: URLRequest(url: URL(string: "https://example.com")!))) { event in
+<span class="comment">// Using callAsFunction with strong reference</span>
+<span class="call">decorator</span>(<span class="type">NetworkEffect</span>(request: <span class="type">URLRequest</span>(url: <span class="type">URL</span>(string: <span class="string">"https://example.com"</span>)!))) { event <span class="keyword">in</span>
 
-    print("Event received: \(event.response)")
+    <span class="call">print</span>(<span class="string">"Event received:</span> \(event.<span class="property">response</span>)<span class="string">"</span>)
 }
-```
-
-## Testing the Decorator
-
-To ensure our decorator works correctly, we can write unit tests. The tests can be found in the following files on GitHub:
-
-- [HandleEffectDecoratorTests.swift](https://github.com/igor1309/swift-imrx/blob/main/Tests/IMToolsTests/Decorators/HandleEffectDecoratorTests.swift)
-- [HandleEffectDecoratorCallAsFunctionTests.swift](https://github.com/igor1309/swift-imrx/blob/main/Tests/IMToolsTests/Decorators/HandleEffectDecoratorCallAsFunctionTests.swift)
-
-These tests cover various scenarios, including:
-
-- Ensuring the decorated effect handler is called.
-- Verifying that events are correctly delivered.
-- Confirming that decoration actions are performed.
-- Handling deallocation of the decorator instance.
-
-## Conclusion
-
-The `HandleEffectDecorator` pattern we've explored provides a flexible and powerful way to manage side effects in an event-driven system. By offering both weak and strong reference handling, we can choose the appropriate strategy based on the specific requirements of our application.
-
-Understanding and applying this technique helps us build more robust, memory-efficient, and maintainable Swift applications. Whether dealing with network requests, user interactions, or any other side effects, this pattern ensures that our additional behaviors are seamlessly integrated and safely managed.
-
-For more details, you can explore the complete code and tests in the [swift-imrx repository on GitHub](https://github.com/igor1309/swift-imrx). Happy coding!</p></div><div class="item-date"><span>Published on: May 18, 2024</span></div><span class="tag-list">Tagged with: </span><ul class="tag-list"><li><a href="/tags/decorator">Decorator</a></li><li><a href="/tags/design-patterns">Design Patterns</a></li><li><a href="/tags/gpt4o">gpt-4o</a></li></ul></article></div><footer><p>Copyright © Igor Malyarov 2022</p><p>Built using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="https://twitter.com/igor1309">Twitter</a> | <a href="/feed.rss">RSS feed</a></p></footer></body></html>
+</code></pre><h2>Testing the Decorator</h2><p>To ensure our decorator works correctly, we can write unit tests. The tests can be found in the following files on GitHub:</p><ul><li><a href="https://github.com/igor1309/swift-imrx/blob/main/Tests/IMToolsTests/Decorators/HandleEffectDecoratorTests.swift">HandleEffectDecoratorTests.swift</a></li><li><a href="https://github.com/igor1309/swift-imrx/blob/main/Tests/IMToolsTests/Decorators/HandleEffectDecoratorCallAsFunctionTests.swift">HandleEffectDecoratorCallAsFunctionTests.swift</a></li></ul><p>These tests cover various scenarios, including:</p><ul><li>Ensuring the decorated effect handler is called.</li><li>Verifying that events are correctly delivered.</li><li>Confirming that decoration actions are performed.</li><li>Handling deallocation of the decorator instance.</li></ul><h2>Conclusion</h2><p>The <code>HandleEffectDecorator</code> pattern we've explored provides a flexible and powerful way to manage side effects in an event-driven system. By offering both weak and strong reference handling, we can choose the appropriate strategy based on the specific requirements of our application.</p><p>Understanding and applying this technique helps us build more robust, memory-efficient, and maintainable Swift applications. Whether dealing with network requests, user interactions, or any other side effects, this pattern ensures that our additional behaviors are seamlessly integrated and safely managed.</p><p>For more details, you can explore the complete code and tests in the <a href="https://github.com/igor1309/swift-imrx">swift-imrx repository on GitHub</a>. Happy coding!</p></div><div class="item-date"><span>Published on: May 18, 2024</span></div><span class="tag-list">Tagged with: </span><ul class="tag-list"><li><a href="/tags/decorator">Decorator</a></li><li><a href="/tags/design-patterns">Design Patterns</a></li><li><a href="/tags/gpt4o">gpt-4o</a></li></ul></article></div><footer><p>Copyright © Igor Malyarov 2022</p><p>Built using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="https://twitter.com/igor1309">Twitter</a> | <a href="/feed.rss">RSS feed</a></p></footer></body></html>
