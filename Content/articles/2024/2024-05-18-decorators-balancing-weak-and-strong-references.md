@@ -72,36 +72,36 @@ Our `HandleEffectDecorator` class has two primary methods for handling effects: 
 
 1. **`handleEffect`: Using Weak References**
 
-    ```swift
-    func handleEffect(_ effect: Effect, _ dispatch: @escaping Dispatch) {
-    	
-        decoratee(effect) { [weak self] event in
+```swift
+func handleEffect(_ effect: Effect, _ dispatch: @escaping Dispatch) {
+	
+    decoratee(effect) { [weak self] event in
+    
+        guard let self else { return }
         
-            guard let self else { return }
-            
-            self.decoration.onEffectStart()
-            dispatch(event)
-            self.decoration.onEffectFinish()
-        }
+        self.decoration.onEffectStart()
+        dispatch(event)
+        self.decoration.onEffectFinish()
     }
-    ```
+}
+```
 
-    The `handleEffect` method uses a weak reference to `self` to avoid retain cycles. This is crucial when the effect handling might create circular references, as it ensures that the decorator instance can be deallocated when no longer needed. If `self` is deallocated before the decorated function completes, the completion handler simply doesn't execute, preventing any potential memory leaks.
+The `handleEffect` method uses a weak reference to `self` to avoid retain cycles. This is crucial when the effect handling might create circular references, as it ensures that the decorator instance can be deallocated when no longer needed. If `self` is deallocated before the decorated function completes, the completion handler simply doesn't execute, preventing any potential memory leaks.
 
 2. **`callAsFunction`: Using Strong References**
 
-    ```swift
-    func callAsFunction(_ effect: Effect, _ dispatch: @escaping Dispatch) {
-    	
-        handleEffect(effect) { [self] event in
-        
-            dispatch(event)
-            _ = self
-        }
+```swift
+func callAsFunction(_ effect: Effect, _ dispatch: @escaping Dispatch) {
+	
+    handleEffect(effect) { [self] event in
+    
+        dispatch(event)
+        _ = self
     }
-    ```
+}
+```
 
-    The `callAsFunction` method provides an alternative that uses a strong reference to `self`. By capturing `self` strongly within the closure, we ensure that the decorator instance remains alive until the decorated function completes. This guarantees that all necessary actions, such as dispatching the event and finishing the decoration, are performed reliably.
+The `callAsFunction` method provides an alternative that uses a strong reference to `self`. By capturing `self` strongly within the closure, we ensure that the decorator instance remains alive until the decorated function completes. This guarantees that all necessary actions, such as dispatching the event and finishing the decoration, are performed reliably.
 
 ## When to Use Each Method
 
