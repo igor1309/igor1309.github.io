@@ -136,23 +136,27 @@ let networkEffectHandler: (NetworkEffect, @escaping (NetworkEvent) -> Void) -> V
     dispatch(NetworkEvent(response: response))
 }
 
-let decorator = HandleEffectDecorator<NetworkEvent, NetworkEffect>(
+let decorator = HandleEffectDecorator(
     decoratee: networkEffectHandler,
     decoration: logDecoration
 )
 
+let effect = NetworkEffect(request: URLRequest(url: URL(string: "https://example.com")!))
+
 // Using handleEffect with weak reference
-decorator.handleEffect(NetworkEffect(request: URLRequest(url: URL(string: "https://example.com")!))) { event in
+decorator.handleEffect(effect) { event in
 
     print("Event received: \(event.response)")
 }
 
 // Using callAsFunction with strong reference
-decorator(NetworkEffect(request: URLRequest(url: URL(string: "https://example.com")!))) { event in
+decorator(effect) { event in
 
     print("Event received: \(event.response)")
 }
 ```
+
+Instead of logging, you could imagine showing and hiding a spinner. To achieve this, the callAsFunction method can delegate execution to handleEffect while ensuring a strong reference to self. This ensures that the spinner is shown and hidden correctly even if the decorator instance is deallocated.
 
 ## Testing the Decorator
 
