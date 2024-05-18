@@ -1,6 +1,6 @@
 ---
 date: 2024-05-18 12:35
-description: 
+description: This blog post explores how to implement a `HandleEffectDecorator` in Swift, demonstrating techniques for using weak and strong references to manage side effects in an event-driven system while avoiding retain cycles and ensuring reliable execution.
 tags: Decorator, Design Patterns, gpt-4o
 ---
 
@@ -32,7 +32,8 @@ final class HandleEffectDecorator<Event, Effect> {
     func handleEffect(_ effect: Effect, _ dispatch: @escaping Dispatch) {
     	
         decoratee(effect) { [weak self] event in
-            guard let self = self else { return }
+        
+            guard let self else { return }
             
             self.decoration.onEffectStart()
             dispatch(event)
@@ -43,6 +44,7 @@ final class HandleEffectDecorator<Event, Effect> {
     func callAsFunction(_ effect: Effect, _ dispatch: @escaping Dispatch) {
     	
         handleEffect(effect) { [self] event in
+        
             dispatch(event)
             _ = self
         }
@@ -52,6 +54,7 @@ final class HandleEffectDecorator<Event, Effect> {
 extension HandleEffectDecorator {
 
     struct Decoration {
+    	
         let onEffectStart: () -> Void
         let onEffectFinish: () -> Void
     }
@@ -71,9 +74,10 @@ Our `HandleEffectDecorator` class has two primary methods for handling effects: 
 
     ```swift
     func handleEffect(_ effect: Effect, _ dispatch: @escaping Dispatch) {
+    	
         decoratee(effect) { [weak self] event in
         
-            guard let self = self else { return }
+            guard let self else { return }
             
             self.decoration.onEffectStart()
             dispatch(event)
@@ -90,6 +94,7 @@ Our `HandleEffectDecorator` class has two primary methods for handling effects: 
     func callAsFunction(_ effect: Effect, _ dispatch: @escaping Dispatch) {
     	
         handleEffect(effect) { [self] event in
+        
             dispatch(event)
             _ = self
         }
