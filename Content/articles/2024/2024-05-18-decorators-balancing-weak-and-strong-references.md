@@ -35,9 +35,9 @@ final class HandleEffectDecorator<Event, Effect> {
         
             guard let self else { return }
             
-            self.decoration.onEffectStart()
+            decoration.onEffectStart()
             dispatch(event)
-            self.decoration.onEffectFinish()
+            decoration.onEffectFinish()
         }
     }
 
@@ -79,9 +79,9 @@ func handleEffect(_ effect: Effect, _ dispatch: @escaping Dispatch) {
     
         guard let self else { return }
         
-        self.decoration.onEffectStart()
+        decoration.onEffectStart()
         dispatch(event)
-        self.decoration.onEffectFinish()
+        decoration.onEffectFinish()
     }
 }
 ```
