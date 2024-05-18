@@ -14,9 +14,9 @@
         
             guard let self else</span> { <span class="keyword">return</span> }
             
-            <span class="keyword">self</span>.<span class="property">decoration</span>.<span class="call">onEffectStart</span>()
+            decoration.<span class="call">onEffectStart</span>()
             <span class="call">dispatch</span>(event)
-            <span class="keyword">self</span>.<span class="property">decoration</span>.<span class="call">onEffectFinish</span>()
+            decoration.<span class="call">onEffectFinish</span>()
         }
     }
 
@@ -47,9 +47,9 @@
     
         guard let self else</span> { <span class="keyword">return</span> }
         
-        <span class="keyword">self</span>.<span class="property">decoration</span>.<span class="call">onEffectStart</span>()
+        decoration.<span class="call">onEffectStart</span>()
         <span class="call">dispatch</span>(event)
-        <span class="keyword">self</span>.<span class="property">decoration</span>.<span class="call">onEffectFinish</span>()
+        decoration.<span class="call">onEffectFinish</span>()
     }
 }
 </code></pre><p>The <code>handleEffect</code> method uses a weak reference to <code>self</code> to avoid retain cycles. This is crucial when the effect handling might create circular references, as it ensures that the decorator instance can be deallocated when no longer needed. If <code>self</code> is deallocated before the decorated function completes, the completion handler simply doesn't execute, preventing any potential memory leaks.</p><ol start="2"><li><strong><code>callAsFunction</code>: Using Strong References</strong></li></ol><pre><code><span class="keyword">func</span> callAsFunction(<span class="keyword">_</span> effect: <span class="type">Effect</span>, <span class="keyword">_</span> dispatch: <span class="keyword">@escaping</span> <span class="type">Dispatch</span>) {
