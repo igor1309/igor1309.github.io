@@ -1,5 +1,5 @@
 ---
-date: 2024-05-22 22:22
+date: 2024-05-22 22:23
 description: Understanding the Architecture of Components
 tags: Architecture, Components, Software Design, gpt-4o
 ---
