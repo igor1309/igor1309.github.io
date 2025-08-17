@@ -1,5 +1,5 @@
 ---
-date: 2025-08-1 12:00
+date: 2025-08-01 12:00
 description: An analysis of the architectural confusion in recent debates about Model Context Protocol versus CLI tools, and a proposed framework for intelligent tool selection based on task determinism.
 tags: AI, Architecture, MCP, CLI, Design Patterns
 ---
