@@ -1,1 +1,60 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="og:site_name" content="Swift and iOS dev with Igor"/><link rel="canonical" href="https://igor1309.github.com/portfolio"/><meta name="twitter:url" content="https://igor1309.github.com/portfolio"/><meta name="og:url" content="https://igor1309.github.com/portfolio"/><title>Portfolio | Swift and iOS dev with Igor</title><meta name="twitter:title" content="Portfolio | Swift and iOS dev with Igor"/><meta name="og:title" content="Portfolio | Swift and iOS dev with Igor"/><meta name="description" content="The ride of the iOS developer"/><meta name="twitter:description" content="The ride of the iOS developer"/><meta name="og:description" content="The ride of the iOS developer"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon_io/favicon.ico" type="image/x-icon"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Swift and iOS dev with Igor"/></head><body><header><div class="wrapper"><a href="/" class="site-name">Swift and iOS dev with Igor</a><div class="site-description">The ride of the iOS developer</div><nav><ul><li><a href="/articles">Articles</a></li><li><a href="/portfolio" class="selected">Portfolio</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper"><h1>Portfolio</h1><ul class="item-list"></ul></div><footer><p>Copyright © Igor Malyarov 2022</p><p>Built using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="https://twitter.com/igor1309">Twitter</a> | <a href="/feed.rss">RSS feed</a></p></footer></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="og:site_name" content="Swift and iOS dev with Igor"/><link rel="canonical" href="https://igor1309.github.com/portfolio"/><meta name="twitter:url" content="https://igor1309.github.com/portfolio"/><meta name="og:url" content="https://igor1309.github.com/portfolio"/><title>Portfolio | Swift and iOS dev with Igor</title><meta name="twitter:title" content="Portfolio | Swift and iOS dev with Igor"/><meta name="og:title" content="Portfolio | Swift and iOS dev with Igor"/><meta name="description" content="The ride of the iOS developer"/><meta name="twitter:description" content="The ride of the iOS developer"/><meta name="og:description" content="The ride of the iOS developer"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon_io/favicon.ico" type="image/x-icon"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Swift and iOS dev with Igor"/></head><body><header><div class="wrapper"><a href="/" class="site-name">Swift and iOS dev with Igor</a><div class="site-description">The ride of the iOS developer</div><nav><ul><li><a href="/articles">Articles</a></li><li><a href="/portfolio">Portfolio</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper"><h1>Portfolio</h1><p><em>Most of my work is covered under NDA, but there are few things I can show here</em>.</p><p>All iOS apps support <strong>Dynamic Type</strong> and <strong>Dark mode</strong>.</p><h2>Hole Fill</h2><p><code>Hole Fill</code> was a take home assignment that I've used to present <strong>ultra-modular design of decoupled composable components</strong>. For explanation see <a href="./articles/2022/2022-08-01-fill-hole/">this blog post</a>.</p><blockquote><p>The goal of this task is to build a small image processing library that fills holes in images, along with a small command line utility that uses that library, and answer a few questions.</p></blockquote><div align="center">
+<image src="/images/portfolio/fill-hole/terminal.png" width="30%" title="fill-hole terminal command showing help in case of incorrect input.">
+<br/>
+<p align="center"><cite>fill-hole terminal command showing help in case of incorrect input.</cite></p>
+</div><br/><div align="center">
+<image src="/images/portfolio/fill-hole/modules.png" width="100%" title="Top-level view of modules and dependencies">
+<br/>
+<p align="center"><cite>Top-level view of modules and dependencies.</cite></p>
+</div><br/><div align="center">
+<image src="/images/portfolio/fill-hole/components.png" width="100%" title="Detailed view with components">
+<br/>
+<p align="center"><cite>Detailed view with components.</cite></p>
+</div><br/><h2>CIFilterBrowser</h2><p><strong><em>Core Image</em></strong>, <strong><em>SwiftUI</em></strong>, <strong><em>Combine</em></strong></p><p><strong>Core Image</strong> is <a href="https://developer.apple.com/documentation/coreimage">Apple's framework</a> for image processing and analysis. It's great and performant but not very friendly, especially for Swift programmers.</p><p>One of the framework's pillars is <strong>CIFilter</strong> image filter. There are 230 filters in 21 categories - one filter could belong to multiple categories. Filters have different customisation options, but API is “Stringly typed” and that is Objective-C’s legacy we have to live with.</p><p>I've made an app <strong>CIFilterBrowser</strong> to make it easier to get into CIFilter details.</p><div align="center">
+<image src="/images/portfolio/ciFilterBrowser/combined1_3.png" width="100%" title="CIFilterBrowser main screen view options: list and grid, switched with menu">
+<br/>
+<p align="center"><cite>CIFilterBrowser main screen view options: list and grid, switched with menu.</cite></p>
+</div><br/><div align="center">
+<image src="/images/portfolio/ciFilterBrowser/combined4_6.png" width="100%" title="CIFilterBrowser Search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed)">
+<br/>
+<p align="center"><cite>CIFilterBrowser: search filters (names, categories, descriptions), change image for main view, apply filter by category (selection of multiple categories is allowed).</cite></p>
+</div><br/><div align="center">
+<image src="/images/portfolio/ciFilterBrowser/combined7_9.png" width="100%" title="CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters">
+<br/>
+<p align="center"><cite>CIFilterBrowser: CIFilter detail view with controls to tweak filter parameters.</cite></p>
+</div><br/><br/><p><em>Coming soon to App Store.</em></p><br/><div><details>
+<summary>Where to start</summary>
+<p>For initial dive in into the CIFilter world I highly recommend <a href="https://www.objc.io/issues/21-camera-and-photos/core-image-intro/">An Introduction to Core Image · objc.io</a> by Warren Moore and <a href="https://developer.apple.com/documentation/coreimage/processing_an_image_using_built-in_filters">Processing an Image Using Built-in Filters</a> in Apple Developer Documentation.</p>
+</details></div><br/><h2>Mobility</h2><p><em>My own</em> <strong><em>Chart Library</em></strong>, <strong><em>SwiftUI</em></strong>, <strong><em>Combine</em></strong></p><p>An app for the <a href="https://covid19.apple.com/mobility">Apple Mobility Index</a></p><br/><div align="center">
+<image src="/images/portfolio/mobility/combined1_3.png" width="100%" title="Mobility Index Bar Chart, Country list and search">
+<br/>
+<p align="center"><cite>Mobility Index Bar Chart, Country list and search (by country, region/ sub-region or city).</cite></p>
+</div><br/><div align="center">
+<image src="/images/portfolio/mobility/combined4_6.png" width="100%" title="Mobility Index Calculation Options, country selection by bar">
+<br/>
+<p align="center"><cite>Mobility Index Calculation Options, country selection by bar.</cite></p>
+</div><br/><div align="center">
+<image src="/images/portfolio/mobility/combined7_9.png" width="100%" title="Country mobility line charts: raw data and 7 days moving average">
+<br/>
+<p align="center"><cite>Country mobility line charts: raw data and 7 days moving average.</cite></p>
+</div><br/><h2>Covid-19 Observer</h2><p><em>My own</em> <strong><em>Chart Library</em></strong>, <strong><em>MapKit</em></strong>, <strong><em>Core Data</em></strong>, <strong><em>UIKit</em></strong>, <strong><em>SwiftUI</em></strong>, <strong><em>Combine</em></strong>.</p><div align="center">
+<image src="/images/portfolio/covid/combined1_3.png" width="100%" title="Covid-19 Observer: global overview, charts with floating legend">
+<br/>
+<p align="center"><cite>Covid-19 Observer: global overview, charts with floating legend.</cite></p>
+</div><br/><div align="center">
+<image src="/images/portfolio/covid/combined4_6.png" width="100%" title="Covid-19 Observer: Map and color settings">
+<br/>
+<p align="center"><cite>Covid-19 Observer: map and color settings.</cite></p>
+</div><br/><div align="center">
+<image src="/images/portfolio/covid/combined7_9.png" width="100%" title="Covid-19 Observer: country data, chart with point inspector">
+<br/>
+<p align="center"><cite>Covid-19 Observer: country data, chart with point inspector.</cite></p>
+</div><br/><br/><p><em>Data by John Hopkins University</em>.</p><br/><br/><h2>MAXimatica</h2><p><strong><em>SwiftUI</em></strong>, <strong><em>Combine</em></strong></p><p>Pre-school math (Russian only).</p><div align="center">
+<image src="/images/portfolio/maximatica/combined1_3.png" width="100%" title="MAXImatica: onboarding and mission selection">
+<br/>
+<p align="center"><cite>MAXImatica: onboarding and mission selection.</cite></p>
+</div><br/><div align="center">
+<image src="/images/portfolio/maximatica/combined4_6.png" width="100%" title="MAXImatica: results and history">
+<br/>
+<p align="center"><cite>MAXImatica: results and history.</cite></p>
+</div><br/></div><footer><p>Copyright © Igor Malyarov 2022</p><p>Built using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="https://twitter.com/igor1309">Twitter</a> | <a href="/feed.rss">RSS feed</a></p></footer></body></html>
