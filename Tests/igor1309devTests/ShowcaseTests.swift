@@ -76,4 +76,11 @@ final class ShowcaseTests: XCTestCase {
         XCTAssertEqual(droppingLeadingTitle("\n<h1 id=\"t\">Title</h1><p>Body</p>"), "<p>Body</p>")
         XCTAssertEqual(droppingLeadingTitle("<p>Intro</p><h1>Later</h1>"), "<p>Intro</p><h1>Later</h1>")
     }
+
+    func test_contentVersion_isStableAndChangesWithTheText() {
+        XCTAssertEqual(contentVersion(of: "body { color: red; }"),
+                       contentVersion(of: "body { color: red; }"))
+        XCTAssertNotEqual(contentVersion(of: "body { color: red; }"),
+                          contentVersion(of: "body { color: blue; }"))
+    }
 }

@@ -119,3 +119,13 @@ func droppingLeadingTitle(_ html: String) -> String {
     else { return html }
     return String(trimmed[end.upperBound...])
 }
+
+/// A short hex digest of `text` (FNV-1a, 64-bit), stable across runs.
+func contentVersion(of text: String) -> String {
+    var hash: UInt64 = 0xcbf29ce484222325
+    for byte in text.utf8 {
+        hash ^= UInt64(byte)
+        hash = hash &* 0x100000001b3
+    }
+    return String(String(hash, radix: 16).suffix(10))
+}

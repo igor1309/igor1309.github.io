@@ -31,7 +31,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
 
         return HTML(
             .lang(context.site.language),
-            .head(for: head, on: context.site),
+            .head(for: head, on: context.site, stylesheetPaths: [try stylesheetPath(context)]),
             .body {
                 SiteHeader(context: context, selected: nil)
                 Main {
@@ -79,7 +79,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                          context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: section, on: context.site),
+            .head(for: section, on: context.site, stylesheetPaths: [try stylesheetPath(context)]),
             .body {
                 SiteHeader(context: context, selected: section.id)
                 Main {
@@ -125,7 +125,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
 
         return HTML(
             .lang(context.site.language),
-            .head(for: item, on: context.site),
+            .head(for: item, on: context.site, stylesheetPaths: [try stylesheetPath(context)]),
             .body {
                 SiteHeader(context: context, selected: item.sectionID)
                 Main {
@@ -158,7 +158,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                       context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            .head(for: page, on: context.site, stylesheetPaths: [try stylesheetPath(context)]),
             .body {
                 SiteHeader(
                     context: context,
@@ -176,7 +176,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                          context: PublishingContext<Site>) throws -> HTML? {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            .head(for: page, on: context.site, stylesheetPaths: [try stylesheetPath(context)]),
             .body {
                 SiteHeader(context: context, selected: nil)
                 Main {
@@ -196,7 +196,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                             context: PublishingContext<Site>) throws -> HTML? {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            .head(for: page, on: context.site, stylesheetPaths: [try stylesheetPath(context)]),
             .body {
                 SiteHeader(context: context, selected: nil)
                 Main {
@@ -220,6 +220,13 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                 SiteFooter()
             }
         )
+    }
+
+    /// The stylesheet's URL, versioned by its contents so a browser holding
+    /// an older copy fetches the new one.
+    private func stylesheetPath(_ context: PublishingContext<Site>) throws -> Path {
+        let css = try context.file(at: "Resources/Igor1309DevTheme/styles.css").readAsString()
+        return Path("/styles.css?v=\(contentVersion(of: css))")
     }
 
     private func firstPost(of project: ShowcaseProject, in posts: [Item<Site>]) -> Item<Site>? {
@@ -251,7 +258,7 @@ private enum Icon {
     static let rss = svg(#"<path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>"#)
 
     private static func svg(_ paths: String) -> Node<HTML.BodyContext> {
-        .raw(#"<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">"# + paths + "</svg>")
+        .raw(#"<svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">"# + paths + "</svg>")
     }
 }
 
