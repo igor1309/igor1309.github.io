@@ -84,7 +84,11 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                 SiteHeader(context: context, selected: section.id)
                 Main {
                     // Portfolio and About are sections with a body and no posts.
-                    if section.items.isEmpty {
+                    // Content/about.md is a page written to the same path as
+                    // the About section, so both draw the page's text.
+                    if section.id.rawValue == "about" {
+                        AboutPage(text: context.pages["about"]?.body ?? section.body)
+                    } else if section.items.isEmpty {
                         Div(section.body).class("column content page")
                     } else {
                         Div {
@@ -165,7 +169,11 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                     selected: Site.SectionID(rawValue: page.path.string)
                 )
                 Main {
-                    Div(page.body).class("column content page")
+                    if page.path == "about" {
+                        AboutPage(text: page.body)
+                    } else {
+                        Div(page.body).class("column content page")
+                    }
                 }
                 SiteFooter()
             }
@@ -425,6 +433,31 @@ private struct SeriesBox<Site: Website>: Component {
         case series.index + 1: return "Next →"
         default: return ""
         }
+    }
+}
+
+private struct AboutPage: Component {
+    var text: Content.Body
+
+    var body: Component {
+        Div {
+            Div {
+                Image(url: "/images/about/igor.jpeg", description: "Igor Malyarov")
+                    .class("portrait")
+                Link(url: "/articles/2022/2022-10-18-essential-blue-belt") {
+                    Image(url: "/images/about/certificate-of-completion-for-ios-lead-essentials.png",
+                          description: "Certificate of completion for iOS Lead Essentials")
+                    Div {
+                        Paragraph("iOS Lead Essentials").class("credential-title")
+                        Paragraph("Essential Developer, 2022").class("credential-meta")
+                    }
+                }
+                .class("credential")
+            }
+            .class("about-side")
+            Div(text).class("content about-body")
+        }
+        .class("wrapper about")
     }
 }
 
