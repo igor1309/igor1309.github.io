@@ -1,3 +1,7 @@
+---
+title: About
+---
+
 # Hi, I'm Igor.
 
 I lead iOS development at a bank, and I build my own products with AI coding agents. The agents work from specs and tests: I write down what a product must do, they write the code, and the tests decide when it is done.
