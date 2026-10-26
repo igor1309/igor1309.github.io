@@ -1,5 +1,5 @@
 ---
-date: 2026-11-05 12:00
+date: 2026-08-29 12:00
 description: AVSpeechSynthesizer is asynchronous and full of late callbacks. How FolioTell keeps playback correct with pure reducers, effect handlers and utterance tokens.
 tags: FolioTell, Swift, Architecture, Reducers, Testing, Showcase
 ---

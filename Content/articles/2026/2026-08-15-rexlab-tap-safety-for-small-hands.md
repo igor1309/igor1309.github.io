@@ -1,5 +1,5 @@
 ---
-date: 2026-11-01 12:00
+date: 2026-08-15 12:00
 description: Children tap twice, tap hard and drag when they mean to tap. How RexLab filters a child's double tap at the root of the app, without any screen knowing about it.
 tags: RexLab, TypeScript, Touch, UX, Showcase
 ---

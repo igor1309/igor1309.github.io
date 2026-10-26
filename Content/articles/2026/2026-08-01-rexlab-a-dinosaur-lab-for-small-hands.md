@@ -1,5 +1,5 @@
 ---
-date: 2026-10-28 12:00
+date: 2026-08-01 12:00
 description: RexLab is a dinosaur learning web app for children aged 4 to 7, made for an iPad held sideways. What it is, who it is for, and why it has no backend.
 tags: RexLab, React, TypeScript, Kids, Showcase
 ---

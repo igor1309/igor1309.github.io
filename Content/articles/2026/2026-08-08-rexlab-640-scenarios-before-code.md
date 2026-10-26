@@ -1,5 +1,5 @@
 ---
-date: 2026-10-30 12:00
+date: 2026-08-08 12:00
 description: RexLab's behaviour is specified in 87 Gherkin feature files with about 640 scenarios. Why specs come first when AI agents write the code, and what the tests check beyond game rules.
 tags: RexLab, BDD, Gherkin, Testing, AI Agents, Showcase
 ---

@@ -1,5 +1,5 @@
 ---
-date: 2026-11-11 12:00
+date: 2026-09-19 12:00
 description: Every Agister run leaves a folder with the exact definitions by digest, inputs, permission plan, events and patches. Why the record matters more than the terminal output when agents do the work.
 tags: Agister, Go, AI Agents, Observability, Showcase
 ---
