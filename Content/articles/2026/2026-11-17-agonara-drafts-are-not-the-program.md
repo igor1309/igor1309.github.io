@@ -8,7 +8,7 @@ tags: Agonara, Node.js, Architecture, SQLite, Showcase
 
 A learning program changes all the time. A curator rewrites an explanation, splits a concept in two, replaces a check that turned out to be ambiguous. Meanwhile students are reading it and answering it. And with an agent in the loop, there is a steady stream of suggestions that may or may not be any good.
 
-The [previous post](/articles/2026-11-15-agonara-a-learning-program-your-own-agent-can-work-on) introduced [Agonara](https://github.com/igor1309/agonara). This one is about how it keeps all of that from turning into one tangled table.
+The [previous post](/articles/2026/2026-11-15-agonara-a-learning-program-your-own-agent-can-work-on) introduced [Agonara](https://github.com/igor1309/agonara). This one is about how it keeps all of that from turning into one tangled table.
 
 ## Three stages for every piece of content
 
