@@ -1,13 +1,84 @@
 # Portfolio
 
-_Most of my work is covered under NDA, but there are few things I can show here_.
+## Built with AI coding agents
+
+These projects come from my private monorepo, where I build products with AI coding agents working from specs and tests. Each one is published as its own public repository with its code, tests and README, and checked to build and pass on its own outside the monorepo.
+
+### RexLab
+
+***React***, ***TypeScript***, ***Vite***, ***Gherkin***, ***Vitest***
+
+A dinosaur learning game for children aged 4 to 7, made for an iPad held sideways. Behaviour is specified first in Gherkin (87 feature files) and checked by 130+ Vitest test files.
+
+[Play it](https://rexlab.enoa.ai) · [Source](https://github.com/igor1309/rexlab)
+
+<div align="center">
+<a href="https://rexlab.enoa.ai">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/rexlab/home-dark.webp">
+<img src="/images/portfolio/rexlab/home-light.webp" width="100%" alt="RexLab's home screen with its dinosaur games">
+</picture>
+</a>
+<p align="center"><cite>RexLab's home screen with its dinosaur games.</cite></p>
+</div>
+<br/>
+
+Posts: [A Dinosaur Lab for Small Hands](/articles/2026/2026-08-01-rexlab-a-dinosaur-lab-for-small-hands/), [640 Scenarios Before Code](/articles/2026/2026-08-08-rexlab-640-scenarios-before-code/), [Tap Safety for Small Hands](/articles/2026/2026-08-15-rexlab-tap-safety-for-small-hands/).
+
+### FolioTell
+
+***SwiftUI***, ***AVSpeechSynthesizer***, ***Swift Testing***, ***Maestro***
+
+An offline iPhone app that reads Markdown and plain-text files aloud. SwiftUI over Apple speech synthesis, with the playback logic in a separate library of pure reducers and effect handlers, 196 Swift Testing tests, and Maestro flows on the simulator.
+
+[Source](https://github.com/igor1309/foliotell)
+
+<div align="center">
+<img src="/images/portfolio/foliotell/reader.webp" width="30%" alt="FolioTell reading a Markdown file">
+<img src="/images/portfolio/foliotell/playing.webp" width="30%" alt="FolioTell playing it aloud">
+<img src="/images/portfolio/foliotell/ru-dark.webp" width="30%" alt="FolioTell reading a Russian poem in dark mode">
+<p align="center"><cite>FolioTell: reading a Markdown file, playing it aloud, and a Russian poem in dark mode.</cite></p>
+</div>
+<br/>
+
+Posts: [An App That Reads Your Notes Aloud](/articles/2026/2026-08-22-foliotell-an-app-that-reads-your-notes-aloud/), [A Speech Synthesizer Behind a Reducer](/articles/2026/2026-08-29-foliotell-a-speech-synthesizer-behind-a-reducer/), [Where Am I in This Text?](/articles/2026/2026-09-05-foliotell-where-am-i-in-this-text/).
+
+### Agister
+
+***Go***
+
+A command-line runner for AI-agent work defined in settings files. Agents, processes and workflows are settings that compose; every run is resolved before it starts, held to its limits and budget, and recorded whole.
+
+[Source](https://github.com/igor1309/agister) · [How a run executes](/agister/run-architecture/) · [How settings resolve](/agister/settings-architecture/)
+
+Posts: [Agent Work as Settings, Not Code](/articles/2026/2026-09-12-agister-agent-work-as-settings-not-code/), [What a Run Leaves Behind](/articles/2026/2026-09-19-agister-what-a-run-leaves-behind/), [A Code Review With a Debate Inside](/articles/2026/2026-09-26-agister-a-code-review-with-a-debate-inside/).
+
+### Agonara
+
+***Node.js***, ***SQLite***
+
+A bring-your-own-agent environment for learning programs. A curator builds a program of topics, concepts, materials and checks; students read it, answer and see where they are weak. Both point the agent they already use at the same HTTP API that serves the `/learn` and `/admin` web UIs.
+
+[Live instance](https://agonara.enoa.ai/learn) · [Source](https://github.com/igor1309/agonara)
+
+<div align="center">
+<img src="/images/portfolio/agonara/learn-quick-check.webp" width="70%" alt="An Agonara Quick Check: a student answers a question and sees the result">
+<p align="center"><cite>An Agonara Quick Check: a student answers a question and sees the result.</cite></p>
+</div>
+<br/>
+
+Posts: [A Learning Program Your Own Agent Can Work On](/articles/2026/2026-10-03-agonara-a-learning-program-your-own-agent-can-work-on/), [Drafts Are Not the Program](/articles/2026/2026-10-10-agonara-drafts-are-not-the-program/), [Grading Open Answers with a Model](/articles/2026/2026-10-17-agonara-grading-open-answers-with-a-model/).
+
+## Earlier iOS work
+
+_Most of my iOS work is covered under NDA, but there are a few things I can show here._
 
 All iOS apps support __Dynamic Type__ and __Dark mode__.
 
-## Hole Fill
+### Hole Fill
 
 `Hole Fill` was a take home assignment that I've used to present __ultra-modular design of decoupled composable components__.
-For explanation see [this blog post](./articles/2022/2022-08-01-fill-hole/).
+For explanation see [this blog post](/articles/2022/2022-08-01-fill-hole/).
 
 > The goal of this task is to build a small image processing library that fills holes in images, along with a small command line utility that uses that library, and answer a few questions.
 
@@ -32,7 +103,7 @@ For explanation see [this blog post](./articles/2022/2022-08-01-fill-hole/).
 </div>
 <br/>
 
-## CIFilterBrowser
+### CIFilterBrowser
 
 ***Core Image***, ***SwiftUI***, ***Combine***
 
@@ -73,7 +144,7 @@ _Coming soon to App Store._
 </details></div>
 <br/>
 
-## Mobility
+### Mobility
 
 *My own* ***Chart Library***, ***SwiftUI***, ***Combine***
 
@@ -101,7 +172,7 @@ An app for the [Apple Mobility Index](https://covid19.apple.com/mobility)
 </div>
 <br/>
 
-## Covid-19 Observer
+### Covid-19 Observer
 
 *My own* ***Chart Library***, ***MapKit***, ***Core Data***, ***UIKit***, ***SwiftUI***, ***Combine***.
 
@@ -133,7 +204,7 @@ An app for the [Apple Mobility Index](https://covid19.apple.com/mobility)
 <br/>
 <br/>
 
-## MAXimatica
+### MAXimatica
 
 ***SwiftUI***, ***Combine***
 
