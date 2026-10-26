@@ -1,5 +1,5 @@
 ---
-date: 2026-11-15 12:00
+date: 2026-10-03 12:00
 description: Agonara is a bring-your-own-agent environment for learning programs. A curator builds a program from sources, students follow it and prove they understand, and the agent you already use does the drafting, quizzing and grading. What it is and why only a person accepts content.
 tags: Agonara, Node.js, AI Agents, Learning, Showcase
 ---

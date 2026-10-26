@@ -1,5 +1,5 @@
 ---
-date: 2026-11-03 12:00
+date: 2026-08-22 12:00
 description: FolioTell is an offline iPhone app that reads Markdown and plain-text files aloud. Why it exists, and why it has no account, no backend and no network.
 tags: FolioTell, iOS, SwiftUI, Speech, Showcase
 ---

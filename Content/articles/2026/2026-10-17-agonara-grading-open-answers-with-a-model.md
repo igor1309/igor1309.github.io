@@ -1,5 +1,5 @@
 ---
-date: 2026-11-19 12:00
+date: 2026-10-17 12:00
 description: Agonara can grade a student's open answer with any model behind an OpenAI-compatible endpoint. The model grades per criterion, its output is validated before a student sees it, and the work runs as a leased, retried, budgeted job.
 tags: Agonara, Node.js, LLM, Assessment, Showcase
 ---

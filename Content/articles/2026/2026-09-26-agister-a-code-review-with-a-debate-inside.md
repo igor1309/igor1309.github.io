@@ -1,5 +1,5 @@
 ---
-date: 2026-11-13 12:00
+date: 2026-09-26 12:00
 description: The code review that ships with Agister runs several lenses in parallel, one of them a writer–critic debate in a bounded repeat, before a judge merges the findings. How it is composed from settings.
 tags: Agister, Code Review, AI Agents, Workflows, Showcase
 ---

@@ -1,5 +1,5 @@
 ---
-date: 2026-11-07 12:00
+date: 2026-09-05 12:00
 description: Skipping by sentence and resuming where you stopped sound trivial. In FolioTell they meant mapping UTF-16 offsets from the speech engine back to sentences in the original text.
 tags: FolioTell, Swift, Unicode, Speech, Showcase
 ---

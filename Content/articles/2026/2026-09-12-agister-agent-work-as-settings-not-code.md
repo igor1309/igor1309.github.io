@@ -1,5 +1,5 @@
 ---
-date: 2026-11-09 12:00
+date: 2026-09-12 12:00
 description: Agister is a Go command-line runner for AI-agent work defined in settings files — agents, processes and workflows — with a record of every run. What it is and why I built it.
 tags: Agister, Go, AI Agents, Workflows, Showcase
 ---
