@@ -21,7 +21,7 @@ A program can be joined by invitation, and someone who lost access can be let ba
 
 ## Bring your own agent
 
-Agonara does not ship its own assistant. Curators and students point the agent they already use — Claude Code, Codex or any other — at their Agonara instance, through a set of agent skills and a documented HTTP API.
+Agonara does not ship its own assistant. Curators and students point the agent they already use — Claude Code, Codex or any other — at their Agonara instance, through a set of [agent skills](https://github.com/igor1309/agonara-skills) and a documented HTTP API.
 
 For a curator, the agent reads sources and drafts topics, concepts, materials and checks. For a student, it can quiz them and help them through the material. The web screens and the agents talk to the same API, so what an agent drafts lands in the same place a curator reviews it in the browser.
 
