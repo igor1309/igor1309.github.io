@@ -382,7 +382,8 @@ nav .rss {
 }
 
 .post-body {
-    flex: 0 1 760px;
+    flex: 1 1 auto;
+    max-width: 760px;
 }
 
 .post-body h3 {
