@@ -1,0 +1,4749 @@
+{
+  "version": "2.21",
+  "children": [
+    {
+      "type": "frame",
+      "id": "wO8Ae",
+      "x": 0,
+      "y": -400,
+      "name": "Site Header",
+      "reusable": true,
+      "width": 1440,
+      "fill": "$bg",
+      "stroke": "$line",
+      "strokeWidth": {
+        "bottom": 1
+      },
+      "padding": [
+        28,
+        120
+      ],
+      "justifyContent": "space_between",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ptqIu",
+          "name": "Brand",
+          "gap": 10,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "ellipse",
+              "id": "JkUqd",
+              "name": "Dot",
+              "fill": "$accent",
+              "width": 10,
+              "height": 10
+            },
+            {
+              "type": "text",
+              "id": "wNvLn",
+              "name": "Wordmark",
+              "fill": "$ink",
+              "content": "Igor Malyarov",
+              "fontFamily": "$font-display",
+              "fontSize": 24,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "j5uzkm",
+          "name": "Nav",
+          "gap": 36,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "M7J3yV",
+              "name": "Nav Articles",
+              "fill": "$ink-soft",
+              "content": "Articles",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "Y01yCi",
+              "name": "Nav Portfolio",
+              "fill": "$ink-soft",
+              "content": "Portfolio",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "v4z5d",
+              "name": "Nav About",
+              "fill": "$ink-soft",
+              "content": "About",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "500"
+            },
+            {
+              "type": "icon",
+              "id": "h0guk",
+              "name": "RSS",
+              "width": 18,
+              "height": 18,
+              "icon": "rss",
+              "library": "lucide",
+              "fill": "$ink-soft"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Rxy1N",
+      "x": 0,
+      "y": -260,
+      "name": "Site Footer",
+      "reusable": true,
+      "width": 1440,
+      "fill": "$bg",
+      "stroke": "$line",
+      "strokeWidth": {
+        "top": 1
+      },
+      "padding": [
+        40,
+        120
+      ],
+      "justifyContent": "space_between",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "WlFNa",
+          "name": "Footer Left",
+          "layout": "vertical",
+          "gap": 6,
+          "children": [
+            {
+              "type": "text",
+              "id": "l9Xopx",
+              "name": "Copyright",
+              "fill": "$ink-soft",
+              "content": "© 2026 Igor Malyarov",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "Nr1SJ",
+              "name": "Built with",
+              "fill": "$ink-soft",
+              "content": "Built with Publish, in Swift",
+              "fontFamily": "$font-body",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "D5GoZ",
+          "name": "Footer Links",
+          "gap": 28,
+          "children": [
+            {
+              "type": "text",
+              "id": "R1Skee",
+              "name": "Link GitHub",
+              "fill": "$ink",
+              "content": "GitHub",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "DUUch",
+              "name": "Link LinkedIn",
+              "fill": "$ink",
+              "content": "LinkedIn",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "cWEOb",
+              "name": "Link Telegram",
+              "fill": "$ink",
+              "content": "Telegram",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "YeMU3",
+              "name": "Link RSS",
+              "fill": "$ink",
+              "content": "RSS",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "500"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "gENi3",
+      "x": 0,
+      "y": 0,
+      "name": "Home — Light",
+      "theme": {
+        "mode": "light"
+      },
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "RF6PU",
+          "type": "ref",
+          "ref": "wO8Ae",
+          "name": "Header",
+          "width": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "uqMiw",
+          "name": "Hero",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            96,
+            120,
+            88,
+            120
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "fyr1Z",
+              "name": "Eyebrow",
+              "fill": "$accent",
+              "content": "IOS TECH LEAD  ·  BUILDING WITH AI AGENTS",
+              "fontFamily": "$font-mono",
+              "fontSize": 13,
+              "fontWeight": "500",
+              "letterSpacing": 1.5
+            },
+            {
+              "type": "text",
+              "id": "Tqjhf",
+              "name": "Headline",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": 980,
+              "content": "Notes from building software with AI agents, and the Swift years before them.",
+              "lineHeight": 1.08,
+              "fontFamily": "$font-display",
+              "fontSize": 68,
+              "fontWeight": "500",
+              "letterSpacing": -1.2
+            },
+            {
+              "type": "text",
+              "id": "YSUMV",
+              "name": "Lede",
+              "fill": "$ink-soft",
+              "textGrowth": "fixed-width",
+              "width": 680,
+              "content": "I lead iOS development at a bank and build products with coding agents that work from specs and tests. This is where I write down what works, what didn't, and why.",
+              "lineHeight": 1.55,
+              "fontFamily": "$font-body",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "ozdxO",
+              "name": "Hero Links",
+              "gap": 28,
+              "padding": [
+                8,
+                0,
+                0,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "qvAiF",
+                  "name": "Primary Link",
+                  "fill": "$ink",
+                  "cornerRadius": 999,
+                  "gap": 8,
+                  "padding": [
+                    13,
+                    22
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "c8mHZ",
+                      "name": "Label",
+                      "fill": "$bg",
+                      "content": "Read the latest",
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "R98VYh",
+                      "name": "Arrow",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "arrow-right",
+                      "library": "lucide",
+                      "fill": "$bg"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "M9Jv22",
+                  "name": "Secondary Link",
+                  "fill": "$ink",
+                  "content": "See the portfolio",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "TBb8C",
+          "name": "Projects",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            0,
+            120,
+            96,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "AQhC6",
+              "name": "Projects Head",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "padding": [
+                0,
+                0,
+                20,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Fs9FK",
+                  "name": "Title",
+                  "fill": "$ink",
+                  "content": "Built with agents",
+                  "fontFamily": "$font-display",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "Q1hIur",
+                  "name": "More",
+                  "fill": "$accent",
+                  "content": "Portfolio →",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "z6iPy",
+              "name": "Project Row",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "TCWtY",
+                  "name": "Project RexLab",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "p02cEK",
+                      "name": "Media",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": [
+                        "$surface",
+                        {
+                          "type": "image",
+                          "enabled": true,
+                          "url": "images/home-light.webp",
+                          "mode": "cover"
+                        }
+                      ],
+                      "cornerRadius": 14,
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 24,
+                      "justifyContent": "center"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jswwS",
+                      "name": "Name",
+                      "fill": "$ink",
+                      "content": "RexLab",
+                      "fontFamily": "$font-display",
+                      "fontSize": 24,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "gAYeN",
+                      "name": "Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "A dinosaur learning game for children aged 4 to 7.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ScNCf",
+                      "name": "Stack",
+                      "fill": "$ink-soft",
+                      "content": "React · TypeScript",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "UuIS1",
+                  "name": "Project FolioTell",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "v3I7u",
+                      "name": "Media",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": [
+                        "$surface",
+                        {
+                          "type": "image",
+                          "enabled": true,
+                          "url": "images/reader.webp",
+                          "mode": "cover"
+                        }
+                      ],
+                      "cornerRadius": 14,
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 24,
+                      "justifyContent": "center"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ydrD1",
+                      "name": "Name",
+                      "fill": "$ink",
+                      "content": "FolioTell",
+                      "fontFamily": "$font-display",
+                      "fontSize": 24,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "sLt7c",
+                      "name": "Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "An offline iPhone app that reads your notes aloud.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "RVQbG",
+                      "name": "Stack",
+                      "fill": "$ink-soft",
+                      "content": "SwiftUI · Swift Testing",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EdwFC",
+                  "name": "Project Agister",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "oPio9",
+                      "name": "Media",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": "$code-bg",
+                      "cornerRadius": 14,
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 24,
+                      "justifyContent": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Kik9U",
+                          "name": "Line",
+                          "fill": "#F0A13A",
+                          "content": "$ agister run review",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "CvBAz",
+                          "name": "Line",
+                          "fill": "#9FB092",
+                          "content": "resolve  ✓ 3 definitions",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Me0gm",
+                          "name": "Line",
+                          "fill": "#9FB092",
+                          "content": "admit    ✓ budget 1.20 USD",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "eyXl8",
+                          "name": "Line",
+                          "fill": "#8C8F98",
+                          "content": "record   runs/7f2c/",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "C2l26L",
+                      "name": "Name",
+                      "fill": "$ink",
+                      "content": "Agister",
+                      "fontFamily": "$font-display",
+                      "fontSize": 24,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "T1znl",
+                      "name": "Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "A runner for AI-agent work defined in settings files.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "MRHpB",
+                      "name": "Stack",
+                      "fill": "$ink-soft",
+                      "content": "Go",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "T1pAu",
+                  "name": "Project Agonara",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zO3WG",
+                      "name": "Media",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": [
+                        "$surface",
+                        {
+                          "type": "image",
+                          "enabled": true,
+                          "url": "images/learn-quick-check.webp",
+                          "mode": "cover"
+                        }
+                      ],
+                      "cornerRadius": 14,
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 24,
+                      "justifyContent": "center"
+                    },
+                    {
+                      "type": "text",
+                      "id": "AU6In",
+                      "name": "Name",
+                      "fill": "$ink",
+                      "content": "Agonara",
+                      "fontFamily": "$font-display",
+                      "fontSize": 24,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "FnknN",
+                      "name": "Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Learning programs your own agent can work on.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Tlovs",
+                      "name": "Stack",
+                      "fill": "$ink-soft",
+                      "content": "Node.js · SQLite",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "UrtBn",
+          "name": "Latest Writing",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            0,
+            120,
+            104,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "UWLLa",
+              "name": "Writing Head",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "padding": [
+                0,
+                0,
+                20,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "E46XE",
+                  "name": "Title",
+                  "fill": "$ink",
+                  "content": "Latest writing",
+                  "fontFamily": "$font-display",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "d3PKn",
+                  "name": "More",
+                  "fill": "$accent",
+                  "content": "All articles · Tags →",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rIaaK",
+              "name": "Post Grading Open Answers with a Model",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 48,
+              "padding": [
+                32,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jsopF",
+                  "name": "Meta",
+                  "width": 180,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "aFdmf",
+                      "name": "Date",
+                      "fill": "$ink-soft",
+                      "content": "17 Oct 2026",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jrB6v",
+                      "name": "Tag",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "P0c0R",
+                          "name": "Tag Label",
+                          "fill": "$accent",
+                          "content": "Agonara",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "wAWCI",
+                  "name": "Body",
+                  "width": 760,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "I7VVh",
+                      "name": "Post Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Grading Open Answers with a Model",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font-display",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "PmbPm",
+                      "name": "Post Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Agonara can grade a student's open answer with any model behind an OpenAI-compatible endpoint. The model grades per criterion, its output is validated before a student sees it, and the work runs as a leased, retried, budgeted job.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "y74kNH",
+                  "name": "Go",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$ink-soft"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qbGaN",
+              "name": "Post Drafts Are Not the Program",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 48,
+              "padding": [
+                32,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "G86so",
+                  "name": "Meta",
+                  "width": 180,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zvC5Y",
+                      "name": "Date",
+                      "fill": "$ink-soft",
+                      "content": "10 Oct 2026",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "i1eNvl",
+                      "name": "Tag",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "vVBmO",
+                          "name": "Tag Label",
+                          "fill": "$accent",
+                          "content": "Agonara",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TNF0Q",
+                  "name": "Body",
+                  "width": 760,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rs0ad",
+                      "name": "Post Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Drafts Are Not the Program",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font-display",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s8Q3z",
+                      "name": "Post Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "In Agonara, model suggestions and curator drafts never become program content by themselves, accepted content is kept as revisions, and a student's answers are pinned to the revision they answered.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "xktfa",
+                  "name": "Go",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$ink-soft"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "P0ROE",
+              "name": "Post A Learning Program Your Own Agent Can Work On",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 48,
+              "padding": [
+                32,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "N1LkS",
+                  "name": "Meta",
+                  "width": 180,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MLKnr",
+                      "name": "Date",
+                      "fill": "$ink-soft",
+                      "content": "3 Oct 2026",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YhscK",
+                      "name": "Tag",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PeXB4",
+                          "name": "Tag Label",
+                          "fill": "$accent",
+                          "content": "Agonara",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tCdYC",
+                  "name": "Body",
+                  "width": 760,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zYj1y",
+                      "name": "Post Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "A Learning Program Your Own Agent Can Work On",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font-display",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "OtGXq",
+                      "name": "Post Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Agonara is a bring-your-own-agent environment for learning programs. A curator builds a program from sources, students follow it and prove they understand, and the agent you already use does the drafting, quizzing and grading.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "W3IxWk",
+                  "name": "Go",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$ink-soft"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YhItt",
+              "name": "Post A Code Review With a Debate Inside",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 48,
+              "padding": [
+                32,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "k7XEu",
+                  "name": "Meta",
+                  "width": 180,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "hKxRN",
+                      "name": "Date",
+                      "fill": "$ink-soft",
+                      "content": "26 Sep 2026",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "h0RjUZ",
+                      "name": "Tag",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "tAqnj",
+                          "name": "Tag Label",
+                          "fill": "$accent",
+                          "content": "Agister",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zV3a8",
+                  "name": "Body",
+                  "width": 760,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "I1q6Sg",
+                      "name": "Post Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "A Code Review With a Debate Inside",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font-display",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "MGxkL",
+                      "name": "Post Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "The code review that ships with Agister runs several lenses in parallel, one of them a writer–critic debate in a bounded repeat, before a judge merges the findings. How it is composed from settings.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "uSPjZ",
+                  "name": "Go",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$ink-soft"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vHmXR",
+              "name": "Post What a Run Leaves Behind",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 48,
+              "padding": [
+                32,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "z2pmP2",
+                  "name": "Meta",
+                  "width": 180,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "J5IB2m",
+                      "name": "Date",
+                      "fill": "$ink-soft",
+                      "content": "19 Sep 2026",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Eyz8Y",
+                      "name": "Tag",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "GkCcT",
+                          "name": "Tag Label",
+                          "fill": "$accent",
+                          "content": "Agister",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pwx9v",
+                  "name": "Body",
+                  "width": 760,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MZaL9",
+                      "name": "Post Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "What a Run Leaves Behind",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font-display",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dFuZd",
+                      "name": "Post Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Every Agister run leaves a folder with the exact definitions by digest, inputs, permission plan, events and patches. Why the record matters more than the terminal output when agents do the work.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "j5xCI",
+                  "name": "Go",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$ink-soft"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "MW0tB",
+          "type": "ref",
+          "ref": "Rxy1N",
+          "name": "Footer",
+          "width": "fill_container"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xX2JP",
+      "x": 1540,
+      "y": 0,
+      "name": "Article — Light",
+      "theme": {
+        "mode": "light"
+      },
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "ayx6K",
+          "type": "ref",
+          "ref": "wO8Ae",
+          "name": "Header",
+          "width": "fill_container",
+          "descendants": {
+            "M7J3yV": {
+              "fill": "$ink"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "woH3J",
+          "name": "Article Wrap",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            72,
+            0,
+            96,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "pq3Zk",
+              "name": "Column",
+              "width": 720,
+              "layout": "vertical",
+              "gap": 22,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cA0YS",
+                  "name": "Back",
+                  "fill": "$ink-soft",
+                  "content": "← Articles",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "SXoWy",
+                  "name": "Tags",
+                  "gap": 8,
+                  "padding": [
+                    18,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "pacSE",
+                      "name": "Tag FolioTell",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "oOKzC",
+                          "name": "Label",
+                          "fill": "$accent",
+                          "content": "FolioTell",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "N2Tw5",
+                      "name": "Tag Swift",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Iip6T",
+                          "name": "Label",
+                          "fill": "$accent",
+                          "content": "Swift",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Q3i5i9",
+                      "name": "Tag Architecture",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "c0f96",
+                          "name": "Label",
+                          "fill": "$accent",
+                          "content": "Architecture",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "GwzRg",
+                      "name": "Tag Reducers",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "yNJhO",
+                          "name": "Label",
+                          "fill": "$accent",
+                          "content": "Reducers",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "H4gNQ",
+                  "name": "Title",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "FolioTell: a Speech Synthesizer Behind a Reducer",
+                  "lineHeight": 1.08,
+                  "fontFamily": "$font-display",
+                  "fontSize": 54,
+                  "fontWeight": "500",
+                  "letterSpacing": -0.8
+                },
+                {
+                  "type": "text",
+                  "id": "WgPDV",
+                  "name": "Meta",
+                  "fill": "$ink-soft",
+                  "content": "29 August 2026  ·  3 min read  ·  Part 2 of 3 in FolioTell",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "vkmdD",
+                  "name": "Lede",
+                  "fill": "$ink-soft",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "AVSpeechSynthesizer is asynchronous and full of late callbacks. How FolioTell keeps playback correct with pure reducers, effect handlers and utterance tokens.",
+                  "lineHeight": 1.45,
+                  "fontFamily": "$font-display",
+                  "fontSize": 24,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "rectangle",
+                  "id": "TwOUg",
+                  "name": "Rule",
+                  "fill": "$accent",
+                  "width": 64,
+                  "height": 2
+                },
+                {
+                  "type": "text",
+                  "id": "yUuKR",
+                  "name": "Paragraph",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "On the surface a text-to-speech player has a handful of buttons: play, pause, stop, skip, speed. Underneath, AVSpeechSynthesizer is an asynchronous engine that reports back through delegate callbacks, and those callbacks arrive after you already changed your mind.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "RHjBO",
+                  "name": "Paragraph",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Tap “next sentence” while a word is being spoken and the synthesizer may still tell you about the old utterance: one more word boundary, then a cancellation. FolioTell treats this as a state machine problem.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "QdJtw",
+                  "name": "H2",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Events in, state and effects out",
+                  "lineHeight": 1.2,
+                  "fontFamily": "$font-display",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "SdhET",
+                  "name": "Paragraph",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "The playback logic lives in FolioTellCore, a library with no UIKit, no SwiftUI and no AVFoundation. Its core is a reducer:",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "dQHSq",
+                  "name": "Code Block",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "$code-bg",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "WcQuq",
+                      "name": "Code Bar",
+                      "width": "fill_container",
+                      "stroke": "#FFFFFF14",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "padding": [
+                        10,
+                        18
+                      ],
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "UgaUU",
+                          "name": "Lang",
+                          "fill": "#8C8F98",
+                          "content": "swift",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon",
+                          "id": "sQRvX",
+                          "name": "Copy",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "copy",
+                          "library": "lucide",
+                          "fill": "#8C8F98"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "U6DG6",
+                      "name": "Code Lines",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": [
+                        18,
+                        22,
+                        22,
+                        22
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "TdnHe",
+                          "name": "Line",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "DbMfp",
+                              "name": "Tok",
+                              "fill": "#E77FAE",
+                              "content": "func ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "BN3Ut",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": "reduce",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "p6F9w",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": "(_ state: ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "H4kxd",
+                              "name": "Tok",
+                              "fill": "#A6A3F0",
+                              "content": "State",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "fjLMp",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": ", _ event: ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "F0HJG7",
+                              "name": "Tok",
+                              "fill": "#A6A3F0",
+                              "content": "Event",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "U859w",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": ") -> (",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "K5y2t7",
+                              "name": "Tok",
+                              "fill": "#A6A3F0",
+                              "content": "State",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "o7BeEF",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": ", ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "V5Wojv",
+                              "name": "Tok",
+                              "fill": "#A6A3F0",
+                              "content": "Effect",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "taGfH",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": "?)",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hFwbz",
+                          "name": "Line",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "U0eP2",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": " ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "a1NIrX",
+                          "name": "Line",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "a9Lw8",
+                              "name": "Tok",
+                              "fill": "#6B8A94",
+                              "content": "// accept a callback only for the current utterance",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Ey2ui",
+                          "name": "Line",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ayEt3",
+                              "name": "Tok",
+                              "fill": "#E77FAE",
+                              "content": "case let ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "hSZkI",
+                              "name": "Tok",
+                              "fill": "#5CC2B4",
+                              "content": ".speaking",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "CoXB2",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": "(session) ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "CMIms",
+                              "name": "Tok",
+                              "fill": "#E77FAE",
+                              "content": "where ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "tEifG",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": "session.",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "I4gim",
+                              "name": "Tok",
+                              "fill": "#5CC2B4",
+                              "content": "utteranceToken",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "n1giS",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": " == utteranceToken:",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "kHNub",
+                  "name": "Paragraph",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Every button tap is an event, and so is every synthesizer callback. The reducer computes the next state and, optionally, an effect: start an utterance, restart it from an offset, pause. An effect handler performs it against the real engine through an injected adapter.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "YAG81",
+                  "name": "H2",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Why this shape",
+                  "lineHeight": 1.2,
+                  "fontFamily": "$font-display",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "ttH8T",
+                  "name": "List",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "JQNEx",
+                      "name": "Item",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "GfRkS",
+                          "name": "Num",
+                          "fill": "$accent",
+                          "content": "01",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "LktWc",
+                          "name": "Text",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Testability. Every race is a sequence of events. Most of the 196 tests feed the reducer a sequence and check the state.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YzOTx",
+                      "name": "Item",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "XIR3T",
+                          "name": "Num",
+                          "fill": "$accent",
+                          "content": "02",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "VABra",
+                          "name": "Text",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Working with agents. A reducer gives an agent a narrow, well-tested surface to add a feature to.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "E3Rx4W",
+                      "name": "Item",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "w5l3bR",
+                          "name": "Num",
+                          "fill": "$accent",
+                          "content": "03",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "i1fId",
+                          "name": "Text",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Replaceable edges. The synthesizer and the position store are adapters; tests wire fakes.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "yHCaY",
+                  "name": "Spacer",
+                  "fill": "#00000000",
+                  "width": 1,
+                  "height": 20
+                },
+                {
+                  "type": "frame",
+                  "id": "n7diq1",
+                  "name": "Series",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "S3rN6S",
+                      "name": "Series Head",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Y8oyy",
+                          "name": "Kicker",
+                          "fill": "$accent",
+                          "content": "THE FOLIOTELL SERIES",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 12,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "z0lCZ",
+                          "name": "Repo",
+                          "fill": "$ink-soft",
+                          "content": "github.com/igor1309/foliotell ↗",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gpciR",
+                      "name": "Part 1",
+                      "width": "fill_container",
+                      "fill": "#00000000",
+                      "cornerRadius": 10,
+                      "stroke": "#00000000",
+                      "strokeWidth": 1,
+                      "gap": 16,
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ngMVx",
+                          "name": "Num",
+                          "fill": "$ink-soft",
+                          "content": "1",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "N5dZJ",
+                          "name": "Title",
+                          "fill": "$ink-soft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "An App That Reads Your Notes Aloud",
+                          "fontFamily": "$font-display",
+                          "fontSize": 20
+                        },
+                        {
+                          "type": "text",
+                          "id": "wu2iM",
+                          "name": "State",
+                          "fill": "$accent",
+                          "content": "← Previous",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "uUdJD",
+                      "name": "Part 2",
+                      "width": "fill_container",
+                      "fill": "$bg",
+                      "cornerRadius": 10,
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "gap": 16,
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "tibTD",
+                          "name": "Num",
+                          "fill": "$accent",
+                          "content": "2",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "F764AN",
+                          "name": "Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "A Speech Synthesizer Behind a Reducer",
+                          "fontFamily": "$font-display",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "CzxGA",
+                          "name": "State",
+                          "fill": "$ink-soft",
+                          "content": "Reading",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kV8VO",
+                      "name": "Part 3",
+                      "width": "fill_container",
+                      "fill": "#00000000",
+                      "cornerRadius": 10,
+                      "stroke": "#00000000",
+                      "strokeWidth": 1,
+                      "gap": 16,
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "NoRU6",
+                          "name": "Num",
+                          "fill": "$ink-soft",
+                          "content": "3",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "PDllh",
+                          "name": "Title",
+                          "fill": "$ink-soft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Where Am I in This Text?",
+                          "fontFamily": "$font-display",
+                          "fontSize": 20
+                        },
+                        {
+                          "type": "text",
+                          "id": "FShUB",
+                          "name": "State",
+                          "fill": "$accent",
+                          "content": "Next →",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "z3farM",
+          "type": "ref",
+          "ref": "Rxy1N",
+          "name": "Footer",
+          "width": "fill_container"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "IMxoU",
+      "x": 0,
+      "y": 2513,
+      "name": "Home — Dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "xTQ81",
+          "type": "ref",
+          "ref": "wO8Ae",
+          "name": "Header",
+          "width": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "j5Uy4w",
+          "name": "Hero",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            96,
+            120,
+            88,
+            120
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "NfBh5",
+              "name": "Eyebrow",
+              "fill": "$accent",
+              "content": "IOS TECH LEAD  ·  BUILDING WITH AI AGENTS",
+              "fontFamily": "$font-mono",
+              "fontSize": 13,
+              "fontWeight": "500",
+              "letterSpacing": 1.5
+            },
+            {
+              "type": "text",
+              "id": "FqZOI",
+              "name": "Headline",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": 980,
+              "content": "Notes from building software with AI agents, and the Swift years before them.",
+              "lineHeight": 1.08,
+              "fontFamily": "$font-display",
+              "fontSize": 68,
+              "fontWeight": "500",
+              "letterSpacing": -1.2
+            },
+            {
+              "type": "text",
+              "id": "InHoW",
+              "name": "Lede",
+              "fill": "$ink-soft",
+              "textGrowth": "fixed-width",
+              "width": 680,
+              "content": "I lead iOS development at a bank and build products with coding agents that work from specs and tests. This is where I write down what works, what didn't, and why.",
+              "lineHeight": 1.55,
+              "fontFamily": "$font-body",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "fFocG",
+              "name": "Hero Links",
+              "gap": 28,
+              "padding": [
+                8,
+                0,
+                0,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "VFCId",
+                  "name": "Primary Link",
+                  "fill": "$ink",
+                  "cornerRadius": 999,
+                  "gap": 8,
+                  "padding": [
+                    13,
+                    22
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "H4RCQV",
+                      "name": "Label",
+                      "fill": "$bg",
+                      "content": "Read the latest",
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "LNArJ",
+                      "name": "Arrow",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "arrow-right",
+                      "library": "lucide",
+                      "fill": "$bg"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "DOeYE",
+                  "name": "Secondary Link",
+                  "fill": "$ink",
+                  "content": "See the portfolio",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yoaWo",
+          "name": "Projects",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            0,
+            120,
+            96,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "EumMc",
+              "name": "Projects Head",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "padding": [
+                0,
+                0,
+                20,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QkHHh",
+                  "name": "Title",
+                  "fill": "$ink",
+                  "content": "Built with agents",
+                  "fontFamily": "$font-display",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "U06VGL",
+                  "name": "More",
+                  "fill": "$accent",
+                  "content": "Portfolio →",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "v3ORik",
+              "name": "Project Row",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "H6bv2",
+                  "name": "Project RexLab",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "nrnbo",
+                      "name": "Media",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": [
+                        "$surface",
+                        {
+                          "type": "image",
+                          "enabled": true,
+                          "url": "images/home-dark.webp",
+                          "mode": "cover"
+                        }
+                      ],
+                      "cornerRadius": 14,
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 24,
+                      "justifyContent": "center"
+                    },
+                    {
+                      "type": "text",
+                      "id": "zkrQi",
+                      "name": "Name",
+                      "fill": "$ink",
+                      "content": "RexLab",
+                      "fontFamily": "$font-display",
+                      "fontSize": 24,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "r1x8o",
+                      "name": "Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "A dinosaur learning game for children aged 4 to 7.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xoK16",
+                      "name": "Stack",
+                      "fill": "$ink-soft",
+                      "content": "React · TypeScript",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a9fGs",
+                  "name": "Project FolioTell",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GcMFl",
+                      "name": "Media",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": [
+                        "$surface",
+                        {
+                          "type": "image",
+                          "enabled": true,
+                          "url": "images/reader.webp",
+                          "mode": "cover"
+                        }
+                      ],
+                      "cornerRadius": 14,
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 24,
+                      "justifyContent": "center"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UcGGo",
+                      "name": "Name",
+                      "fill": "$ink",
+                      "content": "FolioTell",
+                      "fontFamily": "$font-display",
+                      "fontSize": 24,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "SAGTV",
+                      "name": "Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "An offline iPhone app that reads your notes aloud.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s7mjPo",
+                      "name": "Stack",
+                      "fill": "$ink-soft",
+                      "content": "SwiftUI · Swift Testing",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "f3fHp",
+                  "name": "Project Agister",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QZiLs",
+                      "name": "Media",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": "$code-bg",
+                      "cornerRadius": 14,
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 24,
+                      "justifyContent": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "dj9Ys",
+                          "name": "Line",
+                          "fill": "#F0A13A",
+                          "content": "$ agister run review",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Y0fpZy",
+                          "name": "Line",
+                          "fill": "#9FB092",
+                          "content": "resolve  ✓ 3 definitions",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "LsxnD",
+                          "name": "Line",
+                          "fill": "#9FB092",
+                          "content": "admit    ✓ budget 1.20 USD",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "MZ2uE",
+                          "name": "Line",
+                          "fill": "#8C8F98",
+                          "content": "record   runs/7f2c/",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "K1wsxM",
+                      "name": "Name",
+                      "fill": "$ink",
+                      "content": "Agister",
+                      "fontFamily": "$font-display",
+                      "fontSize": 24,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "EWEyK",
+                      "name": "Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "A runner for AI-agent work defined in settings files.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "h0VmH",
+                      "name": "Stack",
+                      "fill": "$ink-soft",
+                      "content": "Go",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CoVvp",
+                  "name": "Project Agonara",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ZCy3Q",
+                      "name": "Media",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": [
+                        "$surface",
+                        {
+                          "type": "image",
+                          "enabled": true,
+                          "url": "images/learn-quick-check.webp",
+                          "mode": "cover"
+                        }
+                      ],
+                      "cornerRadius": 14,
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 24,
+                      "justifyContent": "center"
+                    },
+                    {
+                      "type": "text",
+                      "id": "atIOA",
+                      "name": "Name",
+                      "fill": "$ink",
+                      "content": "Agonara",
+                      "fontFamily": "$font-display",
+                      "fontSize": 24,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "vMMvy",
+                      "name": "Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Learning programs your own agent can work on.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UJKzm",
+                      "name": "Stack",
+                      "fill": "$ink-soft",
+                      "content": "Node.js · SQLite",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "f8sPj",
+          "name": "Latest Writing",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            0,
+            120,
+            104,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "dzJJM",
+              "name": "Writing Head",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "padding": [
+                0,
+                0,
+                20,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "i6Myzi",
+                  "name": "Title",
+                  "fill": "$ink",
+                  "content": "Latest writing",
+                  "fontFamily": "$font-display",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "itcgp",
+                  "name": "More",
+                  "fill": "$accent",
+                  "content": "All articles · Tags →",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lNkgX",
+              "name": "Post Grading Open Answers with a Model",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 48,
+              "padding": [
+                32,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ZoqDK",
+                  "name": "Meta",
+                  "width": 180,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "TTdZ3",
+                      "name": "Date",
+                      "fill": "$ink-soft",
+                      "content": "17 Oct 2026",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "NYDJ8",
+                      "name": "Tag",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "e1Xqh",
+                          "name": "Tag Label",
+                          "fill": "$accent",
+                          "content": "Agonara",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HRNnt",
+                  "name": "Body",
+                  "width": 760,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "YtbrE",
+                      "name": "Post Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Grading Open Answers with a Model",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font-display",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "P3r2iN",
+                      "name": "Post Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Agonara can grade a student's open answer with any model behind an OpenAI-compatible endpoint. The model grades per criterion, its output is validated before a student sees it, and the work runs as a leased, retried, budgeted job.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "ZctIe",
+                  "name": "Go",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$ink-soft"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "N6tCDT",
+              "name": "Post Drafts Are Not the Program",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 48,
+              "padding": [
+                32,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "TzR6e",
+                  "name": "Meta",
+                  "width": 180,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "aPCH9",
+                      "name": "Date",
+                      "fill": "$ink-soft",
+                      "content": "10 Oct 2026",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "UoyOb",
+                      "name": "Tag",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "IXJlq",
+                          "name": "Tag Label",
+                          "fill": "$accent",
+                          "content": "Agonara",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "M2LIq",
+                  "name": "Body",
+                  "width": 760,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "o1bAgl",
+                      "name": "Post Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Drafts Are Not the Program",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font-display",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ENu1G",
+                      "name": "Post Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "In Agonara, model suggestions and curator drafts never become program content by themselves, accepted content is kept as revisions, and a student's answers are pinned to the revision they answered.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "WeVMM",
+                  "name": "Go",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$ink-soft"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "pbNeV",
+              "name": "Post A Learning Program Your Own Agent Can Work On",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 48,
+              "padding": [
+                32,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "WHUi4",
+                  "name": "Meta",
+                  "width": 180,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "GLI23",
+                      "name": "Date",
+                      "fill": "$ink-soft",
+                      "content": "3 Oct 2026",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qso8A",
+                      "name": "Tag",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "y0ae75",
+                          "name": "Tag Label",
+                          "fill": "$accent",
+                          "content": "Agonara",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "S67cx",
+                  "name": "Body",
+                  "width": 760,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NM216",
+                      "name": "Post Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "A Learning Program Your Own Agent Can Work On",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font-display",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ceRo0",
+                      "name": "Post Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Agonara is a bring-your-own-agent environment for learning programs. A curator builds a program from sources, students follow it and prove they understand, and the agent you already use does the drafting, quizzing and grading.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "r1J8Z",
+                  "name": "Go",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$ink-soft"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aZT0Z",
+              "name": "Post A Code Review With a Debate Inside",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 48,
+              "padding": [
+                32,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "uyVeW",
+                  "name": "Meta",
+                  "width": 180,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "IgnPV",
+                      "name": "Date",
+                      "fill": "$ink-soft",
+                      "content": "26 Sep 2026",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ozeR8",
+                      "name": "Tag",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mciM2",
+                          "name": "Tag Label",
+                          "fill": "$accent",
+                          "content": "Agister",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eu7K4",
+                  "name": "Body",
+                  "width": 760,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "hLGNJ",
+                      "name": "Post Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "A Code Review With a Debate Inside",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font-display",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "id9kk",
+                      "name": "Post Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "The code review that ships with Agister runs several lenses in parallel, one of them a writer–critic debate in a bounded repeat, before a judge merges the findings. How it is composed from settings.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "OnE79",
+                  "name": "Go",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$ink-soft"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jG4bG",
+              "name": "Post What a Run Leaves Behind",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "gap": 48,
+              "padding": [
+                32,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "dRjKQ",
+                  "name": "Meta",
+                  "width": 180,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "nvUGW",
+                      "name": "Date",
+                      "fill": "$ink-soft",
+                      "content": "19 Sep 2026",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sRnOh",
+                      "name": "Tag",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "q6oeX",
+                          "name": "Tag Label",
+                          "fill": "$accent",
+                          "content": "Agister",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "T2FzsC",
+                  "name": "Body",
+                  "width": 760,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "E9zc8N",
+                      "name": "Post Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "What a Run Leaves Behind",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font-display",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "huyGv",
+                      "name": "Post Desc",
+                      "fill": "$ink-soft",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Every Agister run leaves a folder with the exact definitions by digest, inputs, permission plan, events and patches. Why the record matters more than the terminal output when agents do the work.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "xkZsM",
+                  "name": "Go",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$ink-soft"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Q0GpC",
+          "type": "ref",
+          "ref": "Rxy1N",
+          "name": "Footer",
+          "width": "fill_container"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "LmXrb",
+      "x": 1540,
+      "y": 2513,
+      "name": "Article — Dark",
+      "theme": {
+        "mode": "dark"
+      },
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "iSARv",
+          "type": "ref",
+          "ref": "wO8Ae",
+          "name": "Header",
+          "width": "fill_container",
+          "descendants": {
+            "M7J3yV": {
+              "fill": "$ink"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "G4arhv",
+          "name": "Article Wrap",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            72,
+            0,
+            96,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ZKAt3",
+              "name": "Column",
+              "width": 720,
+              "layout": "vertical",
+              "gap": 22,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "dH6Ph",
+                  "name": "Back",
+                  "fill": "$ink-soft",
+                  "content": "← Articles",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "bJbAV",
+                  "name": "Tags",
+                  "gap": 8,
+                  "padding": [
+                    18,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Sguwc",
+                      "name": "Tag FolioTell",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xtGQx",
+                          "name": "Label",
+                          "fill": "$accent",
+                          "content": "FolioTell",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PAb9z",
+                      "name": "Tag Swift",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZIXAf",
+                          "name": "Label",
+                          "fill": "$accent",
+                          "content": "Swift",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Kl0Wo",
+                      "name": "Tag Architecture",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "JP9AX",
+                          "name": "Label",
+                          "fill": "$accent",
+                          "content": "Architecture",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "SzTm4",
+                      "name": "Tag Reducers",
+                      "fill": "$accent-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        10
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Y5bOTe",
+                          "name": "Label",
+                          "fill": "$accent",
+                          "content": "Reducers",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "ORrmt",
+                  "name": "Title",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "FolioTell: a Speech Synthesizer Behind a Reducer",
+                  "lineHeight": 1.08,
+                  "fontFamily": "$font-display",
+                  "fontSize": 54,
+                  "fontWeight": "500",
+                  "letterSpacing": -0.8
+                },
+                {
+                  "type": "text",
+                  "id": "UiW2F",
+                  "name": "Meta",
+                  "fill": "$ink-soft",
+                  "content": "29 August 2026  ·  3 min read  ·  Part 2 of 3 in FolioTell",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Zy8OW",
+                  "name": "Lede",
+                  "fill": "$ink-soft",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "AVSpeechSynthesizer is asynchronous and full of late callbacks. How FolioTell keeps playback correct with pure reducers, effect handlers and utterance tokens.",
+                  "lineHeight": 1.45,
+                  "fontFamily": "$font-display",
+                  "fontSize": 24,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "rectangle",
+                  "id": "L45ygW",
+                  "name": "Rule",
+                  "fill": "$accent",
+                  "width": 64,
+                  "height": 2
+                },
+                {
+                  "type": "text",
+                  "id": "g20J2A",
+                  "name": "Paragraph",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "On the surface a text-to-speech player has a handful of buttons: play, pause, stop, skip, speed. Underneath, AVSpeechSynthesizer is an asynchronous engine that reports back through delegate callbacks, and those callbacks arrive after you already changed your mind.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "z6O0td",
+                  "name": "Paragraph",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Tap “next sentence” while a word is being spoken and the synthesizer may still tell you about the old utterance: one more word boundary, then a cancellation. FolioTell treats this as a state machine problem.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "I06CR2",
+                  "name": "H2",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Events in, state and effects out",
+                  "lineHeight": 1.2,
+                  "fontFamily": "$font-display",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "MsdxD",
+                  "name": "Paragraph",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "The playback logic lives in FolioTellCore, a library with no UIKit, no SwiftUI and no AVFoundation. Its core is a reducer:",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "gLsek",
+                  "name": "Code Block",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "$code-bg",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "iWxI9",
+                      "name": "Code Bar",
+                      "width": "fill_container",
+                      "stroke": "#FFFFFF14",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "padding": [
+                        10,
+                        18
+                      ],
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Forzp",
+                          "name": "Lang",
+                          "fill": "#8C8F98",
+                          "content": "swift",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon",
+                          "id": "J2XXHS",
+                          "name": "Copy",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "copy",
+                          "library": "lucide",
+                          "fill": "#8C8F98"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "CiiuP",
+                      "name": "Code Lines",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "padding": [
+                        18,
+                        22,
+                        22,
+                        22
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "rmod9",
+                          "name": "Line",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "j6I1A",
+                              "name": "Tok",
+                              "fill": "#E77FAE",
+                              "content": "func ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "iYYzP",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": "reduce",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ZxJtI",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": "(_ state: ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "LyBuc",
+                              "name": "Tok",
+                              "fill": "#A6A3F0",
+                              "content": "State",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "tCqYD",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": ", _ event: ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ck2Pl",
+                              "name": "Tok",
+                              "fill": "#A6A3F0",
+                              "content": "Event",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "k0QN6J",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": ") -> (",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "nyrOs",
+                              "name": "Tok",
+                              "fill": "#A6A3F0",
+                              "content": "State",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "d3xG9",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": ", ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "VTJtg",
+                              "name": "Tok",
+                              "fill": "#A6A3F0",
+                              "content": "Effect",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "mectP",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": "?)",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "w3DCRy",
+                          "name": "Line",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "D1Kv4",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": " ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "GTpTm",
+                          "name": "Line",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "H2Edn8",
+                              "name": "Tok",
+                              "fill": "#6B8A94",
+                              "content": "// accept a callback only for the current utterance",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "uKGsd",
+                          "name": "Line",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "mfs8Y",
+                              "name": "Tok",
+                              "fill": "#E77FAE",
+                              "content": "case let ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "YxQ9W",
+                              "name": "Tok",
+                              "fill": "#5CC2B4",
+                              "content": ".speaking",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "hJjaZ",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": "(session) ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "PE6Bz",
+                              "name": "Tok",
+                              "fill": "#E77FAE",
+                              "content": "where ",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "B6fCEj",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": "session.",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Ob0mS",
+                              "name": "Tok",
+                              "fill": "#5CC2B4",
+                              "content": "utteranceToken",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "DWfBv",
+                              "name": "Tok",
+                              "fill": "#D7D5CF",
+                              "content": " == utteranceToken:",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "d6HHTH",
+                  "name": "Paragraph",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Every button tap is an event, and so is every synthesizer callback. The reducer computes the next state and, optionally, an effect: start an utterance, restart it from an offset, pause. An effect handler performs it against the real engine through an injected adapter.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "dfU1n",
+                  "name": "H2",
+                  "fill": "$ink",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Why this shape",
+                  "lineHeight": 1.2,
+                  "fontFamily": "$font-display",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "U9j0v",
+                  "name": "List",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "tVDZe",
+                      "name": "Item",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "puxiv",
+                          "name": "Num",
+                          "fill": "$accent",
+                          "content": "01",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "tRODL",
+                          "name": "Text",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Testability. Every race is a sequence of events. Most of the 196 tests feed the reducer a sequence and check the state.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xrUaa",
+                      "name": "Item",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "h5aWsy",
+                          "name": "Num",
+                          "fill": "$accent",
+                          "content": "02",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "toXQ7",
+                          "name": "Text",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Working with agents. A reducer gives an agent a narrow, well-tested surface to add a feature to.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xj7RY",
+                      "name": "Item",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "zKULE",
+                          "name": "Num",
+                          "fill": "$accent",
+                          "content": "03",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "NOluh",
+                          "name": "Text",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Replaceable edges. The synthesizer and the position store are adapters; tests wire fakes.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "b0zGQt",
+                  "name": "Spacer",
+                  "fill": "#00000000",
+                  "width": 1,
+                  "height": 20
+                },
+                {
+                  "type": "frame",
+                  "id": "p2Izk",
+                  "name": "Series",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "AmJXT",
+                      "name": "Series Head",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YwXPN",
+                          "name": "Kicker",
+                          "fill": "$accent",
+                          "content": "THE FOLIOTELL SERIES",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 12,
+                          "fontWeight": "600",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "xkB4e",
+                          "name": "Repo",
+                          "fill": "$ink-soft",
+                          "content": "github.com/igor1309/foliotell ↗",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wdq7F",
+                      "name": "Part 1",
+                      "width": "fill_container",
+                      "fill": "#00000000",
+                      "cornerRadius": 10,
+                      "stroke": "#00000000",
+                      "strokeWidth": 1,
+                      "gap": 16,
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "wdclu",
+                          "name": "Num",
+                          "fill": "$ink-soft",
+                          "content": "1",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "k1q56",
+                          "name": "Title",
+                          "fill": "$ink-soft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "An App That Reads Your Notes Aloud",
+                          "fontFamily": "$font-display",
+                          "fontSize": 20
+                        },
+                        {
+                          "type": "text",
+                          "id": "QjJY6",
+                          "name": "State",
+                          "fill": "$accent",
+                          "content": "← Previous",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Us8pb",
+                      "name": "Part 2",
+                      "width": "fill_container",
+                      "fill": "$bg",
+                      "cornerRadius": 10,
+                      "stroke": "$line",
+                      "strokeWidth": 1,
+                      "gap": 16,
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "fkBJ3",
+                          "name": "Num",
+                          "fill": "$accent",
+                          "content": "2",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "RbaS5",
+                          "name": "Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "A Speech Synthesizer Behind a Reducer",
+                          "fontFamily": "$font-display",
+                          "fontSize": 20,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "pfnUi",
+                          "name": "State",
+                          "fill": "$ink-soft",
+                          "content": "Reading",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "P6EJL",
+                      "name": "Part 3",
+                      "width": "fill_container",
+                      "fill": "#00000000",
+                      "cornerRadius": 10,
+                      "stroke": "#00000000",
+                      "strokeWidth": 1,
+                      "gap": 16,
+                      "padding": [
+                        12,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "hyFOK",
+                          "name": "Num",
+                          "fill": "$ink-soft",
+                          "content": "3",
+                          "fontFamily": "$font-mono",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "S5U8CK",
+                          "name": "Title",
+                          "fill": "$ink-soft",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Where Am I in This Text?",
+                          "fontFamily": "$font-display",
+                          "fontSize": 20
+                        },
+                        {
+                          "type": "text",
+                          "id": "EYRyf",
+                          "name": "State",
+                          "fill": "$accent",
+                          "content": "Next →",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "UIZcC",
+          "type": "ref",
+          "ref": "Rxy1N",
+          "name": "Footer",
+          "width": "fill_container"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "MQF3D",
+      "x": 3080,
+      "y": 0,
+      "name": "Article — Mobile Light",
+      "theme": {
+        "mode": "light"
+      },
+      "clip": true,
+      "width": 390,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "GwmyI",
+          "name": "Mobile Header",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+            "bottom": 1
+          },
+          "padding": [
+            18,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "w6sIp",
+              "name": "Brand",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "T2NP1",
+                  "name": "Dot",
+                  "fill": "$accent",
+                  "width": 8,
+                  "height": 8
+                },
+                {
+                  "type": "text",
+                  "id": "VKmIs",
+                  "name": "Wordmark",
+                  "fill": "$ink",
+                  "content": "Igor Malyarov",
+                  "fontFamily": "$font-display",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "icon",
+              "id": "qaalW",
+              "name": "Menu",
+              "width": 22,
+              "height": 22,
+              "icon": "menu",
+              "library": "lucide",
+              "fill": "$ink"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "KadIp",
+          "name": "Column",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 18,
+          "padding": [
+            32,
+            20,
+            48,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "WbZIq",
+              "name": "Tags",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "GrBb4",
+                  "name": "Tag FolioTell",
+                  "fill": "$accent-soft",
+                  "cornerRadius": 999,
+                  "padding": [
+                    3,
+                    9
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "S5hdsJ",
+                      "name": "Label",
+                      "fill": "$accent",
+                      "content": "FolioTell",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a8IY5",
+                  "name": "Tag Swift",
+                  "fill": "$accent-soft",
+                  "cornerRadius": 999,
+                  "padding": [
+                    3,
+                    9
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pb6XI",
+                      "name": "Label",
+                      "fill": "$accent",
+                      "content": "Swift",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "JBMGx",
+                  "name": "Tag Reducers",
+                  "fill": "$accent-soft",
+                  "cornerRadius": 999,
+                  "padding": [
+                    3,
+                    9
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "WhRwP",
+                      "name": "Label",
+                      "fill": "$accent",
+                      "content": "Reducers",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "qktdH",
+              "name": "Title",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "FolioTell: a Speech Synthesizer Behind a Reducer",
+              "lineHeight": 1.1,
+              "fontFamily": "$font-display",
+              "fontSize": 34,
+              "fontWeight": "500",
+              "letterSpacing": -0.4
+            },
+            {
+              "type": "text",
+              "id": "ajvAe",
+              "name": "Meta",
+              "fill": "$ink-soft",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "29 Aug 2026 · 3 min · Part 2 of 3",
+              "fontFamily": "$font-mono",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "nJFpp",
+              "name": "Lede",
+              "fill": "$ink-soft",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "AVSpeechSynthesizer is asynchronous and full of late callbacks. How FolioTell keeps playback correct with pure reducers, effect handlers and utterance tokens.",
+              "lineHeight": 1.45,
+              "fontFamily": "$font-display",
+              "fontSize": 20,
+              "fontWeight": "normal",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "rectangle",
+              "id": "uCHZQ",
+              "name": "Rule",
+              "fill": "$accent",
+              "width": 48,
+              "height": 2
+            },
+            {
+              "type": "text",
+              "id": "ON4F4",
+              "name": "Paragraph",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "On the surface a text-to-speech player has a handful of buttons: play, pause, stop, skip, speed. Underneath, AVSpeechSynthesizer is an asynchronous engine that reports back through delegate callbacks, and those callbacks arrive after you already changed your mind.",
+              "lineHeight": 1.65,
+              "fontFamily": "$font-body",
+              "fontSize": 17,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "UqWyg",
+              "name": "H2",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Events in, state and effects out",
+              "lineHeight": 1.2,
+              "fontFamily": "$font-display",
+              "fontSize": 26,
+              "fontWeight": "500"
+            },
+            {
+              "type": "frame",
+              "id": "N7KMq8",
+              "name": "Code Block",
+              "clip": true,
+              "width": "fill_container",
+              "fill": "$code-bg",
+              "cornerRadius": 10,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "j5CEpb",
+                  "name": "Line",
+                  "fill": "#D7D5CF",
+                  "content": "func reduce(_ state: State,",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "VJ5xI",
+                  "name": "Line",
+                  "fill": "#D7D5CF",
+                  "content": "            _ event: Event)",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "z4cZ0t",
+                  "name": "Line",
+                  "fill": "#A6A3F0",
+                  "content": "    -> (State, Effect?)",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "LSZg1",
+              "name": "Paragraph",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Every button tap is an event, and so is every synthesizer callback. The reducer computes the next state and, optionally, an effect.",
+              "lineHeight": 1.65,
+              "fontFamily": "$font-body",
+              "fontSize": 17,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "O1Vt4T",
+          "name": "Mobile Footer",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+            "top": 1
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            28,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "ueu2e",
+              "name": "Links",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "HgRw8",
+                  "name": "GitHub",
+                  "fill": "$ink",
+                  "content": "GitHub",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "t5ctfC",
+                  "name": "LinkedIn",
+                  "fill": "$ink",
+                  "content": "LinkedIn",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "QIKZh",
+                  "name": "Telegram",
+                  "fill": "$ink",
+                  "content": "Telegram",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "lBajq",
+                  "name": "RSS",
+                  "fill": "$ink",
+                  "content": "RSS",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "TdlC0",
+              "name": "Copyright",
+              "fill": "$ink-soft",
+              "content": "© 2026 Igor Malyarov",
+              "fontFamily": "$font-body",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "themes": {
+    "mode": [
+      "light",
+      "dark"
+    ]
+  },
+  "variables": {
+    "bg": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FBFAF7",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#141518",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "surface": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F2EFE8",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#1D1E22",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "ink": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#1B1A17",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#ECEAE4",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "ink-soft": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#5E5A52",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#A29E95",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "line": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#1B1A171F",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#ECEAE41F",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "accent": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#B85A06",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#F0A13A",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "accent-soft": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F6E7D3",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#3A2A17",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "code-bg": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#1D1E22",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#0D0E10",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "code-ink": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D7D5CF",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#D7D5CF",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "font-display": {
+      "type": "string",
+      "value": "Newsreader"
+    },
+    "font-body": {
+      "type": "string",
+      "value": "Inter"
+    },
+    "font-mono": {
+      "type": "string",
+      "value": "JetBrains Mono"
+    }
+  },
+  "fileToken": "0d533603-66a5-4698-9674-b2e8709981a9"
+}
