@@ -1,3 +1,7 @@
+---
+title: Portfolio
+---
+
 # Portfolio
 
 ## Built with AI coding agents

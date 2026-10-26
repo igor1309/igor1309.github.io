@@ -84,10 +84,8 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                 SiteHeader(context: context, selected: section.id)
                 Main {
                     // Portfolio and About are sections with a body and no posts.
-                    // Content/about.md is a page written to the same path as
-                    // the About section, so both draw the page's text.
                     if section.id.rawValue == "about" {
-                        AboutPage(text: context.pages["about"]?.body ?? section.body)
+                        AboutPage(text: section.body)
                     } else if section.items.isEmpty {
                         Div(section.body).class("column content page")
                     } else {
@@ -169,11 +167,7 @@ private struct Igor1309DevHTMLFactory<Site: Website>: HTMLFactory {
                     selected: Site.SectionID(rawValue: page.path.string)
                 )
                 Main {
-                    if page.path == "about" {
-                        AboutPage(text: page.body)
-                    } else {
-                        Div(page.body).class("column content page")
-                    }
+                    Div(page.body).class("column content page")
                 }
                 SiteFooter()
             }
