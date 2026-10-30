@@ -66,6 +66,14 @@ extension ShowcaseProject {
             repo: "https://github.com/igor1309/agonara",
             media: .image("/images/portfolio/agonara/learn-quick-check.webp")
         ),
+        .init(
+            name: "Mizan BLE",
+            tag: "Mizan BLE",
+            summary: "An iPad and an iPhone agree a payment over Bluetooth.",
+            stack: "SwiftUI · Core Bluetooth",
+            repo: "https://github.com/igor1309/mizan-ble",
+            media: .image("/images/portfolio/mizan-ble/host-advertising.webp")
+        ),
     ]
 }
 
