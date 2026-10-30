@@ -1,5 +1,5 @@
 ---
-date: 2026-10-24 12:00
+date: 2026-10-18 12:00
 description: Mizan BLE is a proof of concept in which an iPad at the till and a payer's iPhone agree a payment over Bluetooth Low Energy. What it is, which device plays which Bluetooth role, and how the four characteristics of one service carry a whole transaction.
 tags: Mizan BLE, Swift, Core Bluetooth, iOS, Showcase
 ---

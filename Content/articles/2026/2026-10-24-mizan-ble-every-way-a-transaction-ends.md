@@ -1,12 +1,12 @@
 ---
-date: 2026-10-31 12:00
+date: 2026-10-24 12:00
 description: A payment over Bluetooth has one way to succeed and many ways to stop. How Mizan BLE splits each side into a chain of state machines, why the countdown stops once the amount is sent, and how an iPad ends a link it is not allowed to close.
 tags: Mizan BLE, Swift, Core Bluetooth, iOS, Showcase
 ---
 
 # Mizan BLE: Every Way a Transaction Ends
 
-The [first post](/articles/2026/2026-10-24-mizan-ble-a-payment-between-an-ipad-and-an-iphone) walked through a payment that goes well: lock, connect, amount, confirm, result. Most of the specifying went into the other paths: the payer walks away, the operator changes their mind, Bluetooth drops halfway. Both screens have to say what happened, and they have to agree.
+The [first post](/articles/2026/2026-10-18-mizan-ble-a-payment-between-an-ipad-and-an-iphone) walked through a payment that goes well: lock, connect, amount, confirm, result. Most of the specifying went into the other paths: the payer walks away, the operator changes their mind, Bluetooth drops halfway. Both screens have to say what happened, and they have to agree.
 
 ## The endings
 

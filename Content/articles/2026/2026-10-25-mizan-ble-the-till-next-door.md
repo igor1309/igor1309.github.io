@@ -1,5 +1,5 @@
 ---
-date: 2026-11-07 12:00
+date: 2026-10-25 12:00
 description: A phone that pays at a till must never pay the till next door. How Mizan BLE picks the nearest host by smoothed signal strength, what a real iPad and iPhone measured, why the first picker flickered at arm's length, and what iOS does not let a Bluetooth payment do.
 tags: Mizan BLE, Swift, Core Bluetooth, iOS, Showcase
 ---
@@ -34,7 +34,7 @@ A second iPad was not at hand, so choosing between two real tills waits for the 
 
 Some limits are not in the app's code at all.
 
-- **A peripheral cannot hang up.** As the [second post](/articles/2026/2026-10-31-mizan-ble-every-way-a-transaction-ends) described, the iPad ends a link by removing its service.
+- **A peripheral cannot hang up.** As the [second post](/articles/2026/2026-10-24-mizan-ble-every-way-a-transaction-ends) described, the iPad ends a link by removing its service.
 - **The iPad never learns the phone's signal.** RSSI is something a central reads; the host has no way to tell how near the payer is.
 - **Message size is negotiated.** A link left at Bluetooth's default 23-byte MTU could not carry the 41-byte amount in one write. Current iPhones and iPads negotiate more, and every sender checks its limit before sending; a message that does not fit fails the transaction rather than being split.
 - **Scanning with duplicates works only in the foreground,** and iOS may slow it over time even there.
