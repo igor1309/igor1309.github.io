@@ -1,0 +1,77 @@
+# Checks every pull request into `author` before it can publish.
+# Required status check on `author`: "Post checks / checks".
+
+name: Post checks
+
+on:
+  pull_request:
+    branches:
+      - author
+
+jobs:
+  checks:
+    runs-on: macos-26
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+      PUBLISH_FUTURE_POSTS: "1"   # render posts dated later too, so they get checked
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Find changed posts
+        id: changed
+        run: |
+          git fetch -q origin author
+          posts=$(git diff --name-only --diff-filter=AM origin/author...HEAD -- 'Content/**/*.md' | tr '\n' ' ')
+          echo "posts=$posts" >> "$GITHUB_OUTPUT"
+          echo "Changed posts: ${posts:-none}"
+
+      - uses: actions/cache@v5
+        with:
+          path: .build
+          key: ${{ runner.os }}-${{ runner.arch }}-macos-26-xcode-26.3-site-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ runner.arch }}-macos-26-xcode-26.3-site-
+
+      - name: Build site
+        id: build
+        run: swift run -c release igor1309dev
+
+      - name: Tests
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        # The snapshot tests in igor1309devTests have no recorded references.
+        run: swift test --filter 'ContentLayoutTests|ShowcaseTests'
+
+      - name: Content guardrail, front matter and images
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: python3 scripts/check_posts.py source ${{ steps.changed.outputs.posts }}
+
+      - name: Rendered output (raw Markdown/HTML, local links)
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: python3 scripts/check_posts.py rendered ${{ steps.changed.outputs.posts }}
+
+      - name: External links
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: python3 scripts/check_posts.py links ${{ steps.changed.outputs.posts }}
+
+      - uses: actions/setup-node@v5
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.changed.outputs.posts != '' }}
+        with:
+          node-version: 22
+
+      - name: Screenshots and iPhone overflow
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.changed.outputs.posts != '' }}
+        run: |
+          (cd scripts && npm install --no-audit --no-fund)
+          (cd Output && python3 -m http.server 8123 >/dev/null 2>&1 &)
+          sleep 2
+          node scripts/screenshots.mjs http://localhost:8123 shots ${{ steps.changed.outputs.posts }}
+
+      - uses: actions/upload-artifact@v5
+        if: always() && steps.changed.outputs.posts != ''
+        with:
+          name: post-screenshots
+          path: shots/
+          if-no-files-found: ignore
