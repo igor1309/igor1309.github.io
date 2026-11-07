@@ -1,0 +1,38 @@
+# The build leaves out posts dated in the future (see main.swift).
+# Every hour, deploy if a post's date (UTC) passed within the last hour.
+
+name: Scheduled publish
+
+on:
+  schedule:
+    - cron: '2 * * * *'
+  workflow_dispatch:
+
+jobs:
+  due:
+    runs-on: ubuntu-latest
+    outputs:
+      due: ${{ steps.due.outputs.due }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: author
+      - id: due
+        run: |
+          python3 - <<'PYTHON' >> "$GITHUB_OUTPUT"
+          import re, datetime as dt
+          from pathlib import Path
+          now = dt.datetime.utcnow()
+          due = []
+          for p in Path("Content").rglob("*.md"):
+              m = re.search(r"^date: (\d{4}-\d{2}-\d{2} \d{2}:\d{2})", p.read_text(), re.M)
+              if m and now - dt.timedelta(hours=1, minutes=5) < dt.datetime.strptime(m.group(1), "%Y-%m-%d %H:%M") <= now:
+                  due.append(str(p))
+          print(f"due={'true' if due else 'false'}")
+          PYTHON
+          cat "$GITHUB_OUTPUT"
+
+  publish:
+    needs: due
+    if: needs.due.outputs.due == 'true' || github.event_name == 'workflow_dispatch'
+    uses: ./.github/workflows/publish.yml
