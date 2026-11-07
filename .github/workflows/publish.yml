@@ -54,6 +54,28 @@ jobs:
           print(f"Verified {len(files)} generated resources at their original paths")
           PYTHON
 
+      - name: Verify no raw Markdown in generated pages
+        # An HTML block Ink can't close (e.g. a bare `<img ...>` on its own line,
+        # not self-closed and not wrapped in <div>/<p>) swallows the rest of the
+        # post as raw text. Fail before deploying instead of publishing it.
+        run: |
+          python3 - <<'PYTHON'
+          import re, sys
+          from pathlib import Path
+          bad = []
+          for page in Path("Output").rglob("*.html"):
+              html = page.read_text(errors="ignore")
+              html = re.sub(r"<(pre|code|script|style)\b.*?</\1>", "", html, flags=re.S)
+              for n, line in enumerate(html.splitlines(), 1):
+                  if re.match(r"\s*#{1,6} \S", line) or re.search(r"\]\((https?://|/)[^)\s]*\)", line):
+                      bad.append(f"{page}:{n}: {line.strip()[:120]}")
+          if bad:
+              print("Raw Markdown left in generated HTML. Wrap bare <img> lines in <div>...</div> or self-close them (<img ... />).")
+              print("\n".join(bad[:50]))
+              sys.exit(1)
+          print("No raw Markdown in generated pages")
+          PYTHON
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
