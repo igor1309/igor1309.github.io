@@ -10,7 +10,9 @@ tags: RexLab, Design, UX, Process, Showcase
 
 This week every one of them moved onto the same piece of ground.
 
+<div>
 <img src="/images/portfolio/rexlab/home-light.webp" width="100%" title="RexLab's Home as the dig site: today's game in the sky, every other game in a pocket in the earth" />
+</div>
 
 ## One world instead of eight looks
 
@@ -50,6 +52,8 @@ Most of what the design-first process found was small: misplaced labels, titles 
 
 The cost is speed. A screen waits for a person to look at it. The payoff is that RexLab now looks like one place, and stays that way as games are added.
 
+<div>
 <img src="/images/portfolio/rexlab/home-dark.webp" width="100%" title="The same Home in the dark theme" />
+</div>
 
 Play it at [rexlab.enoa.ai](https://rexlab.enoa.ai); the code is at [github.com/igor1309/rexlab](https://github.com/igor1309/rexlab).
