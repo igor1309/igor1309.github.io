@@ -7,9 +7,9 @@ on:
   
 jobs:
   publish:
-    runs-on: macos-15
+    runs-on: macos-26
     env:
-      DEVELOPER_DIR: /Applications/Xcode_26.2.app/Contents/Developer
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
     
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -22,9 +22,9 @@ jobs:
           path: |
             ~/Publish_build
             .build
-          key: ${{ runner.os }}-${{ runner.arch }}-macos-15-xcode-26.2-spm-${{ hashFiles('**/Package.resolved') }}
+          key: ${{ runner.os }}-${{ runner.arch }}-macos-26-xcode-26.3-spm-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
-            ${{ runner.os }}-${{ runner.arch }}-macos-15-xcode-26.2-spm-
+            ${{ runner.os }}-${{ runner.arch }}-macos-26-xcode-26.3-spm-
             
       - name: Setup JohnSundell/Publish
         run: |
@@ -39,6 +39,20 @@ jobs:
           
       - name: Generate Site 
         run: publish-cli generate
+
+      - name: Verify generated resource paths
+        run: |
+          python3 - <<'PYTHON'
+          from pathlib import Path
+          resources = list(Path("Resources").rglob("*"))
+          files = [source for source in resources if source.is_file()]
+          assert files, "No source resources found"
+          for source in files:
+              target = Path("Output") / source.relative_to("Resources")
+              assert target.is_file(), f"Missing generated resource: {target}"
+              assert source.read_bytes() == target.read_bytes(), f"Changed resource: {target}"
+          print(f"Verified {len(files)} generated resources at their original paths")
+          PYTHON
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
