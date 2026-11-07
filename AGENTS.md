@@ -8,11 +8,11 @@ Wrap every raw `<img>` in a `<div>`, with blank lines around the block:
 
 ```html
 <div>
-<img src="/images/<project>/<file>.webp" width="100%" title="...">
+<img src="/images/<project>/<file>.webp" width="100%" title="..." />
 </div>
 ```
 
-A bare `<img>` line starts an HTML block that the Markdown parser does not close, so all the text after it, up to the next image, renders as raw Markdown.
+A bare `<img>` line starts an HTML block that the Markdown parser does not close, so all the text after it, up to the next image, renders as raw Markdown. Close the tag too (`<img ... />`): `ContentLayoutTests` fails on an unclosed one.
 
 ## Rendering check (mandatory before merge)
 

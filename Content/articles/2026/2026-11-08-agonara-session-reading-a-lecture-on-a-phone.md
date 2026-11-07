@@ -39,8 +39,8 @@ A chat can only go so far: little control over typography, no room for a menu on
 It was designed before it was built, in [pen.dev](https://pen.dev), from real program data rather than placeholder text: tokens for colour, type, spacing and radius, components, and iPhone, iPad and desktop screens in light and dark. A second round raised dark-mode contrast and added a second palette, so there are two: Ink & Saffron, used by default, and Pine & Lichen. The page's CSS is generated from the design's colour variables, so the palettes do not drift from the design.
 
 <p align="center">
-  <img src="/images/agonara-session/phone-reading.png" width="45%" title="A lecture page on a phone">
-  <img src="/images/agonara-session/phone-contents-sheet.png" width="45%" title="The lecture's contents as a sheet">
+  <img src="/images/agonara-session/phone-reading.png" width="45%" title="A lecture page on a phone" />
+  <img src="/images/agonara-session/phone-contents-sheet.png" width="45%" title="The lecture's contents as a sheet" />
 </p>
 
 The page cuts a lecture exactly as the bot does, because both draw the same screens. The outline is a sidebar on a wide screen, a drawer on a medium one and a sheet on a phone. Every paragraph has a ⋯ menu — Tell me more, Explain simpler, Give an example, Ask a question — whose answers are a stub until a model is chosen. Addresses are real (`/p/{program}`, `/m/{entity}?page=N`), so Back, refresh and links work, and the last page read is kept for Continue reading. Access needs a token once; the page trades it for a cookie.

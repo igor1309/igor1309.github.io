@@ -20,7 +20,7 @@ A dinosaur learning game for children aged 4 to 7, made for an iPad held sideway
 <a href="https://rexlab.enoa.ai">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/rexlab/home-dark.webp">
-<img src="/images/portfolio/rexlab/home-light.webp" width="100%" alt="RexLab's home screen with its dinosaur games">
+<img src="/images/portfolio/rexlab/home-light.webp" width="100%" alt="RexLab's home screen with its dinosaur games" />
 </picture>
 </a>
 <p align="center"><cite>RexLab's home screen with its dinosaur games.</cite></p>
@@ -38,9 +38,9 @@ An offline iPhone app that reads Markdown and plain-text files aloud. SwiftUI ov
 [Source](https://github.com/igor1309/foliotell)
 
 <div align="center">
-<img src="/images/portfolio/foliotell/reader.webp" width="30%" alt="FolioTell reading a Markdown file">
-<img src="/images/portfolio/foliotell/playing.webp" width="30%" alt="FolioTell playing it aloud">
-<img src="/images/portfolio/foliotell/ru-dark.webp" width="30%" alt="FolioTell reading a Russian poem in dark mode">
+<img src="/images/portfolio/foliotell/reader.webp" width="30%" alt="FolioTell reading a Markdown file" />
+<img src="/images/portfolio/foliotell/playing.webp" width="30%" alt="FolioTell playing it aloud" />
+<img src="/images/portfolio/foliotell/ru-dark.webp" width="30%" alt="FolioTell reading a Russian poem in dark mode" />
 <p align="center"><cite>FolioTell: reading a Markdown file, playing it aloud, and a Russian poem in dark mode.</cite></p>
 </div>
 <br/>
@@ -66,7 +66,7 @@ A bring-your-own-agent environment for learning programs. A curator builds a pro
 [Live instance](https://agonara.enoa.ai/learn) · [Source](https://github.com/igor1309/agonara)
 
 <div align="center">
-<img src="/images/portfolio/agonara/learn-quick-check.webp" width="70%" alt="An Agonara Quick Check: a student answers a question and sees the result">
+<img src="/images/portfolio/agonara/learn-quick-check.webp" width="70%" alt="An Agonara Quick Check: a student answers a question and sees the result" />
 <p align="center"><cite>An Agonara Quick Check: a student answers a question and sees the result.</cite></p>
 </div>
 <br/>
