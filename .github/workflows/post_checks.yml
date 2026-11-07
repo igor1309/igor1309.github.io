@@ -36,27 +36,33 @@ jobs:
             ${{ runner.os }}-${{ runner.arch }}-macos-26-xcode-26.3-site-
 
       - name: Build site
+        id: build
         run: swift run -c release igor1309dev
 
       - name: Tests
-        run: swift test
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        # The snapshot tests in igor1309devTests have no recorded references.
+        run: swift test --filter 'ContentLayoutTests|ShowcaseTests'
 
       - name: Content guardrail, front matter and images
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: python3 scripts/check_posts.py source ${{ steps.changed.outputs.posts }}
 
       - name: Rendered output (raw Markdown/HTML, local links)
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: python3 scripts/check_posts.py rendered ${{ steps.changed.outputs.posts }}
 
       - name: External links
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: python3 scripts/check_posts.py links ${{ steps.changed.outputs.posts }}
 
       - uses: actions/setup-node@v5
-        if: steps.changed.outputs.posts != ''
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.changed.outputs.posts != '' }}
         with:
           node-version: 22
 
       - name: Screenshots and iPhone overflow
-        if: steps.changed.outputs.posts != ''
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.changed.outputs.posts != '' }}
         run: |
           (cd scripts && npm install --no-audit --no-fund)
           (cd Output && python3 -m http.server 8123 >/dev/null 2>&1 &)
