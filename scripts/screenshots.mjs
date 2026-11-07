@@ -23,17 +23,17 @@ for (const post of posts) {
   await page.goto(base + urlPath, { waitUntil: "networkidle0" });
   await page.screenshot({ path: `${outDir}/${name}-iphone.png`, fullPage: true });
   const m = await page.evaluate(() => ({
+    device: screen.width,
     vw: window.innerWidth,
     sw: document.documentElement.scrollWidth,
-    wide: [...document.querySelectorAll("body *")]
-      .filter((e) => e.getBoundingClientRect().right > window.innerWidth + 1)
-      .slice(0, 5)
-      .map((e) => e.tagName.toLowerCase() + (e.className ? "." + e.className : "")),
     broken: [...document.images].filter((i) => !i.complete || i.naturalWidth === 0).map((i) => i.src),
   }));
-  console.log(`${urlPath}: iPhone 15 viewport ${m.vw}px, scrollWidth ${m.sw}px`);
-  if (m.vw !== 393) failures.push(`${urlPath}: iPhone 15 emulation not applied (viewport ${m.vw}px)`);
-  if (m.sw > m.vw) failures.push(`${urlPath}: scrolls sideways on iPhone 15 (${m.sw}px > ${m.vw}px): ${m.wide.join(", ")}`);
+  // A too-wide page makes mobile Chrome zoom out, which widens innerWidth too,
+  // so compare against the device width, not the viewport.
+  console.log(`${urlPath}: iPhone 15 device ${m.device}px, viewport ${m.vw}px, scrollWidth ${m.sw}px`);
+  if (m.device !== 393) failures.push(`${urlPath}: iPhone 15 emulation not applied (screen ${m.device}px)`);
+  else if (Math.max(m.sw, m.vw) > m.device)
+    failures.push(`${urlPath}: scrolls sideways on iPhone 15 (page ${Math.max(m.sw, m.vw)}px wide, device ${m.device}px)`);
   for (const src of m.broken) failures.push(`${urlPath}: image did not load: ${src}`);
   await page.close();
 }
