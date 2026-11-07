@@ -24,6 +24,6 @@ Thank you, Caio, Mike, [Bogdan](https://www.linkedin.com/in/bpoplauschi/), [Raph
 
 <br/>
 <div align="center">
-<img src="../../../images/about/certificate-of-completion-for-ios-lead-essentials.png" width="100%" title="Certificate of completion for iOS Lead Essentials program at the Essential Developer Academy">
+<img src="../../../images/about/certificate-of-completion-for-ios-lead-essentials.png" width="100%" title="Certificate of completion for iOS Lead Essentials program at the Essential Developer Academy" />
 </div>
 <br/>

@@ -15,15 +15,15 @@ Some bank apps let you pay at a till by holding your phone near it: no QR code, 
 The **host** is an iPad at the till. The operator types an amount and locks it, and the iPad starts advertising it with a countdown, 60 seconds by default.
 
 <div>
-<img src="/images/mizan-ble/host-advertising.webp" width="100%" title="The host on an iPad, advertising an amount with its countdown">
+<img src="/images/mizan-ble/host-advertising.webp" width="100%" title="The host on an iPad, advertising an amount with its countdown" />
 </div>
 
 The **client** is the payer's iPhone. It finds the nearest host, and when the payer taps Start, it connects, shows the amount and asks them to confirm or decline. On a confirm, the operator picks the mock outcome, success or failure, and both screens show it.
 
 <div>
-  <img src="/images/mizan-ble/client-find.webp" width="32%" title="The client finds a host in range">
-  <img src="/images/mizan-ble/client-review.webp" width="32%" title="The payer reviews the amount, to confirm or decline">
-  <img src="/images/mizan-ble/client-waiting.webp" width="32%" title="The client waits for the host's result">
+  <img src="/images/mizan-ble/client-find.webp" width="32%" title="The client finds a host in range" />
+  <img src="/images/mizan-ble/client-review.webp" width="32%" title="The payer reviews the amount, to confirm or decline" />
+  <img src="/images/mizan-ble/client-waiting.webp" width="32%" title="The client waits for the host's result" />
 </div>
 
 Either device can take either role: an iPad launches as host and an iPhone as client, and a switch in the header changes it between payments.
@@ -54,7 +54,7 @@ One payment goes like this:
 5. On a confirm, the operator picks the outcome; the host sends the result. The phone disconnects, and the host removes the service.
 
 <div>
-<img src="/images/mizan-ble/host-paid.webp" width="100%" title="The host on an iPad after the payment is approved">
+<img src="/images/mizan-ble/host-paid.webp" width="100%" title="The host on an iPad after the payment is approved" />
 </div>
 
 On a real iPad and iPhone, from connecting to the amount on screen takes 1.1 to 1.3 seconds.
