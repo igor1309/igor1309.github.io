@@ -8,6 +8,8 @@ on:
 jobs:
   publish:
     runs-on: macos-15
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.2.app/Contents/Developer
     
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -20,9 +22,9 @@ jobs:
           path: |
             ~/Publish_build
             .build
-          key: ${{ runner.os }}-${{ runner.arch }}-${{ env.ImageOS }}-${{ env.ImageVersion }}-spm-${{ hashFiles('**/Package.resolved') }}
+          key: ${{ runner.os }}-${{ runner.arch }}-macos-15-xcode-26.2-spm-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
-            ${{ runner.os }}-${{ runner.arch }}-${{ env.ImageOS }}-${{ env.ImageVersion }}-spm-
+            ${{ runner.os }}-${{ runner.arch }}-macos-15-xcode-26.2-spm-
             
       - name: Setup JohnSundell/Publish
         run: |
