@@ -27,7 +27,17 @@ struct Igor1309Dev: Website {
 }
 
 // This will generate your website using selected theme:
+// There is no scheduler: a post dated in the future is left out of the build,
+// and the hourly `Scheduled publish` workflow deploys it once its time passes.
+// Dates are read in the build machine's time zone (UTC on GitHub runners).
+// PR checks set PUBLISH_FUTURE_POSTS=1 so they render and check those posts too.
+let includeFuturePosts = ProcessInfo.processInfo.environment["PUBLISH_FUTURE_POSTS"] == "1"
+let buildDate = Date()
+
 try Igor1309Dev().publish(
     withTheme: .igor1309,
+    additionalSteps: includeFuturePosts ? [] : [
+        .removeAllItems(in: .articles, matching: Predicate { $0.date > buildDate })
+    ],
     plugins: [.splash(withClassPrefix: "")]
 )
