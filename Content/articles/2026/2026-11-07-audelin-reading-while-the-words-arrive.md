@@ -16,6 +16,16 @@ The earlier gutter labelled speakers with the Russian words «я» and «они�
 
 Gap captions carry the missing side's symbol too. A warning about missing audio should tell me which half of the conversation it concerns, rather than making the whole transcript look suspect.
 
+Before and after the speaker-gutter change, in retained app-rendered test snapshots:
+
+<div>
+<img src="/images/audelin/speakers-before.webp" width="100%" title="Before: separate я and они labels beside the timestamps" />
+</div>
+
+<div>
+<img src="/images/audelin/speakers-after.webp" width="100%" title="After: coloured microphone and speaker symbols before the timestamps" />
+</div>
+
 Here is the panel following the newest words. The screenshots use synthetic Russian conversation text with English terms, rendered by the actual panel; they contain no recorded call.
 
 <div>
