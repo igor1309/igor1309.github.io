@@ -1,5 +1,5 @@
 ---
-date: 2026-11-18 12:00
+date: 2026-11-28 12:00
 description: Audelin's live transcript panel now tells VoiceOver who said each line. The row elements are built only when accessibility asks for them, so a late update in a long call stays as cheap as before.
 tags: Audelin, Swift, macOS, Accessibility, Performance, Showcase
 ---
