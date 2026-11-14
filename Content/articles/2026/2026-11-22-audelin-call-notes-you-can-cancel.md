@@ -1,5 +1,5 @@
 ---
-date: 2026-11-17 12:00
+date: 2026-11-22 12:00
 description: Audelin's calls window makes a call's notes on request, shows them being made, lets you cancel or retry them, and remembers what an app exit interrupted.
 tags: Audelin, macOS, AI, UI, Showcase
 ---
