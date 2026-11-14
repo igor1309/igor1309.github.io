@@ -10,7 +10,7 @@ tags: Audelin, macOS, Design, UI, Showcase
 
 ## What was wrong with the old list
 
-The old window was a list of calls. To read a call's notes you clicked an eye on its row, pressed Space, or chose «Показать итоги», and the notes opened in a floating panel over the list. The panel was a second window to place, close and keep in sync with the selection. Finding a call meant scrolling.
+The old window was a list of calls. To read a call's notes you clicked an eye on its row, pressed Space, or chose «Показать итоги», and the notes opened in a floating panel over the list.
 
 ## Drawing options before code
 
@@ -32,7 +32,7 @@ Search is the list's first row. It looks through each call's title, transcript a
 <img src="/images/audelin/calls-search-en.webp" width="100%" alt="Audelin's calls list searching for OKR: matches highlighted in a title, a transcript line with its timestamp and 2 more, and a summary line" title="Search: where each match is, and how many more" />
 </div>
 
-Notes are made on request, even with automatic notes off; cancelling leaves no record, and failed notes can be retried. That part has [its own post](/articles/2026/2026-11-22-audelin-call-notes-you-can-cancel/).
+Notes are made on request, even with automatic notes off; cancelling leaves no record, and failed notes can be retried. How that works, cancel and quit included, gets its own post next weekend.
 
 ## Two languages, live
 
@@ -48,6 +48,6 @@ Each drawn state became a reference image: the window rendered from fixture call
 
 To exercise the window as a whole, it moved into its own library, so a second app can show it. That app, a rehearsal build, opens the calls window over given folders of fixture calls with a fake summary runtime and no audio devices. A scripted scenario makes a call's notes there and cancels them, with no real call and no real model.
 
-Drawing first cost a day before any code. It bought a window whose every state had already been decided, and images that keep it that way.
+Drawing first meant every state of the window was decided before code, and the images keep it that way.
 
 The recording and live-transcript code, screenshots and build instructions are in [Audelin's public repository](https://github.com/igor1309/audelin).
