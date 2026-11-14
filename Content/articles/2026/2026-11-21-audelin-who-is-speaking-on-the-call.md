@@ -22,7 +22,11 @@ Separating voices in a recording is called diarization. Audelin measured live di
 
 A small Manifest V3 extension for Chrome and Yandex Browser runs on Telemost call pages. It finds the call frame, reads the participant tiles, tells your own tile from the others, and watches for the green speaking border. It relies on the page's test IDs and structure, not on translated labels or generated class names. Its tests run on saved Telemost pages: a gallery with one and with several remote people, speaker view, screen share, a pre-join screen and a page that is not a call. When two tiles share a name, nobody is marked speaking, because the extension cannot tell which one it is.
 
-[diagram: sequence from Telemost page through the extension, the native host and the app socket to the panel]
+<div>
+<a href="/images/audelin/telemost-names-flow.webp"><img src="/images/audelin/telemost-names-flow.webp" width="100%" alt="Sequence diagram: the Telemost page's roster and speaking border reach the extension, which stamps each event and sends it over native messaging to the host; the host passes it to the app socket after presenting a secret; the app pings the extension for its clock, maps browser time onto call time, and names the row in the panel" title="Schematic: from the call page to the panel" /></a>
+</div>
+
+A schematic of the path, not a trace; open it full size on a phone.
 
 Each change becomes an event with a sequence number and a browser timestamp, in one versioned message format that the extension and the app test against the same fixtures. The app rejects a message of an unknown version or shape.
 
