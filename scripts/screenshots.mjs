@@ -11,8 +11,9 @@ const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
 const failures = [];
 
 for (const post of posts) {
-  const urlPath = post.replace(/^Content\//, "/").replace(/\.md$/, "/");
-  const name = path.basename(post, ".md");
+  // A section's index.md is served at the section's own path.
+  const urlPath = post.replace(/^Content\//, "/").replace(/(^|\/)index\.md$/, "$1").replace(/\.md$/, "/");
+  const name = post.replace(/^Content\//, "").replace(/\.md$/, "").replaceAll("/", "-");
   const page = await browser.newPage();
 
   await page.setViewport({ width: 1440, height: 900 });

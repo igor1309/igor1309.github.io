@@ -24,9 +24,13 @@ jobs:
         id: changed
         run: |
           git fetch -q origin author
-          posts=$(git diff --name-only --diff-filter=AM origin/author...HEAD -- 'Content/**/*.md' | tr '\n' ' ')
+          posts=$(git diff --name-only --diff-filter=AM origin/author...HEAD -- 'Content/articles/**/*.md' | tr '\n' ' ')
+          # Pages (portfolio, about, home) have no post front matter; they get
+          # the link check and the screenshots, not the post checks.
+          pages=$(git diff --name-only --diff-filter=AM origin/author...HEAD -- 'Content/**/*.md' ':!Content/articles/**' | tr '\n' ' ')
           echo "posts=$posts" >> "$GITHUB_OUTPUT"
-          echo "Changed posts: ${posts:-none}"
+          echo "all=$posts$pages" >> "$GITHUB_OUTPUT"
+          echo "Changed posts: ${posts:-none}; changed pages: ${pages:-none}"
 
       - uses: actions/cache@v5
         with:
@@ -54,23 +58,23 @@ jobs:
 
       - name: External links
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
-        run: python3 scripts/check_posts.py links ${{ steps.changed.outputs.posts }}
+        run: python3 scripts/check_posts.py links ${{ steps.changed.outputs.all }}
 
       - uses: actions/setup-node@v5
-        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.changed.outputs.posts != '' }}
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.changed.outputs.all != '' }}
         with:
           node-version: 22
 
       - name: Screenshots and iPhone overflow
-        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.changed.outputs.posts != '' }}
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.changed.outputs.all != '' }}
         run: |
           (cd scripts && npm install --no-audit --no-fund)
           (cd Output && python3 -m http.server 8123 >/dev/null 2>&1 &)
           sleep 2
-          node scripts/screenshots.mjs http://localhost:8123 shots ${{ steps.changed.outputs.posts }}
+          node scripts/screenshots.mjs http://localhost:8123 shots ${{ steps.changed.outputs.all }}
 
       - uses: actions/upload-artifact@v5
-        if: always() && steps.changed.outputs.posts != ''
+        if: always() && steps.changed.outputs.all != ''
         with:
           name: post-screenshots
           path: shots/
