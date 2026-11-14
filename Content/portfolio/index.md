@@ -8,6 +8,21 @@ title: Portfolio
 
 These projects come from my private monorepo, where I build products with AI coding agents working from specs and tests. Each one is published as its own public repository with its code, tests and README, and checked to build and pass on its own outside the monorepo.
 
+### Audelin
+
+***Swift***, ***SwiftUI***, ***Core Audio***, ***Swift Testing***
+
+A native macOS call recorder with a floating, selectable live transcript. It records the microphone and the call as separate tracks, and audio and speech recognition run on the Mac. A browser extension names remote speakers in Yandex Telemost calls live.
+
+[Download for macOS](https://github.com/igor1309/audelin/releases/latest) · [Source](https://github.com/igor1309/audelin)
+
+<div align="center">
+<img src="/images/portfolio/audelin/live.webp" width="48%" alt="Audelin's floating live transcript with speaker symbols" />
+<img src="/images/portfolio/audelin/speakers-live.webp" width="48%" alt="Remote speakers named live from a Telemost call" />
+<p align="center"><cite>Audelin: the live transcript, and remote speakers named live from a Telemost call.</cite></p>
+</div>
+<br/>
+
 ### RexLab
 
 ***React***, ***TypeScript***, ***Vite***, ***Gherkin***, ***Vitest***
