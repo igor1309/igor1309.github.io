@@ -18,7 +18,7 @@ A [panel test](https://github.com/igor1309/audelin/blob/main/macos/Tests/PanelUI
 
 ## Built when asked
 
-The first version rebuilt every row's element on each update. That is the pattern the earlier post removed from drawing: work that grows with the conversation when only the last word changed. In a long call, every new word would have made one accessibility object per row, whether or not anything was listening.
+The first version rebuilt every row's element on each update. That is the pattern the earlier post removed from drawing: work that grows with the conversation when only the last word changed. In a long call, every new word would have made one accessibility object per row, whether or not anything was listening. The load test below caught it: with those elements built on every update, an update at 6,000 entries took 11.61 ms against 1.07 ms at 20, nearly eleven times as much, and the test failed.
 
 The fix keeps only the current lines. An update drops the built elements and tells accessibility the layout changed. The elements are made the next time accessibility asks the view for its children, and kept until the lines change again. With VoiceOver off, nothing asks, and an update costs what it did before.
 
@@ -28,8 +28,8 @@ The [view load test](https://github.com/igor1309/audelin/blob/main/macos/Tests/P
 
 | Case | 20 entries | Long transcript |
 |---|---:|---:|
-| 800 entries | 1.08 ms | 1.37 ms |
-| 6,000 entries | 1.13 ms | 1.47 ms |
+| 800 entries | 1.07 ms | 1.33 ms |
+| 6,000 entries | 1.02 ms | 1.46 ms |
 
 About 0.04 ms of each update is building the changed rows; the rest is layout. These are local timings on one Mac, not CI measurements. The test asks the ratio, not the absolute time, and these runs are not comparable to the earlier post's table.
 
