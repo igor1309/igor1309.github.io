@@ -1,5 +1,5 @@
 ---
-date: 2026-11-16 12:00
+date: 2026-11-21 12:00
 description: Audelin names remote speakers in a Telemost call while it runs, by reading who the call page shows speaking instead of guessing from the audio.
 tags: Audelin, macOS, Chrome, AI, Showcase
 ---
