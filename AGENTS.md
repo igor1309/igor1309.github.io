@@ -12,6 +12,7 @@ Posts live in `Content/articles/<year>/<date>-<slug>.md` and are built with Publ
 
 The build leaves out any post whose `date` is still in the future, and the `Scheduled publish` workflow checks every hour and deploys once a post's time has passed. So a post can be merged ahead of time and goes live at its slot, within the hour.
 
+- Posts go out on Saturday or Sunday; pick a weekend `date`.
 - `date` is read as UTC (the runner's time zone): `date: 2026-11-08 14:00` goes live shortly after 14:00 UTC.
 - Merging a post dated in the past publishes it at once.
 - To render future posts locally, build with `PUBLISH_FUTURE_POSTS=1 swift run`. The PR checks do this.
