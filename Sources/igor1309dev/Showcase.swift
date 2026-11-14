@@ -27,6 +27,14 @@ extension ShowcaseProject {
 
     static let all: [ShowcaseProject] = [
         .init(
+            name: "Audelin",
+            tag: "Audelin",
+            summary: "A macOS call recorder with a live, local transcript.",
+            stack: "Swift · Core Audio",
+            repo: "https://github.com/igor1309/audelin",
+            media: .image("/images/portfolio/audelin/live.webp")
+        ),
+        .init(
             name: "RexLab",
             tag: "RexLab",
             summary: "A dinosaur learning game for children aged 4 to 7.",
