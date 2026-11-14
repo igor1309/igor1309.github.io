@@ -6,7 +6,7 @@ tags: Audelin, Swift, macOS, Accessibility, Performance, Showcase
 
 # Audelin: An Accessible Transcript That Stays Fast
 
-[Audelin](https://github.com/igor1309/audelin) is a macOS app that transcribes both sides of a call and shows the text in a small panel while people speak. An [earlier post](/articles/2026-11-07-audelin-a-millisecond-to-update-the-transcript) described how an update late in a long call went from hundreds of milliseconds to about one. This one is about making the same panel readable by VoiceOver without giving that back.
+[Audelin](https://github.com/igor1309/audelin) is a macOS app that transcribes both sides of a call and shows the text in a small panel while people speak. An [earlier post](/articles/2026/2026-11-07-audelin-a-millisecond-to-update-the-transcript/) described how an update late in a long call went from hundreds of milliseconds to about one. This one is about making the same panel readable by VoiceOver without giving that back.
 
 ## One text view, many lines
 
