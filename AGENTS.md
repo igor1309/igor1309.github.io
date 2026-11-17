@@ -36,6 +36,19 @@ Wrap every raw `<img>` in a `<div>`, with blank lines around the block:
 
 A bare `<img>` line starts an HTML block that the Markdown parser does not close, so all the text after it, up to the next image, renders as raw Markdown. Close the tag too (`<img ... />`): `ContentLayoutTests` fails on an unclosed one.
 
+## Light and dark screenshots
+
+Portfolio screenshots ship as a pair of the same view: `Resources/images/portfolio/<project>/<name>-light.webp` and `<name>-dark.webp`, WebP, each under 200 KB. Show them with one `alt`:
+
+```html
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/<project>/<name>-dark.webp">
+<img src="/images/portfolio/<project>/<name>-light.webp" width="100%" alt="..." />
+</picture>
+```
+
+The theme script points the dark source at the header toggle's choice, so the screenshot follows both the system and the toggle. Showcase cards use `.picture(light:dark:)`. `ContentLayoutTests` fails when one half of a pair is missing. New posts should ship pairs too; older single images stay as they are.
+
 ## PR checks
 
 `Post checks` runs on every pull request into `author` and must pass before merge. For each changed post it:

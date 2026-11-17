@@ -38,7 +38,10 @@ extension ShowcaseProject {
             summaryRU: "Запись звонков на macOS с живой локальной расшифровкой.",
             stack: "Swift · Core Audio",
             repo: "https://github.com/igor1309/audelin",
-            media: .image("/images/portfolio/audelin/live.webp")
+            media: .picture(
+                light: "/images/portfolio/audelin/live-light.webp",
+                dark: "/images/portfolio/audelin/live-dark.webp"
+            )
         ),
         .init(
             name: "RexLab",
@@ -59,7 +62,10 @@ extension ShowcaseProject {
             summaryRU: "Офлайн-приложение для iPhone, которое читает заметки вслух.",
             stack: "SwiftUI · Swift Testing",
             repo: "https://github.com/igor1309/foliotell",
-            media: .image("/images/portfolio/foliotell/reader.webp")
+            media: .picture(
+                light: "/images/portfolio/foliotell/reader-light.webp",
+                dark: "/images/portfolio/foliotell/reader-dark.webp"
+            )
         ),
         .init(
             name: "Agister",
@@ -82,7 +88,10 @@ extension ShowcaseProject {
             summaryRU: "Учебные программы, с которыми работает ваш агент.",
             stack: "Node.js · SQLite",
             repo: "https://github.com/igor1309/agonara",
-            media: .image("/images/portfolio/agonara/learn-quick-check.webp")
+            media: .picture(
+                light: "/images/portfolio/agonara/learn-quick-check-light.webp",
+                dark: "/images/portfolio/agonara/learn-quick-check-dark.webp"
+            )
         ),
         .init(
             name: "Mizan BLE",
@@ -91,7 +100,10 @@ extension ShowcaseProject {
             summaryRU: "iPad и iPhone согласуют платёж по Bluetooth.",
             stack: "SwiftUI · Core Bluetooth",
             repo: "https://github.com/igor1309/mizan-ble",
-            media: .image("/images/portfolio/mizan-ble/host-advertising.webp")
+            media: .picture(
+                light: "/images/portfolio/mizan-ble/host-advertising-light.webp",
+                dark: "/images/portfolio/mizan-ble/host-advertising-dark.webp"
+            )
         ),
     ]
 }
