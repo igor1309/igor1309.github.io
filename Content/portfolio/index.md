@@ -17,8 +17,8 @@ A native macOS call recorder with a floating, selectable live transcript. It rec
 [Download for macOS](https://github.com/igor1309/audelin/releases/latest) · [Source](https://github.com/igor1309/audelin)
 
 <div align="center">
-<img src="/images/portfolio/audelin/live.webp" width="48%" alt="Audelin's floating live transcript with speaker symbols" />
-<img src="/images/portfolio/audelin/speakers-live.webp" width="48%" alt="Remote speakers named live from a Telemost call" />
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/audelin/live-dark.webp"><img src="/images/portfolio/audelin/live-light.webp" width="48%" alt="Audelin's floating live transcript with speaker symbols" /></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/audelin/speakers-live-dark.webp"><img src="/images/portfolio/audelin/speakers-live-light.webp" width="48%" alt="Remote speakers named live from a Telemost call" /></picture>
 <p align="center"><cite>Audelin: the live transcript, and remote speakers named live from a Telemost call.</cite></p>
 </div>
 <br/>
@@ -53,10 +53,10 @@ An offline iPhone app that reads Markdown and plain-text files aloud. SwiftUI ov
 [Source](https://github.com/igor1309/foliotell)
 
 <div align="center">
-<img src="/images/portfolio/foliotell/reader.webp" width="30%" alt="FolioTell reading a Markdown file" />
-<img src="/images/portfolio/foliotell/playing.webp" width="30%" alt="FolioTell playing it aloud" />
-<img src="/images/portfolio/foliotell/ru-dark.webp" width="30%" alt="FolioTell reading a Russian poem in dark mode" />
-<p align="center"><cite>FolioTell: reading a Markdown file, playing it aloud, and a Russian poem in dark mode.</cite></p>
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/foliotell/reader-dark.webp"><img src="/images/portfolio/foliotell/reader-light.webp" width="30%" alt="FolioTell reading a Markdown file" /></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/foliotell/playing-dark.webp"><img src="/images/portfolio/foliotell/playing-light.webp" width="30%" alt="FolioTell playing it aloud" /></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/foliotell/ru-dark.webp"><img src="/images/portfolio/foliotell/ru-light.webp" width="30%" alt="FolioTell reading a Russian poem" /></picture>
+<p align="center"><cite>FolioTell: reading a Markdown file, playing it aloud, and a Russian poem.</cite></p>
 </div>
 <br/>
 
@@ -81,7 +81,7 @@ A bring-your-own-agent environment for learning programs. A curator builds a pro
 [Live instance](https://agonara.enoa.ai/learn) · [Source](https://github.com/igor1309/agonara)
 
 <div align="center">
-<img src="/images/portfolio/agonara/learn-quick-check.webp" width="70%" alt="An Agonara Quick Check: a student answers a question and sees the result" />
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/agonara/learn-quick-check-dark.webp"><img src="/images/portfolio/agonara/learn-quick-check-light.webp" width="70%" alt="An Agonara Quick Check: a student answers a question and sees the result" /></picture>
 <p align="center"><cite>An Agonara Quick Check: a student answers a question and sees the result.</cite></p>
 </div>
 <br/>
@@ -102,21 +102,21 @@ For explanation see [this blog post](/articles/2022/2022-08-01-fill-hole/).
 > The goal of this task is to build a small image processing library that fills holes in images, along with a small command line utility that uses that library, and answer a few questions.
 
 <div align="center">
-<image src="/images/portfolio/fill-hole/terminal.png" width="30%" title="fill-hole terminal command showing help in case of incorrect input.">
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/fill-hole/terminal-dark.webp"><img src="/images/portfolio/fill-hole/terminal-light.webp" width="30%" title="fill-hole terminal command showing help in case of incorrect input." alt="fill-hole terminal command showing help in case of incorrect input." /></picture>
 <br/>
 <p align="center"><cite>fill-hole terminal command showing help in case of incorrect input.</cite></p>
 </div>
 <br/>
 
 <div align="center">
-<image src="/images/portfolio/fill-hole/modules.png" width="100%" title="Top-level view of modules and dependencies">
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/fill-hole/modules-dark.webp"><img src="/images/portfolio/fill-hole/modules-light.webp" width="100%" title="Top-level view of modules and dependencies" alt="Top-level view of modules and dependencies" /></picture>
 <br/>
 <p align="center"><cite>Top-level view of modules and dependencies.</cite></p>
 </div>
 <br/>
 
 <div align="center">
-<image src="/images/portfolio/fill-hole/components.png" width="100%" title="Detailed view with components">
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/fill-hole/components-dark.webp"><img src="/images/portfolio/fill-hole/components-light.webp" width="100%" title="Detailed view with components" alt="Detailed view with components" /></picture>
 <br/>
 <p align="center"><cite>Detailed view with components.</cite></p>
 </div>

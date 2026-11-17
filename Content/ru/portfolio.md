@@ -19,8 +19,8 @@ title: Портфолио
 [Скачать для macOS](https://github.com/igor1309/audelin/releases/latest) · [Исходный код](https://github.com/igor1309/audelin)
 
 <div align="center">
-<img src="/images/portfolio/audelin/live.webp" width="48%" alt="Плавающая живая расшифровка Audelin со значками говорящих" />
-<img src="/images/portfolio/audelin/speakers-live.webp" width="48%" alt="Имена собеседников из звонка в Телемосте, подписанные на лету" />
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/audelin/live-dark.webp"><img src="/images/portfolio/audelin/live-light.webp" width="48%" alt="Плавающая живая расшифровка Audelin со значками говорящих" /></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/audelin/speakers-live-dark.webp"><img src="/images/portfolio/audelin/speakers-live-light.webp" width="48%" alt="Имена собеседников из звонка в Телемосте, подписанные на лету" /></picture>
 <p align="center"><cite>Audelin: живая расшифровка и имена собеседников из звонка в Телемосте.</cite></p>
 </div>
 <br/>
@@ -55,10 +55,10 @@ title: Портфолио
 [Исходный код](https://github.com/igor1309/foliotell)
 
 <div align="center">
-<img src="/images/portfolio/foliotell/reader.webp" width="30%" alt="FolioTell показывает файл Markdown" />
-<img src="/images/portfolio/foliotell/playing.webp" width="30%" alt="FolioTell читает его вслух" />
-<img src="/images/portfolio/foliotell/ru-dark.webp" width="30%" alt="FolioTell читает русское стихотворение в тёмной теме" />
-<p align="center"><cite>FolioTell: файл Markdown, чтение вслух и русское стихотворение в тёмной теме.</cite></p>
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/foliotell/reader-dark.webp"><img src="/images/portfolio/foliotell/reader-light.webp" width="30%" alt="FolioTell показывает файл Markdown" /></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/foliotell/playing-dark.webp"><img src="/images/portfolio/foliotell/playing-light.webp" width="30%" alt="FolioTell читает его вслух" /></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/foliotell/ru-dark.webp"><img src="/images/portfolio/foliotell/ru-light.webp" width="30%" alt="FolioTell читает русское стихотворение" /></picture>
+<p align="center"><cite>FolioTell: файл Markdown, чтение вслух и русское стихотворение.</cite></p>
 </div>
 <br/>
 
@@ -83,7 +83,7 @@ title: Портфолио
 [Рабочий экземпляр](https://agonara.enoa.ai/learn) · [Исходный код](https://github.com/igor1309/agonara)
 
 <div align="center">
-<img src="/images/portfolio/agonara/learn-quick-check.webp" width="70%" alt="Быстрая проверка в Agonara: студент отвечает на вопрос и видит результат" />
+<picture><source media="(prefers-color-scheme: dark)" srcset="/images/portfolio/agonara/learn-quick-check-dark.webp"><img src="/images/portfolio/agonara/learn-quick-check-light.webp" width="70%" alt="Быстрая проверка в Agonara: студент отвечает на вопрос и видит результат" /></picture>
 <p align="center"><cite>Быстрая проверка в Agonara: студент отвечает на вопрос и видит результат.</cite></p>
 </div>
 <br/>
