@@ -165,6 +165,9 @@ def check_links(posts):
             seen.add(url)
             status = fetch(url)
             print(f"{status} {url}")
+            # LinkedIn answers every non-browser request with 999.
+            if status == 999 and "linkedin.com/" in url:
+                continue
             if not isinstance(status, int) or not 200 <= status < 400:
                 errors.append(f"{post}: {url} -> {status}")
     return errors
