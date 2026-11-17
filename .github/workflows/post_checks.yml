@@ -46,7 +46,7 @@ jobs:
       - name: Tests
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         # The snapshot tests in igor1309devTests have no recorded references.
-        run: swift test --filter 'ContentLayoutTests|ShowcaseTests|LanguageTests'
+        run: swift test --filter 'ContentLayoutTests|ShowcaseTests|LanguageTests|ThemeToggleTests'
 
       - name: Content guardrail, front matter and images
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}

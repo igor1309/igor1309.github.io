@@ -233,7 +233,8 @@ extension Node where Context == HTML.DocumentContext {
                     .attribute(named: "hreflang", value: alternate.hreflang),
                     .href(alternate.href)
                 )
-            }
+            },
+            .script(.raw(ThemeScript.source))
         )
     }
 }
@@ -264,10 +265,14 @@ private enum DateFormats {
 private enum Icon {
     static let arrowRight = svg(#"<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>"#)
     static let arrowUpRight = svg(#"<path d="M7 7h10v10"/><path d="M7 17 17 7"/>"#)
+    static let monitor = svg(#"<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>"#, name: "monitor")
+    static let sun = svg(#"<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>"#, name: "sun")
+    static let moon = svg(#"<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>"#, name: "moon")
     static let rss = svg(#"<path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>"#)
 
-    private static func svg(_ paths: String) -> Node<HTML.BodyContext> {
-        .raw(#"<svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">"# + paths + "</svg>")
+    private static func svg(_ paths: String, name: String? = nil) -> Node<HTML.BodyContext> {
+        let classes = name.map { "icon icon-\($0)" } ?? "icon"
+        return .raw(#"<svg class=""# + classes + #"" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">"# + paths + "</svg>")
     }
 }
 
@@ -306,6 +311,7 @@ private struct SiteHeader: Component {
 
                 Div {
                     LanguageSwitch(strings: strings, switchURL: switchURL)
+                    ThemeToggle(language: strings.language)
                 }
                 .class("prefs")
             }
@@ -629,4 +635,78 @@ private struct SiteFooter: Component {
         }
         .class("site-footer")
     }
+}
+
+/// The light / dark / system theme button. It is hidden until `ThemeScript`
+/// runs, so a page without JavaScript shows no control that does nothing.
+private struct ThemeToggle: Component {
+    var language: SiteLanguage
+
+    private var label: String {
+        language == .ru ? "Тема: системная. Переключить на светлую" : "Theme: system. Switch to light"
+    }
+
+    var body: Component {
+        Button {
+            Icon.monitor
+            Icon.sun
+            Icon.moon
+        }
+        .class("theme-toggle")
+        .attribute(named: "type", value: "button")
+        .attribute(named: "hidden", value: nil, ignoreValueIfEmpty: false)
+        .attribute(named: "aria-label", value: label)
+        .attribute(named: "title", value: label)
+    }
+}
+
+/// Runs blocking in `<head>`: applies the stored theme before first paint,
+/// then wires the header button once the DOM is ready.
+/// `localStorage['theme']` is `light` or `dark`; no value means follow the system.
+enum ThemeScript {
+    static let source = #"""
+(function () {
+  var root = document.documentElement;
+  var order = ["system", "light", "dark"];
+  function stored() {
+    try { var t = localStorage.getItem("theme"); return t === "light" || t === "dark" ? t : "system"; }
+    catch (e) { return "system"; }
+  }
+  function apply(theme) {
+    if (theme === "system") root.removeAttribute("data-theme");
+    else root.setAttribute("data-theme", theme);
+  }
+  apply(stored());
+  var labels = {
+    en: { name: { system: "system", light: "light", dark: "dark" }, text: function (c, n) { return "Theme: " + c + ". Switch to " + n; } },
+    ru: { name: { system: "системная", light: "светлая", dark: "тёмная" }, next: { system: "системную", light: "светлую", dark: "тёмную" }, text: function (c, n) { return "Тема: " + c + ". Переключить на " + n; } }
+  };
+  function label(theme) {
+    var l = (root.lang || "en").slice(0, 2) === "ru" ? labels.ru : labels.en;
+    var next = order[(order.indexOf(theme) + 1) % order.length];
+    return l.text(l.name[theme], (l.next || l.name)[next]);
+  }
+  function sync(button, theme) {
+    button.setAttribute("data-choice", theme);
+    button.setAttribute("aria-label", label(theme));
+    button.setAttribute("title", label(theme));
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    var buttons = document.querySelectorAll(".theme-toggle");
+    Array.prototype.forEach.call(buttons, function (button) {
+      sync(button, stored());
+      button.hidden = false;
+      button.addEventListener("click", function () {
+        var theme = order[(order.indexOf(stored()) + 1) % order.length];
+        try {
+          if (theme === "system") localStorage.removeItem("theme");
+          else localStorage.setItem("theme", theme);
+        } catch (e) {}
+        apply(theme);
+        Array.prototype.forEach.call(buttons, function (b) { sync(b, theme); });
+      });
+    });
+  });
+})();
+"""#
 }
