@@ -13,7 +13,11 @@ struct Igor1309Dev: Website {
     }
     
     struct ItemMetadata: WebsiteItemMetadata {
-        // Add any site-specific metadata that you want to use here.
+        /// `ru` for a Russian post; English when absent. See Language.swift.
+        var lang: String?
+        /// The path of the English post this one translates, e.g.
+        /// `articles/2026/2026-11-01-some-post`.
+        var translation: String?
     }
     
     // Update these properties to configure your website:
@@ -34,10 +38,33 @@ struct Igor1309Dev: Website {
 let includeFuturePosts = ProcessInfo.processInfo.environment["PUBLISH_FUTURE_POSTS"] == "1"
 let buildDate = Date()
 
-try Igor1309Dev().publish(
-    withTheme: .igor1309,
-    additionalSteps: includeFuturePosts ? [] : [
-        .removeAllItems(in: .articles, matching: Predicate { $0.date > buildDate })
-    ],
-    plugins: [.splash(withClassPrefix: "")]
-)
+try Igor1309Dev().publish(using: Igor1309Dev.pipeline(
+    excludingPostsAfter: includeFuturePosts ? nil : buildDate
+))
+
+extension Igor1309Dev {
+    /// Publish's default pipeline, with one RSS feed per language:
+    /// /feed.rss has the English posts, /ru/feed.rss the Russian ones.
+    static func pipeline(excludingPostsAfter date: Date?) -> [PublishingStep<Igor1309Dev>] {
+        [
+            .installPlugin(.splash(withClassPrefix: "")),
+            .optional(.copyResources()),
+            .addMarkdownFiles(),
+            .sortItems(by: \.date, order: .descending),
+            .unwrap(date) { date in
+                .removeAllItems(in: .articles, matching: Predicate { $0.date > date })
+            },
+            .generateHTML(withTheme: .igor1309),
+            .generateRSSFeed(
+                including: Set(SectionID.allCases),
+                itemPredicate: Predicate { SiteLanguage.of(itemLang: $0.metadata.lang) == .en }
+            ),
+            .generateRSSFeed(
+                including: Set(SectionID.allCases),
+                itemPredicate: Predicate { SiteLanguage.of(itemLang: $0.metadata.lang) == .ru },
+                config: .init(targetPath: "ru/feed.rss")
+            ),
+            .generateSiteMap(),
+        ]
+    }
+}

@@ -17,9 +17,14 @@ struct ShowcaseProject {
     let name: String
     let tag: String
     let summary: String
+    let summaryRU: String
     let stack: String
     let repo: String
     let media: Media
+
+    func summary(in language: SiteLanguage) -> String {
+        language == .en ? summary : summaryRU
+    }
 }
 
 extension ShowcaseProject {
@@ -30,6 +35,7 @@ extension ShowcaseProject {
             name: "Audelin",
             tag: "Audelin",
             summary: "A macOS call recorder with a live, local transcript.",
+            summaryRU: "Запись звонков на macOS с живой локальной расшифровкой.",
             stack: "Swift · Core Audio",
             repo: "https://github.com/igor1309/audelin",
             media: .image("/images/portfolio/audelin/live.webp")
@@ -38,6 +44,7 @@ extension ShowcaseProject {
             name: "RexLab",
             tag: "RexLab",
             summary: "A dinosaur learning game for children aged 4 to 7.",
+            summaryRU: "Обучающая игра про динозавров для детей 4–7 лет.",
             stack: "React · TypeScript",
             repo: "https://github.com/igor1309/rexlab",
             media: .picture(
@@ -49,6 +56,7 @@ extension ShowcaseProject {
             name: "FolioTell",
             tag: "FolioTell",
             summary: "An offline iPhone app that reads your notes aloud.",
+            summaryRU: "Офлайн-приложение для iPhone, которое читает заметки вслух.",
             stack: "SwiftUI · Swift Testing",
             repo: "https://github.com/igor1309/foliotell",
             media: .image("/images/portfolio/foliotell/reader.webp")
@@ -57,6 +65,7 @@ extension ShowcaseProject {
             name: "Agister",
             tag: "Agister",
             summary: "A runner for AI-agent work defined in settings files.",
+            summaryRU: "Запуск работы AI-агентов, описанной в файлах настроек.",
             stack: "Go",
             repo: "https://github.com/igor1309/agister",
             media: .terminal([
@@ -70,6 +79,7 @@ extension ShowcaseProject {
             name: "Agonara",
             tag: "Agonara",
             summary: "Learning programs your own agent can work on.",
+            summaryRU: "Учебные программы, с которыми работает ваш агент.",
             stack: "Node.js · SQLite",
             repo: "https://github.com/igor1309/agonara",
             media: .image("/images/portfolio/agonara/learn-quick-check.webp")
@@ -78,6 +88,7 @@ extension ShowcaseProject {
             name: "Mizan BLE",
             tag: "Mizan BLE",
             summary: "An iPad and an iPhone agree a payment over Bluetooth.",
+            summaryRU: "iPad и iPhone согласуют платёж по Bluetooth.",
             stack: "SwiftUI · Core Bluetooth",
             repo: "https://github.com/igor1309/mizan-ble",
             media: .image("/images/portfolio/mizan-ble/host-advertising.webp")
