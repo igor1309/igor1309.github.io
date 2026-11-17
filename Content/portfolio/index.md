@@ -6,7 +6,7 @@ title: Portfolio
 
 ## Built with AI coding agents
 
-These projects come from my private monorepo, where I build products with AI coding agents working from specs and tests. Each one is published as its own public repository with its code, tests and README, and checked to build and pass on its own outside the monorepo.
+I build these products with AI coding agents working from specs and tests. Each one is its own public repository with its code, tests and README, and builds and passes its tests on its own.
 
 ### Audelin
 
