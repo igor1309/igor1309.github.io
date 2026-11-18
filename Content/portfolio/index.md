@@ -4,9 +4,9 @@ title: Portfolio
 
 # Portfolio
 
-## Built with AI coding agents
+## Products
 
-I build these products with AI coding agents working from specs and tests. Each one is its own public repository with its code, tests and README, and builds and passes its tests on its own.
+Each product is its own public repository with its code, tests and README, and builds and passes its tests on its own.
 
 ### Audelin
 

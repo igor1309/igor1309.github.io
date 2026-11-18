@@ -4,7 +4,7 @@ title: About
 
 # Hi, I'm Igor.
 
-I lead iOS development at a bank, and I build my own products with AI coding agents. The agents work from specs and tests: I write down what a product must do, they write the code, and the tests decide when it is done.
+I lead iOS development at a bank, and I build my own products. Each starts as a written spec of what it must do, and its tests decide when it is done.
 
 ## What I'm building
 
@@ -15,7 +15,7 @@ I lead iOS development at a bank, and I build my own products with AI coding age
 
 Each one is a public repository with its code and tests. The [portfolio](/portfolio) has screenshots and details.
 
-## Before the agents
+## Earlier
 
 Years of Swift and SwiftUI, written up as I went in the [articles](/articles). In 2022 I completed iOS Lead Essentials at the Essential Developer Academy, and wrote down [what I took from it](/articles/2022/2022-10-18-essential-blue-belt).
 

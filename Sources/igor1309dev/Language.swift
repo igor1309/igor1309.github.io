@@ -138,13 +138,13 @@ struct SiteStrings {
 
     var siteName: String { pick("Igor Malyarov", "Игорь Маляров") }
     var siteDescription: String {
-        pick("Notes from building software with AI agents, and the Swift years before them.",
-             "Заметки о разработке с AI-агентами и о годах на Swift до них.")
+        pick("Notes from building software: products, architecture and Swift.",
+             "Заметки о разработке: продукты, архитектура и Swift.")
     }
-    var eyebrow: String { pick("iOS tech lead · building with AI agents", "iOS-техлид · разрабатываю с AI-агентами") }
+    var eyebrow: String { pick("iOS tech lead · building products", "iOS-техлид · делаю продукты") }
     var readLatest: String { pick("Read the latest", "Читать свежее") }
     var seePortfolio: String { pick("See the portfolio", "Смотреть портфолио") }
-    var builtWithAgents: String { pick("Built with agents", "Сделано с агентами") }
+    var productsHeading: String { pick("Products", "Продукты") }
     var portfolioMore: String { pick("Portfolio →", "Портфолио →") }
     var latestWriting: String { pick("Latest writing", "Свежие статьи") }
     var allArticles: String { pick("All articles · Tags →", "Все статьи · Теги →") }
