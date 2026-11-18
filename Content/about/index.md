@@ -4,7 +4,7 @@ title: About
 
 # Hi, I'm Igor.
 
-I lead iOS development at a bank, and I build my own products. Each starts as a written spec of what it must do, and its tests decide when it is done.
+I lead iOS and Android development at a bank, and I build my own products. Each starts as a written spec of what it must do, and its tests decide when it is done.
 
 ## What I'm building
 

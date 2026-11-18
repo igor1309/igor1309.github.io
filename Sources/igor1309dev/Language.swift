@@ -138,8 +138,8 @@ struct SiteStrings {
 
     var siteName: String { pick("Igor Malyarov", "Игорь Маляров") }
     var siteDescription: String {
-        pick("Notes from building software: products, architecture and Swift.",
-             "Заметки о разработке: продукты, архитектура и Swift.")
+        pick("Notes from building software: products and architecture.",
+             "Заметки о разработке: продукты и архитектура.")
     }
     var eyebrow: String { pick("iOS tech lead · building products", "iOS-техлид · делаю продукты") }
     var readLatest: String { pick("Read the latest", "Читать свежее") }
