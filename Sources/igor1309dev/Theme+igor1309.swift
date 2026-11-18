@@ -378,7 +378,7 @@ private struct HomePage: Component {
             .class("wrapper hero")
 
             Div {
-                SectionHead(title: strings.builtWithAgents,
+                SectionHead(title: strings.productsHeading,
                             link: (strings.portfolioMore, portfolio))
                 List(ShowcaseProject.all) { project in
                     ProjectTile(project: project,

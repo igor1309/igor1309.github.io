@@ -23,7 +23,7 @@ struct Igor1309Dev: Website {
     // Update these properties to configure your website:
     var url = URL(string: "https://igor1309.dev")!
     var name = "Igor Malyarov"
-    var description = "Notes from building software with AI agents, and the Swift years before them."
+    var description = "Notes from building software: products, architecture and Swift."
     var language: Language { .english }
     var imagePath: Path? { nil }
     var favicon: Favicon? { .init(path: Path("images/favicon_io/favicon.ico"), type: "image/x-icon")}
